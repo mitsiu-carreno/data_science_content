@@ -1,0 +1,69 @@
+Opción 1: Ciberseguridad - pregunta : ¿Cuáles son las principales características, tendencias y efectos de las “Common Vulnerabilities and Exposures”?
+
+    ¿Qué datos necesito?
+
+Datos relacionados con vulnerabilidades de software, fecha en que se detectó y tipo de vulnerabilidad.
+
+    ¿Dónde puedo conseguirlos?
+
+Existen distintos tipos de registros de vulnerabilidades:
+
+https://cve.mitre.org/data/downloads/index.html
+
+https://nvd.nist.gov/Vulnerability-Metrics/Calculator-Product-Integration
+
+https://nvd.nist.gov/vuln/data-feeds
+
+https://otx.alienvault.com/api
+
+https://www.first.org/cvss/user-guide
+
+https://data.world/apottr/nvd-2002-to-2017
+
+    ¿Cómo puedo acceder a ellos?
+
+Todos los recursos encontrados tienen links de descarga o apis, solo debo revisar a profundidad si todas las api 's son gratuitas y públicas o si requieren algún pago y/o autenticación.
+
+    ¿Qué transformaciones necesito aplicar?
+
+Primero debo obtener el compilado de CVE completo, ya que es el estándar para identificar vulnerabilidades en el resto de api ‘s, probablemente deba hacer búsquedas basadas en texto para identificar la metadata respecto a qué empresa desarrolló el software vulnerable.
+
+    ¿Cómo hace que estos datos respondan a mi pregunta?
+
+Al tener un registro histórico y categorizado de las distintas vulnerabilidades se puede realizar búsquedas de tendencias, cruce de eventos relevantes como guerras, ciberataques, cambios políticos y analizar su efecto en la ciberseguridad, así como la evolución en las técnicas y objetivos en las vulnerabilidades. 
+
+
+
+
+
+Opción 2: Simulación carreras - pregunta: Dado que es posible capturar la telemetría del videojuego F1 2020, ¿Que ajustes tanto en coche como en estilo de conducción se pueden llevar a cabo para mejorar los tiempos de vuelta ?
+
+    ¿Qué datos necesito?
+
+Datos de reglajes del coche (carga aerodinámica en alas, presion en neumaticos, nivel combustible)
+
+Datos de telemetría del coche (velocidad, porcentaje de acelerador, temperatura de frenos, grado de clutch)
+
+Datos de vuelta (tiempo por sector, mejor tiempo por sector, mejor tiempo por vuelta, )
+
+    ¿Dónde puedo conseguirlos?
+
+El código para capturar paquetes ya existe, se puede ajustar para leer y guardar 100% de los paquetes recibidos.
+
+    ¿Cómo puedo acceder a ellos?
+
+Este es el repositorio para capturar los datos https://github.com/mitsiu-carreno/Nyyyan2020_telemetry/tree/master
+
+https://answers.ea.com/t5/General-Discussion/F1-22-UDP-Specification/m-p/11551274#M2321 
+
+https://github.com/mitsiu-carreno/Nyyyan2020_telemetry/commit/24ed9cceefbcf0454de8036d0beb682054e45c84 
+
+    ¿Qué transformaciones necesito aplicar?
+
+Se debe ampliar el código existente para capturar todos los tipos de paquetes y validar que realmente no existe pérdida de información, tal vez volverlo ligeramente concurrente, para asegurar que todo se guarda sabiendo que va ha haber una fase de ordenamiento de la información (él código actual era para un demo gráficando soft real-time).
+
+Posteriormente se debe encontrar la correlación entre un evento determinado (bloquear una llanta, dar una curva más rápido de lo usual, una buena/mala arrancada) y su exposición en los datos para poder identificar dichos eventos de interés de manera automática y analizar el resto de las variables y cómo afectan el evento analizado.
+
+    ¿Cómo hace que estos datos respondan a mi pregunta?
+
+Los datos reflejan el comportamiento del coche bajo distintas condiciones, (reglajes, input del usuario [porcentaje de acelerador, grado de torsión del volante…], condiciones meteorológicas) un análisis de estos factores permitirá reconocer los factores que más influyen en un rendimiento bajo y permitirá experimentar para mejorar los tiempos de vuelta.

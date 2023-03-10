@@ -1,0 +1,5 @@
+{"nombre": "Kaliman",
+ "profesion": "superheroe",
+ "edad": 60,
+ "ciudad": {"nombre": "Kalimantan", "continente": "Asia", "pais": "India"},
+ "amigos": ["Solin"]}
