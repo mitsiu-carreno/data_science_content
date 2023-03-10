@@ -1,0 +1,500 @@
+\documentclass[fleqn]{article}
+\usepackage{amsmath}
+\usepackage{arydshln} % To add dashed line in matrix %
+\usepackage[margin=2cm]{geometry}
+
+\title{Tarea: Resolucion de sistemas de ecuaciones}
+\date{07-03-2023}
+\author{Mitsiu Alejandro Carreño Sarabia}
+\begin{document}
+
+\maketitle
+\pagenumbering{gobble}
+\newpage
+\pagenumbering{arabic}
+
+\section{Método de Gauss}
+  \subsection{Ejercicio 1}
+    \begin{align*}
+      16x+16y+17z&=10\\
+      -14x+17y-3z&=75\\
+      -5x-11y-18z&=43 
+    \end{align*}
+  
+    \begin{alignat*}{2}
+      &\left[
+        \begin{array}{ccc:c}
+          16 & 16 & 17 & 10 \\
+          -14 & 17 & -3 & 75\\
+          -5 & -11 & -18 & 43
+        \end{array}
+      \right] 
+      \quad 
+      && R1\left(\frac{1}{16}\right)
+    \end{alignat*}
+
+    \begin{alignat*}{2}
+      &\left[\def\arraystretch{1.5}
+        \begin{array}{ccc:c}
+          1 & 1 & \frac{17}{16} & \frac{5}{8} \\
+          -14 & 17 & -3 & 75\\
+          -5 & -11 & -18 & 43
+        \end{array}
+      \right] 
+      \quad 
+      && R1\left(14\right)+R2 \qquad y \qquad R1\left(5\right)+R3
+    \end{alignat*}
+
+    \begin{alignat*}{2}
+      &\left[\def\arraystretch{1.5}
+        \begin{array}{ccc:c}
+          1 & 1 & \frac{17}{16} & \frac{5}{8} \\
+          0 & 31 & 11\frac{7}{8} & 83\frac{3}{4} \\
+          0 & -6 & -12\frac{11}{16} & 46\frac{1}{8}
+        \end{array}
+      \right]
+      \quad
+      && R2\left(\frac{1}{31}\right)
+    \end{alignat*}
+    
+    \begin{alignat*}{2}
+      &\left[\def\arraystretch{1.5}
+        \begin{array}{ccc:c}
+          1 & 1 & \frac{17}{16} & \frac{5}{8} \\
+          0 & 1 & \frac{95}{248} & 2\frac{87}{124} \\
+          0 & -6 & -12\frac{11}{16} & 46\frac{1}{8}
+        \end{array}
+      \right]
+      \quad
+      && R2\left(6\right)+R3
+    \end{alignat*}
+  
+    \begin{alignat*}{2}
+      &\left[\def\arraystretch{1.5}
+        \begin{array}{ccc:c}
+          1 & 1 & \frac{17}{16} & \frac{5}{8}  \\
+          0 & 1 & \frac{95}{248} & 2\frac{87}{124} \\
+          0 & 0 & -10\frac{193}{496} & 62\frac{83}{248} \\
+        \end{array}
+      \right]
+    \end{alignat*}
+  
+    \text{Despejando "z":}
+    \begin{align*}
+      -10\frac{193}{496}z &= 62\frac{83}{248} \\
+      z &= \frac{62\frac{83}{248}}{-10\frac{193}{496}} \\
+      z &= -6 \\
+    \end{align*}
+
+    \text{Sustituyendo "z" para despejar "y":}
+    \begin{align*}
+      y + \frac{95}{248}z &= 2\frac{87}{124} \\
+      y + \frac{95}{248}(-6) &= 2\frac{87}{124}  \\
+      y + -2\frac{37}{124} &= 2\frac{87}{124}  \\
+      y &= 2\frac{87}{124} + 2\frac{37}{124} \\
+      y &= 5  \\
+    \end{align*}
+
+    \text{Sustituyendo "z" y "y" para despejar "x":}
+    \begin{align*}
+      x + y + \frac{17}{16}z &= \frac{5}{8} \\
+      x + 5 + \frac{17}{16}(-6) &= \frac{5}{8}  \\
+      x + 5 + (-6\frac{3}{8}) &= \frac{5}{8}  \\
+      x &= \frac{5}{8} -5 +6\frac{3}{8}  \\
+      x &= 2  \\
+    \end{align*}
+
+    \text{Comprobando: 16x+16y+17z=10\\}
+    \begin{align*}
+      16x+16y+17z&=10 \\
+      16(2)+16(5)+17(-6)&=10 \\
+      32+80-102&=10 \\
+      10&=10 \\
+    \end{align*}
+    
+    \text{Comprobando: -14x+17y-3z=75\\}
+    \begin{align*}
+      -14x+17y-3z&=75 \\
+      -14(2)+17(5)-3(-6)&=75 \\
+      -28+85+18&=75 \\
+      75&=75 \\
+    \end{align*}
+  
+    \text{Comprobando: -5x-11y-18z=43}
+    \begin{align*}
+      -5x-11y-18z&=43 \\
+      -5(2)-11(5)-18(-6)&=43 \\
+      -10-55+108&=43  \\
+      43&=43 \\
+    \end{align*}
+
+  \subsection{Ejercicio 2}
+    \begin{align*}
+      x+2y-z&=1 \\
+      2x+3y+z&=2  \\
+      x+3y-2z&=1
+    \end{align*}
+    
+    \begin{alignat*}{2}
+      &\left[
+        \begin{array}{ccc:c}
+          1 & 2 & -1 & 1 \\
+          2 & 3 & 1 & 2 \\
+          1 & 3 & -2 & 1  
+        \end{array}
+      \right]
+      \quad
+      && R1\left(-2\right)+R2 \qquad y \qquad R1\left(-1\right)+R3
+    \end{alignat*}
+
+    \begin{alignat*}{2}
+      &\left[
+        \begin{array}{ccc:c}
+          1 & 2 & -1 & 1 \\
+          0 & -1 & 3 & 0 \\
+          0 & 1 & -1 & 0
+        \end{array}
+      \right]
+      \quad
+      && R2\left(-1\right)
+    \end{alignat*}
+    
+    \begin{alignat*}{2}
+      &\left[
+        \begin{array}{ccc:c}
+          1 & 2 & -1 & 1 \\
+          0 & 1 & -3 & 0 \\
+          0 & 1 & -1 & 0
+        \end{array}
+      \right]
+      \quad
+      && R2\left(-1\right)+R3
+    \end{alignat*}
+
+    \begin{alignat*}{2}
+      &\left[
+        \begin{array}{ccc:c}
+          1 & 2 & -1 & 1 \\
+          0 & 1 & -3 & 0 \\
+          0 & 0 & 2 & 0
+        \end{array}
+      \right]
+      \quad
+      && R3\left(\frac{1}{2}\right)
+    \end{alignat*}
+
+    \begin{alignat*}{2}
+      &\left[
+        \begin{array}{ccc:c}
+          1 & 2 & -1 & 1 \\
+          0 & 1 & -3 & 0 \\
+          0 & 0 & 1 & 0 \\
+        \end{array}
+      \right]
+    \end{alignat*}
+    
+    \text{Despejando "z":}
+    \begin{align*}
+      z &= 0
+    \end{align*}
+
+    \text{Sustituyendo "z" para despejar "y":}
+    \begin{align*}
+      y -3z &= 0 \\
+      y -3(0) &= 0 \\
+      y - 0 &= 0 \\
+      y &= 0 \\
+    \end{align*}
+
+    \text{Sustituyendo "z" y "y" para despejar "x":}
+    \begin{align*}
+      x + 2y -1z &= 1 \\
+      x + 2(0) -1(0) &= 1 \\
+      x + 0 + 0 &= 1 \\
+      x &= 1
+    \end{align*}
+
+    \text{Comprobando: x+2y-z=1 \\}
+    \begin{align*}
+      x+2y-z&=1 \\
+      1+2(0)-0 &= 1 \\
+      1+0-0 &= 1\\
+      1 &= 1 \\
+    \end{align*}
+    
+    \text{Comprobando: 2x+3y+z=2 \\}
+    \begin{align*}
+      2x+3y+z &= 2 \\
+      2(1) + 3(0) + 0 &= 2 \\
+      2 + 0 + 0 &= 2 \\
+      2 &= 2 \\
+    \end{align*}
+
+    \text{Comprobando: x+3y-2z=1  \\}
+    \begin{align*}
+      x+3y-2z &= 1 \\
+      1+3(0)-2(0) &= 1 \\
+      1+0+0 &= 1 \\
+      1 &= 1 \\
+    \end{align*}
+
+
+\section{Método de Gauss-Jordán}
+  \subsection{Ejercicio 3}
+    \begin{align*}
+      1x+2y+3z&=14 \\
+      3x+2y+1z&=10 \\
+      3x+1y+2z&=11
+    \end{align*}
+    
+    \begin{alignat*}{2}
+      &\left[
+        \begin{array}{ccc:c}
+          1 & 2 & 3 & 14 \\
+          3 & 2 & 1 & 10 \\
+          3 & 1 & 2 & 11
+        \end{array}
+      \right]
+      \quad
+      && R1\left(-3\right)+R2 \qquad y \qquad R1\left(-3\right)+R3
+    \end{alignat*}
+
+    \begin{alignat*}{2}
+      &\left[
+        \begin{array}{ccc:c}
+          1 & 2 & 3 & 14 \\
+          0 & -4 & -8 & -32 \\
+          0 & -5 & -7 & -31
+        \end{array}
+      \right]
+      \quad
+      && R2\left(-\frac{1}{4}\right)
+    \end{alignat*}
+
+    \begin{alignat*}{2}
+      &\left[
+        \begin{array}{ccc:c}
+          1 & 2 & 3 & 14 \\
+          0 & 1 & 2 & 8 \\
+          0 & -5 & -7 & -31
+        \end{array}
+      \right]
+      \quad
+      && R2\left(-2\right)+R1 \qquad y \qquad R2\left(5\right)+R3
+    \end{alignat*}
+
+    \begin{alignat*}{2}
+      &\left[
+        \begin{array}{ccc:c}
+          1 & 0 & -1 & -2 \\
+          0 & 1 & 2 & 8 \\
+          0 & 0 & 3 & 9
+        \end{array}
+      \right]
+      \quad
+      && R3\left(\frac{1}{3}\right)
+    \end{alignat*}
+
+    \begin{alignat*}{2}
+      &\left[
+        \begin{array}{ccc:c}
+          1 & 0 & -1 & -2 \\
+          0 & 1 & 2 & 8 \\
+          0 & 0 & 1 & 3 
+        \end{array}
+      \right]
+      \quad
+      && R3\left(1\right)+R1 \qquad y \qquad R3\left(-2\right)+R2
+    \end{alignat*}
+
+    \begin{alignat*}{2}
+      &\left[
+        \begin{array}{ccc:c}
+          1 & 0 & 0 & 1 \\
+          0 & 1 & 0 & 2 \\
+          0 & 0 & 1 & 3 \\
+        \end{array}
+      \right]
+    \end{alignat*}
+
+    \text{Comprobando: 1x+2y+3z=14\\}
+    \begin{align*}
+      1x+2y+3z&=14 \\
+      1(1)+2(2)+3(3) &= 14 \\
+      1+4+9 &= 14 \\
+      14 &= 14 \\
+    \end{align*}
+
+    \text{Comprobando: 3x+2y+1z=10\\}
+    \begin{align*}
+      3x+2y+1z&=10 \\
+      3(1) + 2(2) + 1(3) &= 10 \\
+      3+4+3 &= 10 \\
+    \end{align*}
+
+    \text{Comprobando: 3x+1y+2z=11\\}
+    \begin{align*}
+      3x+1y+2z &= 11 \\
+      3(1)+1(2)+2(3) &= 11 \\
+      3+2+6 &= 11 \\
+      11 &= 11 \\
+    \end{align*}
+
+  \subsection{Ejercicio 4}
+    \begin{align*}
+      2a+2b-c+d&=4 \\
+      4a+3b-c+2d&=6 \\
+      8a+5b-3c+4d&=12 \\
+      3a+3b-2c+2d&=6
+    \end{align*}
+
+
+    \begin{alignat*}{2}
+      &\left[
+        \begin{array}{cccc:c}
+          2 & 2 & -1 & 1 & 4 \\
+          4 & 3 & -1 & 2 & 6 \\
+          8 & 5 & -3 & 4 & 12 \\
+          3 & 3 & -2 & 2 & 6
+        \end{array}
+      \right]
+      \quad
+      && R1\left(\frac{1}{2}\right)
+    \end{alignat*}
+
+    \begin{alignat*}{2}
+      &\left[\def\arraystretch{1.5}
+        \begin{array}{cccc:c}
+          1 & 1 & -\frac{1}{2} & \frac{1}{2} & 2 \\
+          4 & 3 & -1 & 2 & 6 \\
+          8 & 5 & -3 & 4 & 12 \\
+          3 & 3 & -2 & 2 & 6  
+        \end{array}
+      \right]
+      \quad
+      && R1\left(-4\right)+R2 \qquad y \qquad R1\left(-8\right)+R3 \qquad y \qquad R1\left(-3\right)+R4
+    \end{alignat*}
+
+    \begin{alignat*}{2}
+      &\left[\def\arraystretch{1.5}
+        \begin{array}{cccc:c}
+          1 & 1 & -\frac{1}{2} & \frac{1}{2} & 2 \\
+          0 & -1 & 1 & 0 & -2 \\
+          0 & -3 & 1 & 0 & -4 \\
+          0 & 0 & -\frac{1}{2} & \frac{1}{2} & 0 
+        \end{array}
+      \right]
+      \quad
+      && R2\left(-1\right)
+    \end{alignat*}
+  
+    \begin{alignat*}{2}
+      &\left[\def\arraystretch{1.5}
+        \begin{array}{cccc:c}
+          1 & 1 & -\frac{1}{2} & \frac{1}{2} & 2 \\
+          0 & 1 & -1 & 0 & 2 \\
+          0 & -3 & 1 & 0 & -4 \\
+          0 & 0 & -\frac{1}{2} & \frac{1}{2} & 0
+        \end{array}
+      \right]
+      \quad
+      && R2\left(-1\right)+R1 \qquad y \qquad R2\left(3\right)+R3
+    \end{alignat*}
+
+    \begin{alignat*}{2}
+      &\left[\def\arraystretch{1.5}
+        \begin{array}{cccc:c}
+          1 & 0 & \frac{1}{2} & \frac{1}{2} & 0 \\
+          0 & 1 & -1 & 0 & 2 \\
+          0 & 0 & -2 & 0 & 2 \\
+          0 & 0 & -\frac{1}{2} & \frac{1}{2} & 0
+        \end{array}
+      \right]
+      \quad
+      && R3\left(-\frac{1}{2}\right)
+    \end{alignat*}
+
+    \begin{alignat*}{2}
+      &\left[\def\arraystretch{1.5}
+        \begin{array}{cccc:c}
+          1 & 0 & \frac{1}{2} & \frac{1}{2} & 0 \\
+          0 & 1 & -1 & 0 & 2 \\
+          0 & 0 & 1 & 0 & -1 \\
+          0 & 0 & -\frac{1}{2} & \frac{1}{2} & 0 
+        \end{array}
+      \right]
+      \quad
+      && R3\left(-\frac{1}{2}\right)+R1 \qquad y \qquad R3\left(1\right)+R2 \qquad y \qquad R3\left(\frac{1}{2}\right)+R4
+    \end{alignat*}
+
+    \begin{alignat*}{2}
+      &\left[\def\arraystretch{1.5}
+        \begin{array}{cccc:c}
+          1 & 0 & 0 & \frac{1}{2} & \frac{1}{2} \\
+          0 & 1 & 0 & 0 & 1 \\
+          0 & 0 & 1 & 0 & -1 \\
+          0 & 0 & 0 & \frac{1}{2} & -\frac{1}{2} 
+        \end{array}
+      \right]
+      \quad
+      && R4\left(2\right)
+    \end{alignat*}
+
+    \begin{alignat*}{2}
+      &\left[\def\arraystretch{1.5}
+        \begin{array}{cccc:c}
+          1 & 0 & 0 & \frac{1}{2} & \frac{1}{2} \\
+          0 & 1 & 0 & 0 & 1 \\
+          0 & 0 & 1 & 0 & -1 \\
+          0 & 0 & 0 & 1 & -1 
+        \end{array}
+      \right]
+      \quad
+      && R4\left(-\frac{1}{2}\right)+R1
+    \end{alignat*}
+    
+    \begin{alignat*}{2}
+      &\left[\def\arraystretch{1.5}
+        \begin{array}{cccc:c}
+          1 & 0 & 0 & 0 & 1 \\
+          0 & 1 & 0 & 0 & 1 \\
+          0 & 0 & 1 & 0 & -1 \\
+          0 & 0 & 0 & 1 & -1 \\
+        \end{array}
+      \right]
+      \quad
+    \end{alignat*}
+
+    \text{Comprobando: 2a+2b-c+d=4}
+    \begin{align*}
+      2a+2b-c+d&=4 \\
+      2(1)+2(1) -(-1)+(-1) &= 4 \\
+      2+2+1-1 &= 4 \\
+      4 &= 4 \\
+    \end{align*}
+
+    \text{Comprobando: 4a+3b-c+2d=6}
+    \begin{align*}
+      4a+3b-c+2d&=6 \\
+      4(1)+3(1)-(-1)+2(-1) &= 6 \\
+      4+3+1-2 &= 6 \\
+      6 &= 6 \\
+    \end{align*}
+
+    \text{Comprobando: 8a+5b-3c+4d=12}
+    \begin{align*}
+      8a+5b-3c+4d&=12 \\
+      8(1)+5(1)-3(-1)+4(-1) &= 12 \\
+      8 + 5 +3 -4 &= 12 \\
+      12 &= 12 \\
+    \end{align*}
+
+    \text{Comprobando: 3a+3b-2c+2d=6}
+    \begin{align*}
+      3a+3b-2c+2d&= 6 \\
+      3(1) + 3(1) - 2(-1) + 2(-1) &= 6 \\
+      3 + 3 + 2 -2 &= 6 \\
+      6 &= 6 \\
+    \end{align*}
+
+\end{document}
