@@ -6,4 +6,5 @@ git submodule init
 git submodule update
 
 # Get changes
+git submodule update --remote
 git submodule update --remote 1_sem/data_science_intro/repo
