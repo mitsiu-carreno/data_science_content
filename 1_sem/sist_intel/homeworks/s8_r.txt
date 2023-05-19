@@ -1,0 +1,115 @@
+####### Load data
+df = read.csv("path/to/file.csv")
+
+library(readxl) # Load Excel files
+brooklyn <- read_excel("rollingsales_brooklyn.xls", skip = 4)
+
+####### Analyze data
+library(tidyverse)
+glimpse(df)
+
+mean(df$year)
+
+view(df)
+
+colnames(df)
+
+qplot(body_mass_g, data=df)
+
+
+####### Tratamiento de valores faltantes
+df$Age = ifelse(is.na(df$Age),
+                     ave(df$Age, FUN = function (x)mean(x, na.rm = TRUE)),
+                     df$Age)
+
+
+###### Transform data
+library(magrittr)
+colnames(df) %<>% str_replace_all("e", "_") %<>% tolower()
+
+
+###### Categorize
+df$species = factor(df$species, 
+        levels = c("Adelie", "Gentoo", "Chinstrap")
+        labels = c(1, 2, 3))
+
+##### Count appearances
+table(df$species)
+
+
+##### Remove columns by name
+library(dplyr)
+df_interest <- df %>% select(-sex)
+
+##### Get datatypes
+class(df$species)
+
+##### Get statistics
+library(Hmisc)
+di <- describe(iris)
+
+
+
+##############################################
+# Existen distintas librerías en tidyverse que nos perimten manipular datos
+# Primero cargamos nuestros datos, en este caso cargaré un csv
+df = read.csv("/path/to/penguins.csv")
+
+# library(readxl)
+# df <- read_excel("/path/to/excel")
+
+# Para analizar los datos vamos a cargar tidyverse (previamente instalado)
+library(tidyverse)
+# Podemos ver un panorama general de las columnas y datos con
+glimpse(df) 
+
+# O ver completo el archivo
+view(df)
+
+# Listar sus columnas
+colnames(df)
+
+# Obtener datos estadisticos 
+# R usa la sintax <dataframe>$<col_name>
+mean(df$year)
+
+# Para sustituir valores faltantes podemos usar
+df$year = ifelse(is.na(df$year), 
+    ave(df$year, FUN = function (x)mean(x, na.rm = TRUE)), 
+    df$year)  
+# Vamos a asignar un valor para cada renglón de la columna df$year
+# Primero debemos evaluar si year tiene valor o no, 
+# Si no tiene valor, vamos a calcular la media, pero solo de los renglones que SI tengan valor
+# (La media con NA's se vuelve NA)
+# Si el renglón ya tenía valor, lo dejamos con su valor previo
+
+
+# Otra transformación de strings útil 
+library(magrittr)
+colnames(df) %<>% str_replace_all(" ", "_") %<>% tolower()
+# Es estandarizar los nombres de columnas, sin espacios y todo minusculas
+
+# Si queremos quitar columnas completas
+library(dplyr)
+df_interest <- df %>% select(-sex)
+# En este caso quitamos la columna sex y guardamos en una nueva variable df_interest
+
+
+# Para mostrar los tipos de datos 
+class(df$species)
+
+# Para obtener estadisticas
+library(Hmisc)
+describe(df)
+
+# Para convertir a categorías y reducir el espacio en disco
+df$species = factor(df$species, 
+    levels = c("Adelie", "Gentoo", "Chinstrap")
+    labels = c(1,2,3))
+# Con esto en lugar de guardar Adelie guardamos 1
+
+# Para contabilizar distribución de valores
+table(df$species)
+
+# Finalmente para graficar 
+qplot(body_mass_g, data=df)

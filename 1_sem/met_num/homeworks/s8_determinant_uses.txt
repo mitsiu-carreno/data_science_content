@@ -1,0 +1,15 @@
+Mitsiu Alejandro Carreño Sarabia - E23S-1804
+
+Los determinantes tienen una gran cantidad de propiedades que podrían ser útiles en distintos ambientes realiza una investigación de propiedades que no hayamos visto en clase y que consideres muy útil.
+
+- Dada una matriz A de n columnas y filas, si multiplicamos la matriz A por una constante diferente de cero, det(c.A) = c^n.det(A) 
+- Si A y B son matrices de nxn, entonces det(A.B) = det(A) . det(B)
+- Una matriz identidad de orden n siempre tiene una determinante igual a 1
+- Una matriz solo es invertible si tiene un determinante distinto de cero
+- Si una matriz A es invertible, entonces det(A^-1) = 1/det(A)
+- Las determinantes también son usadas en el teorema de Rouché – Frobenius, el cuál nos permite saber el tipo de solución (compatible determinado o indeterminado o incompatible) sin resolver el sistema.
+- Un determinante también se puede entender como el área del poligono que genera nuestra matriz
+
+Referencias:
+https://www.mate.unlp.edu.ar/practicas/49_15_15062019141546.pdf
+https://es.khanacademy.org/math/precalculus/x9e81a4f98389efdf:matrices/x9e81a4f98389efdf:matrices-as-transformations/v/interpreting-determinants-in-terms-of-area
