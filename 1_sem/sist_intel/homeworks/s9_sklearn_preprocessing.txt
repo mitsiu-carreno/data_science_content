@@ -1,0 +1,13 @@
+Mitsiu Alejandro Carreño Sarabia - E23S-18014
+
+Como viste en los ejercicios, se hizo uso extenso de la librería sklearn.preprocessing. Revisa que otras funciones tiene la librería y explica dos funciones que encuentres útiles  
+
+sklearn.preprocessing.Binarizer - [https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.Binarizer.html#sklearn.preprocessing.Binarizer]
+class sklearn.preprocessing.Binarizer(*, threshold=0.0, copy=True)
+Crea dos grupos (ceros y unos) basado en un limite (threshold) definido. Creo que puede ser muy útil cuando se quiere discretizar dicotomicamente un valor, por ejemplo si se tiene un 
+registro de personas con edades y solo nos importa separar mayores y menores de edad
+
+sklearn.preprocessing.KBinsDiscretizer - [https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.KBinsDiscretizer.html#sklearn.preprocessing.KBinsDiscretizer & https://scikit-learn.org/stable/modules/preprocessing.html#preprocessing-discretization]
+class sklearn.preprocessing.KBinsDiscretizer(n_bins=5, *, encode='onehot', strategy='quantile', dtype=None, subsample='warn', random_state=None)
+Crea n cantidad de grupos (n_bins) pasando de datos continuos a discretos, permite elegir como codificar el resultado (ordinal, onehot, onehot-dense) y la estrategia para separar en grupos (‘uniform’, ‘quantile’, ‘kmeans’) por número de elementos, número de puntos o proximidad k-means, con k-bin-discretizer, puedes generar tantos grupos como sea necesario manteniendo contro sobre como se crean estos 
+grupos, la misma situación de edad puede ser un ejemplo al requerir 5 grupos de edad por ejemplo.

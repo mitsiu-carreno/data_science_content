@@ -1,0 +1,9 @@
+Mitsiu Alejandro Carreño Sarabia - E235-18014
+
+Investiga otros métodos de reducción de dimensionalidad y como puedes aplicarlos.
+
+Por dimensión se entiende a una variable dentro de un conjunto de datos, cuando se intenta analizar un conjunto de datos es común que contenga muchas variables, y no todas ellas representan información útil o única, para facilitar el manejo, recursos, exploración y analisis de datos, se crearon distintas técnicas para reducir la dimensión del dataset manteniendo la maxima cantidad de información.
+Existen tres técnicas para reducir la dimensión:
+Análisis de componentes principales (PCA): Realiza una transformación líneal del dataset en un nuevo sistema de coordenadas en el que, la variación de la información puede describirse con menos dimensiones.
+Análisis discriminante lineal (LDA): Emplea una combinación líneal de rasgos que caracterizan o separan dos o más clases, esta estrechamente relacionada con el análisis de varianza y regresión, mediante los cuales se intenta expresar una variable dependiente como la combinaciñon líneal de otras caracteristicas o medidas.
+Análisis de correlación canónica (CCA): Su objetivo es buscar las relaciones que puede existir entre grupos de variables a partir de matrices de covarianza cruzada. Se diferencia del análisis de correlación multiple en que este solo predice una variable dependiente a partir de múltiples independientes, mientras que la correlación canónica predice múltiples variables dependientes a partir de múltiples independientes.
