@@ -1,0 +1,13 @@
+Mitsiu Alejandro Carreño Sarabia - E23S-18014
+Los modelos revisados son un pequeño subconjunto de los disponibles.
+Selecciona dos modelos de aprendizaje supervisado de scikitLearn que encuentres interesantes y exponga sus características.
+1.- Nearest Neighbors Classification - https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-classification
+Los algoritmos de k-vecinos más próximos se pueden emplear tanto para regresión como clasificación, pero en este caso me centraré en el de clasificación.
+La base del algoritmo es estimar el valor de densidad de probabilidad o la probabilidad de que un elemento pertenezca a cierta clase.
+La librería scikit-learn implementa dos clasificadores: KNeighborsClasssifier y RadiusNeighborsClassifier
+KNeighborsClasssifier necesita un parámetro K (entero) en el que un objeto es clasificado por votación de sus vecinos, la elección óptima del parámetro K depende de la naturaleza de los datos, pero en general una k grande suprime mejor los efectos de ruido, pero hace los límites de la clasificación más difusos.
+RadiusNeighborsClassifier también requiere un parametro r (flotante) y el objeto es clasificado seg´n la mayoría de sus vecinos dentro del “barrio” de radio r, RadiusNeighborsClassifier en general funciona bien para datos que no están muestreados de manera uniforme.
+2.- Polynomial regression: extending linear models with basis functions - https://scikit-learn.org/stable/modules/linear_model.html#polynomial-regression-extending-linear-models-with-basis-functions
+La regresión polinomial permite emplear modelos lineales en funciones no lineales, esta técnica permite mantener el performance de los modelos lineales a la vez que permite aplicarlos a un rango mayor de datos.
+En otras palabras, al agregar polinomios de distintos grados, generamos parábolas que aún se pueden modelar con modelos lineales en el que cada grado se maneja como una nueva característica.
+
