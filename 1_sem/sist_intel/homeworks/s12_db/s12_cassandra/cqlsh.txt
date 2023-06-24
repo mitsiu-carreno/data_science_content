@@ -1,0 +1,132 @@
+//docker exec -it cas1 nodetool status
+//docker exec -it cas2 nodetool status
+
+//docker exec -it cas2 cqlsh
+
+CREATE KEYSPACE IF NOT EXISTS f1_telem 
+WITH REPLICATION ={
+  'class': 'SimpleStrategy',
+  'replication_factor': 2
+};
+
+USE f1_telem;
+
+CREATE TABLE telem (
+  sessionTime_x float,
+  frameIdentifier int,
+  lastLapTime float,
+  currentLapTime float,
+  sector1TimeInMS int,
+  sector2TimeInMS int,
+  bestLapTime float,
+  bestLapNum tinyint,
+  bestLapSector1TimeInMS int,
+  bestLapSector2TimeInMS int,
+  bestLapSector3TimeInMS int,
+  bestOverallSector1TimeInMS int,
+  bestOverallSector1LapNum tinyint,
+  bestOverallSector2TimeInMS int,
+  bestOverallSector2LapNum tinyint,
+  bestOverallSector3TimeInMS int,
+  bestOverallSector3LapNum tinyint,
+  lapDistance float,
+  totalDistance float,
+  carPosition tinyint,
+  currentLapNum tinyint,
+  sector tinyint,
+  resultStatus tinyint,
+  sessionTime_y float,
+  speed smallint,
+  throttle float,
+  steer float,
+  brake float,
+  clutch tinyint,
+  gear tinyint,
+  engineRPM smallint,
+  revLightsPercent tinyint,
+  brakesTempRearL smallint,
+  brakesTempRearR smallint,
+  brakesTempFrontL smallint,
+  brakesTempFrontR smallint,
+  tyresSurfaceTempRearL tinyint,
+  tyresSurfaceTempRearR tinyint,
+  tyresSurfaceTempFrontL tinyint,
+  tyresSurfaceTempFrontR tinyint,
+  tyresInnerTempRearL tinyint,
+  tyresInnerTempRearR tinyint,
+  tyresInnerTempFrontL tinyint,
+  tyresInnerTempFrontR tinyint,
+  engineTemperature smallint,
+  tyresPressureRearL float,
+  tyresPressureRearR float,
+  tyresPressureFrontL float,
+  tyresPressureFrontR float,
+  surfaceTypeRearL text,
+  surfaceTypeRearR text,
+  surfaceTypeFrontL text,
+  surfaceTypeFrontR text,
+
+ PRIMARY KEY(sessionTime_x, frameIdentifier)
+) WITH CLUSTERING ORDER BY (frameIdentifier DESC);
+
+# docker cp F1_2020_tel.csv cas1:/home
+
+
+COPY telem (
+  sessionTime_x,
+	frameIdentifier,
+	lastLapTime,
+	currentLapTime,
+	sector1TimeInMS,
+	sector2TimeInMS,
+	bestLapTime,
+	bestLapNum,
+	bestLapSector1TimeInMS,
+	bestLapSector2TimeInMS,
+	bestLapSector3TimeInMS,
+	bestOverallSector1TimeInMS,
+	bestOverallSector1LapNum,
+	bestOverallSector2TimeInMS,
+	bestOverallSector2LapNum,
+	bestOverallSector3TimeInMS,
+	bestOverallSector3LapNum,
+	lapDistance,
+	totalDistance,
+	carPosition,
+	currentLapNum,
+	sector,
+	resultStatus,
+	sessionTime_y,
+	speed,
+	throttle,
+	steer,
+	brake,
+	clutch,
+	gear,
+	engineRPM,
+	revLightsPercent,
+	brakesTempRearL,
+	brakesTempRearR,
+	brakesTempFrontL,
+	brakesTempFrontR,
+	tyresSurfaceTempRearL,
+	tyresSurfaceTempRearR,
+	tyresSurfaceTempFrontL,
+	tyresSurfaceTempFrontR,
+	tyresInnerTempRearL,
+	tyresInnerTempRearR,
+	tyresInnerTempFrontL,
+	tyresInnerTempFrontR,
+	engineTemperature,
+	tyresPressureRearL,
+	tyresPressureRearR,
+	tyresPressureFrontL,
+	tyresPressureFrontR,
+	surfaceTypeRearL,
+	surfaceTypeRearR,
+	surfaceTypeFrontL,
+	surfaceTypeFrontR
+    )
+FROM 'home/F1_2020_tel.csv'
+WITH HEADER = TRUE;
+

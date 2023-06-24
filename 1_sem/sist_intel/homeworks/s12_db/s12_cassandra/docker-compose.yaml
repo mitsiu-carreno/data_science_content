@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  cas1:
+    container_name: cas1
+    image: cassandra:latest
+    volumes:
+      - /home/kincaid/Documents/ucags/data_science_master/1_sem/sist_intel/homeworks/s12_db/s12_cassandra/node1:/var/lib/cassandra/data
+    ports:
+      - 9042:9042
+    environment:
+      - CASSANDRA_START_RPC=true
+      - CASSANDRA_CLUSTER_NAME=MyCluster
+      - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
+      - CASSANDRA_DC=datacenter1
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9042"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+  cas2:
+    container_name: cas2
+    image: cassandra:latest
+    volumes: 
+      - /home/kincaid/Documents/ucags/data_science_master/1_sem/sist_intel/homeworks/s12_db/s12_cassandra/node2:/var/lib/cassandra/data
+    ports:
+      - 9043:9042
+    restart: on-failure
+    depends_on:
+      - cas1
+    environment:
+      - CASSANDRA_START_RPC=true
+      - CASSANDRA_CLUSTER_NAME=MyCluster
+      - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
+      - CASSANDRA_DC=datacenter1
+      - CASSANDRA_SEEDS=cas1
+
