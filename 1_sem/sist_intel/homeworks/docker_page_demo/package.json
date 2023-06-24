@@ -1,0 +1,14 @@
+{
+  "name": "docker_page_demo",
+  "version": "1.0.0",
+  "description": "Node.js on docker",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Mitsiu C",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

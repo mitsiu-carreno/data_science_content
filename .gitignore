@@ -1,3 +1,5 @@
 **/server_access
 **/*inegi_pob.csv
 **/.ipynb_checkpoints
+**/node_modules
+
