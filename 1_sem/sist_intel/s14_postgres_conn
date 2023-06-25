@@ -1,0 +1,35 @@
+
+# Install postgresql server
+!sudo apt-get -y -qq update
+!sudo apt-get -y -qq install postgresql
+!sudo service postgresql start
+
+# Setup a password `postgres` for username `postgres`
+!sudo -u postgres psql -U postgres -c "ALTER USER postgres PASSWORD 'postgres';"
+
+# Setup a database with name `tfio_demo` to be used
+!sudo -u postgres psql -U postgres -c 'DROP DATABASE IF EXISTS tfio_demo;'
+!sudo -u postgres psql -U postgres -c 'CREATE DATABASE tfio_demo;'
+
+%env TFIO_DEMO_DATABASE_NAME=tfio_demo
+%env TFIO_DEMO_DATABASE_HOST=localhost
+%env TFIO_DEMO_DATABASE_PORT=5432
+%env TFIO_DEMO_DATABASE_USER=postgres
+%env TFIO_DEMO_DATABASE_PASS=postgres
+
+
+!PGPASSWORD=$TFIO_DEMO_DATABASE_PASS psql -q -h $TFIO_DEMO_DATABASE_HOST -p $TFIO_DEMO_DATABASE_PORT -U $TFIO_DEMO_DATABASE_USER -d $TFIO_DEMO_DATABASE_NAME -c "CREATE TABLE AirQualityUCI ( Date DATE, Time TIME, CO REAL,PT08S1 INT,NMHC REAL,C6H6 REAL,PT08S2 INT,NOx REAL,PT08S3 INT,NO2 REAL,PT08S4 INT,PT08S5 INT,T REAL,RH REAL,AH REAL); INSERT INTO AirQualityUCI (Date, Time, CO, PT08S1, NMHC, C6H6, PT08S2, NOx, PT08S3, NO2, PT08S4, PT08S5, T, RH, AH) VALUES('2004/03/10', '18:00:00', 2.6, 1360, 150, 11.9, 1046, 166, 1056, 113, 1692, 1268, 13.6, 48.9, 0.7578);"
+
+
+from sqlalchemy import create_engine, text, MetaData, Table, Column, Integer, String, ForeignKey
+engine = create_engine("postgresql://postgres:postgres@localhost/tfio_demo", echo=True)
+
+with engine.connect() as conn:
+    result = conn.execute(text("SELECT * FROM pg_catalog.pg_tables"))
+    print(result.all())
+
+with engine.connect() as conn:
+    result = conn.execute(text("SELECT * FROM AirQualityUCI"))
+    print(result.all())
+
+
