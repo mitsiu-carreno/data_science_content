@@ -1,5 +1,7 @@
 #include <iostream>
 #include "utils.hpp"
+#include "cities.hpp"
+#include "travel-path.hpp"
 #include "problem-metadata.hpp"
 
 void DefineProblem(ProblemMetadata *p_meta){
@@ -47,7 +49,7 @@ void DefineProblem(ProblemMetadata *p_meta){
 
 }
 
-float* ConnectCities(int &n_cities){
+float* ConnectCities(int &n_cities, bool interactive){
   /*
     Función para preguntar las distancias entre ciudades
     Input:
@@ -63,27 +65,39 @@ float* ConnectCities(int &n_cities){
   int combinations = utils::GetFactorial(n_cities) / (utils::GetFactorial(r) * (utils::GetFactorial(n_cities -r)));
   
   float *city_distances = new float[combinations];
-  int ascii_start = 64;
-  for(int i=0, city_a=1, city_b = 1; i<combinations; ++i){
-    std::string prompt = std::string("Ingresa la distancia entre ciudad ") 
-      + std::to_string(city_a) 
-      + std::string(" (")
-      + static_cast<char>(city_a + ascii_start)
-      + std::string(") y ") 
-      + std::to_string(city_b%n_cities +1)
-      + std::string(" (")
-      + static_cast<char>(city_b + 1 + ascii_start)
-      + std::string(")");
+  if(interactive){
+    int ascii_start = 64;
+    for(int i=0, city_a=1, city_b = 1; i<combinations; ++i){
+      std::string prompt = std::string("Ingresa la distancia entre ciudad ") 
+        + std::to_string(city_a) 
+        + std::string(" (")
+        + static_cast<char>(city_a + ascii_start)
+        + std::string(") y ") 
+        + std::to_string(city_b%n_cities +1)
+        + std::string(" (")
+        + static_cast<char>(city_b + 1 + ascii_start)
+        + std::string(")");
 
-    utils::AskValue(prompt, &city_distances[i], utils::kFloat);
-    if((city_b+1)%n_cities == 0){
-      ++city_a;
-      city_b = city_a;
-      continue;
+      utils::AskValue(prompt, &city_distances[i], utils::kFloat);
+      if((city_b+1)%n_cities == 0){
+        ++city_a;
+        city_b = city_a;
+        continue;
+      }
+      ++city_b;
     }
-    ++city_b;
+  }else{
+    city_distances[0] = 12; 
+    city_distances[1] = 5;
+    city_distances[2] = 11; 
+    city_distances[3] = 42;
+    city_distances[4] = 31;
+    city_distances[5] = 23;
+    city_distances[6] = 17;
+    city_distances[7] = 6;
+    city_distances[8] = 8;
+    city_distances[9] = 3;
   }
-  
   return city_distances;
 }
 
@@ -92,12 +106,28 @@ int main(){
   ProblemMetadata *p_meta = new ProblemMetadata;
   DefineProblem(p_meta);
 
-  std::cout << "cit: " << p_meta->n_cities << " sol:" << p_meta->n_solutions << " inters:" << p_meta->n_iters << " algo" << static_cast<int>(p_meta->algo) << "\n";
+  float *city_distances = ConnectCities(p_meta->n_cities, false);
+  /*
+  std::cout << "cit: " << p_meta->n_cities << " sol:" << p_meta->n_solutions << " iters:" << p_meta->n_iters << " algo" << static_cast<int>(p_meta->algo) << "\n";
 
-  float *city_distances = ConnectCities(p_meta->n_cities);
   for(int i=0; i<10; ++i){
     std::cout << city_distances[i] << "\n";
   }
+
+  try{
+    for(int i=1; i<=p_meta->n_cities+1; ++i){
+      for(int j=1; j<=p_meta->n_cities; ++j){
+        //std::cout << i << " - " << j << " = " << cities::GetDistance(i, j, city_distances, p_meta->n_cities) << "\n";
+        std::cout << cities::GetDistance(i, j, city_distances, p_meta->n_cities) << "\t";
+      }
+      std::cout << "\n";
+    }
+  }catch(const std::exception &e){
+    std::cout << e.what() << "\n";
+  }
+  */
+
+  travel_path::GenRandomSol(p_meta->n_cities, p_meta->n_solutions);
   
   delete[] city_distances;
   return 0;
