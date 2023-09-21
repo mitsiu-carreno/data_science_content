@@ -4,8 +4,9 @@
 #include "utils.hpp"
 #include "travel-path.hpp"
 #include "problem-metadata.hpp"
+#include "grasp.hpp"
 
-void DefineProblem(ProblemMetadata *p_meta){
+void DefineProblem(ProblemMetadata &p_meta){
   /*
     Función para preguntar los parametros generales del problema
     Input:
@@ -42,10 +43,10 @@ void DefineProblem(ProblemMetadata *p_meta){
 
   // Guardamos todos los resultados en la estructura ProblemMetadata (en header ProblemMetadata) 
   //p_meta {*n_cities, *n_solutions, *n_iters, static_cast<Algorithms>(*n_algorithm)};
-  p_meta->n_cities    = *n_cities;
-  p_meta->n_solutions = *n_solutions;
-  p_meta->n_iters     = *n_iters;
-  p_meta->algo        = static_cast<Algorithms>(*n_algorithm); 
+  p_meta.n_cities    = *n_cities;
+  p_meta.n_solutions = *n_solutions;
+  p_meta.n_iters     = *n_iters;
+  p_meta.algo        = static_cast<Algorithms>(*n_algorithm); 
   
   // Limpiamos los apuntadores (requeridos para utils/ask-value.cpp)
   delete n_cities;
@@ -110,52 +111,46 @@ float* ConnectCities(int &n_cities, bool interactive){
 int main(){
   try{
     // Preguntamos valores generales para saber el problema y como resolverlo
-    ProblemMetadata *p_meta = new ProblemMetadata;
-    DefineProblem(p_meta);
+    ProblemMetadata p_meta;
+    //DefineProblem(p_meta);    // debug
+p_meta.n_cities = 5;
+p_meta.n_solutions = 5;
+p_meta.n_iters = 5;
+p_meta.algo = Algorithms::grasp;
 
     // Generamos arreglo con distancias entre ciudades
-    float *city_distances = ConnectCities(p_meta->n_cities, false);
+    float *city_distances = ConnectCities(p_meta.n_cities, false);
 
     // Guardar arrelgo de distancias en estado interno de cities::GetDistances
     // Probablemente OOP hubiera almacenado el estado de mejor manera pero por ahora lo 
     // manejaré así 
-    travel_path::GetDistance(1,1, city_distances, p_meta->n_cities);
-
-    /*
-    std::cout << "cit: " << p_meta->n_cities << " sol:" << p_meta->n_solutions << " iters:" << p_meta->n_iters << " algo" << static_cast<int>(p_meta->algo) << "\n";
-
-    for(int i=0; i<10; ++i){
-      std::cout << city_distances[i] << "\n";
-    }
-
-    for(int i=1; i<=p_meta->n_cities+1; ++i){
-      for(int j=1; j<=p_meta->n_cities; ++j){
-        //std::cout << i << " - " << j << " = " << cities::GetDistance(i, j, city_distances, p_meta->n_cities) << "\n";
-        std::cout << cities::GetDistance(i, j, city_distances, p_meta->n_cities) << "\t";
-      }
-      std::cout << "\n";
-    }
-    */
+    travel_path::GetDistance(1,1, city_distances, p_meta.n_cities);
 
     // Generamos estructura (set) para almacenar las posibles soluciones así como su distancia
     std::set<travel_path::Solution, travel_path::SolutionCompare> solutions;
 
     // Generamos soluciones aleatorias y las guardamos en el set
-    travel_path::GenRandomSol(p_meta->n_cities, p_meta->n_solutions, solutions);
+    travel_path::GenRandomSol(p_meta.n_cities, p_meta.n_solutions, solutions);
 
-    // Debug
-    for (auto& solution : solutions){
-        std::cout << "([";
-        for(auto& city: solution.path){
-            std::cout << city;
-        }
-        std::cout << "]," << solution.distance << ") ";
+    std::cout << "\n\nSoluciones iniciales:\n";
+    travel_path::PrintSolutions(solutions);
+    
+    switch(p_meta.algo){
+      case Algorithms::grasp:
+        grasp::Solve(p_meta, solutions);
+        break;
+      case Algorithms::tabu:
+        std::cout << "Tabu Pending\n";
+        break;
+      case Algorithms::scatter_search:
+        std::cout << "Tabu Pending\n";
+        break;
+      default: 
+        std::cout << "Algoritmo no soportado\n";
     }
-    std::cout << '\n'; 
 
     // Liberamos la memoria del arreglo de distancias entre ciudades
     delete[] city_distances;
-
   }catch(const std::exception &e){
     std::cout << "Ha ocurrido un error:\n" << e.what() << "\n Terminando programa\n";
   }
