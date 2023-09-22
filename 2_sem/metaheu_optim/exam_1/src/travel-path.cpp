@@ -71,26 +71,40 @@ namespace travel_path{
       int round_turn = (acc + 1) % n_cities;
       switch(round_turn){
         case 0:
-          //  Base + acc
-          std::for_each(base_solution_backup.begin(), base_solution_backup.end(), [acc, n_cities](int& city) { city = ((city+acc)%n_cities)+1;});
+//std::cout << "0--";
+          // Incrementar cada ciudad + acc
+          std::for_each(base_solution_backup.begin(), base_solution_backup.end(), [acc, n_cities](int& city) { city = ((city+acc/2)%n_cities)+1;});
           break;
         case 1: 
-          // Rotate last elements to begining
+//std::cout << "1--";
+          // Incrementar cada ciudad + acc
+          // Rotar los últimos elementos al principio de la ruta
           std::rotate(base_solution_backup.rbegin(), base_solution_backup.rbegin() + (acc%n_cities)+1, base_solution_backup.rend());
           break;
         case 2:
-          // Rotate first elements to back
+//std::cout << "2--";
+          // Incrementar cada ciudad + acc
+          // Rotar los primeros elementos al final de la ruta
           std::rotate(base_solution_backup.begin(), base_solution_backup.begin() + (acc%n_cities)+1, base_solution_backup.end());
           break;
         case 3:
-          // Swap two elements
+//std::cout << "3--";
+          // Incrementar cada ciudad + acc
+          // Intercambiar dos elementos
           std::swap(base_solution_backup.at(acc%n_cities), base_solution_backup.at((acc-1)%n_cities));
           break;
         default:
-          // Aleatorizar la posición de los elementos
+//std::cout << "4--";
+          // Incrementar cada ciudad + acc
+          // Aleatorizar la posición de todos los elementos
           std::shuffle(base_solution_backup.begin(), base_solution_backup.end(), g);
       } 
-
+/*
+for (auto el : base_solution_backup) {
+ std::cout << el << ' ';
+}
+std::cout << "\n";
+*/
       // Se inserta la nueva solución al conjunto
       solutions.insert({std::vector<int>(base_solution_backup), travel_path::EvalSolution(base_solution_backup)});
       ++acc;

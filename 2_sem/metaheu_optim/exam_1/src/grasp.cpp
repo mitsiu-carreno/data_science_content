@@ -1,16 +1,13 @@
-
 #include <iostream>
 
 #include "grasp.hpp"
 
 namespace grasp{
   void Solve(const ProblemMetadata &p_meta, std::set<travel_path::Solution, travel_path::SolutionCompare> &solutions){
-    std::cout << "\nGrasp\n";
     auto first = solutions.begin();
     travel_path::Solution global_best_solution = {first->path, first->distance};
-    //travel_path::Solution local_best_solution = {first->path, first->distance};
 
-    std::cout << "Best solution\n";
+    std::cout << "Mejor solución\n";
     travel_path::PrintSolution(global_best_solution); 
  
     // Guardamos el número de iteración para continuar nuestra búsqueda a traves de iteraciones si no hay mejoría global

@@ -5,6 +5,7 @@
 #include "travel-path.hpp"
 #include "problem-metadata.hpp"
 #include "grasp.hpp"
+#include "tabu.hpp"
 
 void DefineProblem(ProblemMetadata &p_meta){
   /*
@@ -41,12 +42,19 @@ void DefineProblem(ProblemMetadata &p_meta){
     std::cout << "Opción incorrecta\n\n";
   }
 
+  // Si algoritmo seleccionado es tabú, solicitar tamaño de arreglo tabú 
+  int *tabu_size = new int;
+  if(static_cast<Algorithms>(*n_algorithm) == Algorithms::tabu){
+    utils::AskValue("Ingresa el tamaño del conjunto tabú", tabu_size, utils::kInteger);
+  }
+
   // Guardamos todos los resultados en la estructura ProblemMetadata (en header ProblemMetadata) 
   //p_meta {*n_cities, *n_solutions, *n_iters, static_cast<Algorithms>(*n_algorithm)};
-  p_meta.n_cities    = *n_cities;
-  p_meta.n_solutions = *n_solutions;
-  p_meta.n_iters     = *n_iters;
-  p_meta.algo        = static_cast<Algorithms>(*n_algorithm); 
+  p_meta.n_cities     = *n_cities;
+  p_meta.n_solutions  = *n_solutions;
+  p_meta.n_iters      = *n_iters;
+  p_meta.algo         = static_cast<Algorithms>(*n_algorithm); 
+  p_meta.tabu_size    = tabu_size ? *tabu_size : 0;
   
   // Limpiamos los apuntadores (requeridos para utils/ask-value.cpp)
   delete n_cities;
@@ -115,8 +123,9 @@ int main(){
     //DefineProblem(p_meta);    // debug
 p_meta.n_cities = 5;
 p_meta.n_solutions = 5;
-p_meta.n_iters = 5;
-p_meta.algo = Algorithms::grasp;
+p_meta.n_iters = 10;
+p_meta.algo = Algorithms::tabu;
+p_meta.tabu_size = 3;
 
     // Generamos arreglo con distancias entre ciudades
     float *city_distances = ConnectCities(p_meta.n_cities, false);
@@ -137,10 +146,12 @@ p_meta.algo = Algorithms::grasp;
     
     switch(p_meta.algo){
       case Algorithms::grasp:
+        std::cout << "\nGrasp\n";
         grasp::Solve(p_meta, solutions);
         break;
       case Algorithms::tabu:
-        std::cout << "Tabu Pending\n";
+        std::cout << "\nTabu\n";
+        tabu::Solve(p_meta, solutions);
         break;
       case Algorithms::scatter_search:
         std::cout << "Tabu Pending\n";

@@ -12,6 +12,7 @@ struct ProblemMetadata{
   int n_solutions;
   int n_iters;
   Algorithms algo;
+  int tabu_size;
 };
 
 #endif
