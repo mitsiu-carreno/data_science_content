@@ -149,7 +149,7 @@ int main(){
     //DefineProblem(p_meta);    // debug
 p_meta.n_cities = 5;
 p_meta.n_solutions = 5;
-p_meta.n_iters = 10;
+p_meta.n_iters = 1;
 p_meta.algo = Algorithms::scatter_search;
 p_meta.tabu_size = 3;
 p_meta.scatter_pairs  = 2;

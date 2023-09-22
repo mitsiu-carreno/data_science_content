@@ -1,6 +1,7 @@
 #ifndef UTILS_HPP
 #define UTILS_HPP
 
+#include <iostream>   /* std::cin */
 #include <string>
 #include <random>     /* std::mt19937 std::random_device */ 
 
