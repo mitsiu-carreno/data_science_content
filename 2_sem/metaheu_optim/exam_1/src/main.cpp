@@ -6,6 +6,7 @@
 #include "problem-metadata.hpp"
 #include "grasp.hpp"
 #include "tabu.hpp"
+#include "scatter-search.hpp"
 
 void DefineProblem(ProblemMetadata &p_meta){
   /*
@@ -16,11 +17,11 @@ void DefineProblem(ProblemMetadata &p_meta){
 
   // Número de ciudades
   int *n_cities = new int;
-  utils::AskValue("Ingresa la cantidad de ciudades", n_cities, utils::kInteger);
+  utils::AskValue("\nIngresa la cantidad de ciudades", n_cities, utils::kInteger);
 
   // Número de soluciones
   int *n_solutions = new int;
-  utils::AskValue("Ingresa la cantidad de soluciones a crear", n_solutions, utils::kInteger);
+  utils::AskValue("\nIngresa la cantidad de soluciones a crear", n_solutions, utils::kInteger);
   // El número de soluciones no puede ser mayor al número máximo de permutaciones dadas 
   // n_ciudades
   if(*n_solutions > utils::GetFactorial(*n_cities)){
@@ -29,12 +30,12 @@ void DefineProblem(ProblemMetadata &p_meta){
 
   // Número de iteraciones
   int *n_iters = new int;
-  utils::AskValue("Ingresa la cantidad de iteraciones", n_iters, utils::kInteger);
+  utils::AskValue("\nIngresa la cantidad de iteraciones", n_iters, utils::kInteger);
 
   // Algoritmo solución
   int *n_algorithm = new int;
   while(true){
-    utils::AskValue("Selecciona algoritmo (ingresa número)\nGrasp->1\nTabu->2\nDispersa->3", n_algorithm, utils::kInteger);
+    utils::AskValue("\nSelecciona algoritmo (ingresa número)\nGrasp->1\nTabu->2\nDispersa->3", n_algorithm, utils::kInteger);
     if(*n_algorithm >= 1 && *n_algorithm <= 3){
       *n_algorithm -=1;
       break;
@@ -44,17 +45,42 @@ void DefineProblem(ProblemMetadata &p_meta){
 
   // Si algoritmo seleccionado es tabú, solicitar tamaño de arreglo tabú 
   int *tabu_size = new int;
+  int *scatter_pairs = new int;
+  int *scatter_percen = new int;
+
   if(static_cast<Algorithms>(*n_algorithm) == Algorithms::tabu){
-    utils::AskValue("Ingresa el tamaño del conjunto tabú", tabu_size, utils::kInteger);
+    // Solicitar tamaño de conjunto tabu
+    utils::AskValue("\nIngresa el tamaño del conjunto tabú", tabu_size, utils::kInteger);
+  }else if(static_cast<Algorithms>(*n_algorithm) == Algorithms::scatter_search){
+    while(true){
+      // Solicitar cantidad de pares  a combinar
+      utils::AskValue("\nIngresa la cantidad de pares a combinar", scatter_pairs, utils::kInteger);
+      if(*scatter_pairs <= (*n_solutions/2)){
+        break;
+      }
+      std::cout << "La cantidad de pares debe ser menor a la canitdad de pares de soluciones (" << *n_solutions/2 << ")\n\n";
+    }
+    
+    while(true){
+      // Solicitar porcentaje de selección
+      utils::AskValue("\nIngresa el porcentaje de selección [0-100]", scatter_percen, utils::kInteger);
+      if(*scatter_percen >= 0 && *scatter_percen <= 100){
+        break;
+      }
+      std::cout << "Ingresa un porcentaje entero entre 0 y 100\n\n";
+    }
+    
   }
 
   // Guardamos todos los resultados en la estructura ProblemMetadata (en header ProblemMetadata) 
   //p_meta {*n_cities, *n_solutions, *n_iters, static_cast<Algorithms>(*n_algorithm)};
-  p_meta.n_cities     = *n_cities;
-  p_meta.n_solutions  = *n_solutions;
-  p_meta.n_iters      = *n_iters;
-  p_meta.algo         = static_cast<Algorithms>(*n_algorithm); 
-  p_meta.tabu_size    = tabu_size ? *tabu_size : 0;
+  p_meta.n_cities       = *n_cities;
+  p_meta.n_solutions    = *n_solutions;
+  p_meta.n_iters        = *n_iters;
+  p_meta.algo           = static_cast<Algorithms>(*n_algorithm); 
+  p_meta.tabu_size      = tabu_size ? *tabu_size : 0;
+  p_meta.scatter_pairs  = scatter_pairs ? *scatter_pairs : 0;
+  p_meta.scatter_percen = scatter_percen ? *scatter_percen : 0;
   
   // Limpiamos los apuntadores (requeridos para utils/ask-value.cpp)
   delete n_cities;
@@ -83,7 +109,7 @@ float* ConnectCities(int &n_cities, bool interactive){
   if(interactive){
     int ascii_start = 64;
     for(int i=0, city_a=1, city_b = 1; i<combinations; ++i){
-      std::string prompt = std::string("Ingresa la distancia entre ciudad ") 
+      std::string prompt = std::string("\nIngresa la distancia entre ciudad ") 
         + std::to_string(city_a) 
         + std::string(" (")
         + static_cast<char>(city_a + ascii_start)
@@ -124,8 +150,10 @@ int main(){
 p_meta.n_cities = 5;
 p_meta.n_solutions = 5;
 p_meta.n_iters = 10;
-p_meta.algo = Algorithms::tabu;
+p_meta.algo = Algorithms::scatter_search;
 p_meta.tabu_size = 3;
+p_meta.scatter_pairs  = 2;
+p_meta.scatter_percen = 20;
 
     // Generamos arreglo con distancias entre ciudades
     float *city_distances = ConnectCities(p_meta.n_cities, false);
@@ -154,7 +182,8 @@ p_meta.tabu_size = 3;
         tabu::Solve(p_meta, solutions);
         break;
       case Algorithms::scatter_search:
-        std::cout << "Tabu Pending\n";
+        std::cout << "\nBúsqueda dispersa\n";
+        scatter::Solve(p_meta, solutions);
         break;
       default: 
         std::cout << "Algoritmo no soportado\n";

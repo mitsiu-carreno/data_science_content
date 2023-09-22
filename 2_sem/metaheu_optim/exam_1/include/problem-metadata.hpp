@@ -13,6 +13,8 @@ struct ProblemMetadata{
   int n_iters;
   Algorithms algo;
   int tabu_size;
+  int scatter_pairs;
+  int scatter_percen;
 };
 
 #endif

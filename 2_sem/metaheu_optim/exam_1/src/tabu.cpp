@@ -51,8 +51,8 @@ namespace tabu{
       }
       std::cout << "Lista tabu\n";
       travel_path::PrintSolutions(tabu);
-      std::cout << "\n";
-      
+      std::cout << "--------------------------------\n";
+            
     }
     
   }
