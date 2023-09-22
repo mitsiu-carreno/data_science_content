@@ -1,10 +1,10 @@
-#include <random>     /* std::mt19937 std::random_device */ 
 #include <algorithm>  /* std::shuffle std::swap*/
 #include <vector>     /* std::vector */
 #include <stdexcept>  /* std::runtime_error */
 #include <iostream>   /* std::cout */
 
 #include "travel-path.hpp"
+#include "utils.hpp"
 
 namespace travel_path{
   
@@ -27,18 +27,10 @@ namespace travel_path{
     }
 
     // Partiendo de la solución base, generaremos nuevas soluciones random 
-    
-    // Generamos un número aleatorio básado en hardware o una implementación de software 
-    // si el hardware no tiene una implementación disponible
-    std::random_device rd;
-    
-    // Generamos un número aleatorio con el algoritmo Mersenne Twister PRNG
-    // con el seed del random_device
-    std::mt19937 g(rd()); 
 
     while(static_cast<int>(solutions.size()) < n_solutions){
       // Aleatorizamos los elementos de la solución base [start, end, función de randomizado)
-      std::shuffle(base_solution.begin(), base_solution.end(), g);
+      std::shuffle(base_solution.begin(), base_solution.end(), utils::RandomFunction());
 
       solutions.insert({std::vector<int>(base_solution), travel_path::EvalSolution(base_solution)});
 
@@ -54,14 +46,6 @@ namespace travel_path{
         const int & - Cantidad de soluciones distintas a generar
     */
     
-
-    // Generamos un número aleatorio básado en hardware o una implementación de software 
-    // si el hardware no tiene una implementación disponible
-    std::random_device rd;
-    
-    // Generamos un número aleatorio con el algoritmo Mersenne Twister PRNG
-    // con el seed del random_device
-    std::mt19937 g(rd()); 
 
     // Se van a generar n_solutions nuevas, todas únicas
     while(static_cast<int>(solutions.size()) < n_solutions){
@@ -97,7 +81,7 @@ namespace travel_path{
 //std::cout << "4--";
           // Incrementar cada ciudad + acc
           // Aleatorizar la posición de todos los elementos
-          std::shuffle(base_solution_backup.begin(), base_solution_backup.end(), g);
+          std::shuffle(base_solution_backup.begin(), base_solution_backup.end(), utils::RandomFunction());
       } 
 /*
 for (auto el : base_solution_backup) {

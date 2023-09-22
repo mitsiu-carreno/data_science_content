@@ -1,8 +1,10 @@
 #ifndef UTILS_HPP
 #define UTILS_HPP
 
-#include <iostream>
 #include <string>
+#include <random>     /* std::mt19937 std::random_device */ 
+
+#include "problem-metadata.hpp"
 
 namespace utils{
   enum kDataTypes{
@@ -14,6 +16,8 @@ namespace utils{
   bool CheckValidInput();
   void AskValue(std::string, void*, kDataTypes);
   int GetFactorial(int);
+  std::mt19937 RandomFunction();
+  int RandomInInterval(int, int);
 }
 
 #endif
