@@ -98,6 +98,10 @@ bool DefineProblem(ProblemMetadata &p_meta){
   delete n_solutions;  
   delete n_iters;
   delete n_algorithm;
+  delete tabu_size;
+  delete scatter_pairs;
+  delete scatter_percen;
+
   
   return *dynamic;
 }
@@ -229,6 +233,8 @@ int main(){
   
   // Liberamos la memoria del arreglo de distancias entre ciudades
   delete[] city_distances;
+  std::string s;
+  utils::AskValue("\n Enter para terminar", &s, utils::kString);
 
   return 0;
 }

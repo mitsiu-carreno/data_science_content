@@ -8,6 +8,10 @@ else
   CC=g++
 endif
 
+ifeq ($(target), windows)
+  CC=x86_64-w64-mingw32-g++
+endif
+
 # Project structure
 SRC_DIR       := src
 BUILD_TARGET  := build
@@ -40,6 +44,12 @@ INCLUDE_LIST          := $(patsubst include%, -I include%, $(HEADER_DIRECTORY_LI
 
 # ggdb3 helps analyse with valgrind
 CFLAGS=-c -std=c++1z -Wall -Werror -g -ggdb3
+
+
+ifeq ($(target), windows)
+  CFLAGS+= -shared -static
+  LIBS= --static
+endif
 
 $(EXEC_TARGET): $(O_FILE_FULL_PATH_LIST)
 	@mkdir -p $(EXEC_TARGET)
