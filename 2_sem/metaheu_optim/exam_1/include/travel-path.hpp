@@ -19,7 +19,7 @@ namespace travel_path{
     }
   };
   
-  void GenRandomSol(int &, int &, std::set<travel_path::Solution, travel_path::SolutionCompare> &);
+  void GenRandomSol(const int &, const int &, std::set<travel_path::Solution, travel_path::SolutionCompare> &);
   int GenNeighborSolutions(std::vector<int>, std::set<travel_path::Solution, travel_path::SolutionCompare> &, const int &, const int &, int);
   float EvalSolution(const std::vector<int> &); 
   float GetDistance(int, int, float*, int); 

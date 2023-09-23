@@ -8,7 +8,7 @@
 
 namespace travel_path{
   
-  void GenRandomSol(int &n_cities, int &n_solutions, std::set<travel_path::Solution, travel_path::SolutionCompare> &solutions){
+  void GenRandomSol(const int &n_cities, const int &n_solutions, std::set<travel_path::Solution, travel_path::SolutionCompare> &solutions){
     /*
       Función para generar n distintas soluciones de camino
       Input: 
@@ -27,7 +27,6 @@ namespace travel_path{
     }
 
     // Partiendo de la solución base, generaremos nuevas soluciones random 
-
     while(static_cast<int>(solutions.size()) < n_solutions){
       // Aleatorizamos los elementos de la solución base [start, end, función de randomizado)
       std::shuffle(base_solution.begin(), base_solution.end(), utils::RandomFunction());

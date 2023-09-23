@@ -149,11 +149,11 @@ int main(){
     //DefineProblem(p_meta);    // debug
 p_meta.n_cities = 5;
 p_meta.n_solutions = 5;
-p_meta.n_iters = 1;
+p_meta.n_iters = 5;
 p_meta.algo = Algorithms::scatter_search;
 p_meta.tabu_size = 3;
 p_meta.scatter_pairs  = 2;
-p_meta.scatter_percen = 20;
+p_meta.scatter_percen = 50;
 
     // Generamos arreglo con distancias entre ciudades
     float *city_distances = ConnectCities(p_meta.n_cities, false);
