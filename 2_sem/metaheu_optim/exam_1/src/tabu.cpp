@@ -4,10 +4,17 @@
 
 namespace tabu{
   void Solve(const ProblemMetadata &p_meta, std::set<travel_path::Solution, travel_path::SolutionCompare> &solutions){
+    /*
+      Función para resolver el problema dado con el algoritmo tabú
+      Input:
+        const ProblemMetadata & - Estructura con los metadatos del problema
+        std::set<travel_path::Solution, travel_path::SolutionCompare> & - Conjunto de soluciones (recorrido y distancia), ordenadas y sin duplicación
+    */
+  
     // Generamos estructura para almacenar soluciones tabu
     std::set<travel_path::Solution, travel_path::SolutionCompare> tabu;
 
-    // Guardamos el mejor resultado de nuestra población inicial
+    // Guardamos en el conjunto tabú el mejor resultado de nuestra población inicial
     auto first = solutions.begin();
     tabu.insert({std::vector<int>(first->path), first->distance});
     
@@ -21,9 +28,9 @@ namespace tabu{
       // Borramos soluciones anteriores
       solutions.clear();
 
-      // Usamos el meror tabu para generar vecinos
+      // Usamos el mejor tabu para generar vecinos
       auto tabu_first = tabu.begin();
-      // Generamos nuevas soluciones vecinas de nuestra mejor solución local
+      // Generamos nuevas soluciones vecinas de nuestra mejor solución tabú
       acc = GenNeighborSolutions(tabu_first->path, solutions, p_meta.n_solutions, p_meta.n_cities, acc);
       
       std::cout << "Iteración " << i + 1 << "\n";
@@ -39,7 +46,7 @@ namespace tabu{
         // Contabilizamos los elementos después del intento de inserción
         int n_post = tabu.size();
 
-        // Si la cantidad de elementos cambio y 
+        // Si la cantidad de elementos cambio 
         if(n_pre < n_post){
           // Verificar si tabú se llenó
           if(n_post > p_meta.tabu_size){

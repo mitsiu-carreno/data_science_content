@@ -13,6 +13,8 @@ bool DefineProblem(ProblemMetadata &p_meta){
     Función para preguntar los parametros generales del problema
     Input:
       ProblemMetadata * - Variable donde guardar los valores ingresados
+    Output:
+      bool - Responde si el usuario desea ingresar las distancias de ciudades a mano
   */
 
 
@@ -27,14 +29,15 @@ bool DefineProblem(ProblemMetadata &p_meta){
     std::cout << "Tomando distancias predefinidas, se tomarán las 8 ciudades de moodle como base\n";
   }
 
-
   // Número de soluciones
   int *n_solutions = new int;
-  utils::AskValue("\nIngresa la cantidad de soluciones a crear", n_solutions, utils::kInteger);
-  // El número de soluciones no puede ser mayor al número máximo de permutaciones dadas 
-  // n_ciudades
-  if(*n_solutions > utils::GetFactorial(*n_cities)){
-    throw std::runtime_error("Error: Se solicitan más soluciones de las posibles");
+  while(true){
+    utils::AskValue("\nIngresa la cantidad de soluciones a crear", n_solutions, utils::kInteger);
+    // El número de soluciones no puede ser mayor al número máximo de permutaciones dadas n_ciudades
+    if(*n_solutions <= utils::GetFactorial(*n_cities)){
+      break;
+    }
+    std::cout << "Se solicitan más soluciones de las posibles, intenta un número más chico\n\n";
   }
 
   // Número de iteraciones
@@ -82,7 +85,6 @@ bool DefineProblem(ProblemMetadata &p_meta){
   }
 
   // Guardamos todos los resultados en la estructura ProblemMetadata (en header ProblemMetadata) 
-  //p_meta {*n_cities, *n_solutions, *n_iters, static_cast<Algorithms>(*n_algorithm)};
   p_meta.n_cities       = *n_cities;
   p_meta.n_solutions    = *n_solutions;
   p_meta.n_iters        = *n_iters;
@@ -130,6 +132,7 @@ float* ConnectCities(int &n_cities, bool interactive){
         + std::string(")");
 
       utils::AskValue(prompt, &city_distances[i], utils::kFloat);
+      // Verificar si aun quedan conexiones de ciudades con la ciudad actual
       if((city_b+1)%n_cities == 0){
         ++city_a;
         city_b = city_a;
@@ -138,6 +141,7 @@ float* ConnectCities(int &n_cities, bool interactive){
       ++city_b;
     }
   }else{
+    // Valores predefinidos en moodle
     city_distances[0] = 15; 
     city_distances[1] = 11;
     city_distances[2] = 21; 
@@ -171,16 +175,21 @@ float* ConnectCities(int &n_cities, bool interactive){
 }
 
 int main(){
+  // Punto de inicio de la ejecución del programa
+
+  float *city_distances;
   try{
     // Preguntamos valores generales para saber el problema y como resolverlo
     ProblemMetadata p_meta;
     bool dynamic = DefineProblem(p_meta);
-std::cout << dynamic << "\n";
+    
+    // Si elige los datos de moodle seteamos a 8 ciudades
     if(!dynamic){
       p_meta.n_cities = 8;
     }
+
     // Generamos arreglo con distancias entre ciudades
-    float *city_distances = ConnectCities(p_meta.n_cities, dynamic);
+    city_distances = ConnectCities(p_meta.n_cities, dynamic);
 
     // Guardar arrelgo de distancias en estado interno de cities::GetDistances
     // Probablemente OOP hubiera almacenado el estado de mejor manera pero por ahora lo 
@@ -196,6 +205,7 @@ std::cout << dynamic << "\n";
     std::cout << "\n\nSoluciones iniciales:\n";
     travel_path::PrintSolutions(solutions);
     
+    // Evaluamos bajo que algoritmo se desea resolver el problema
     switch(p_meta.algo){
       case Algorithms::grasp:
         std::cout << "\nGrasp\n";
@@ -213,11 +223,12 @@ std::cout << dynamic << "\n";
         std::cout << "Algoritmo no soportado\n";
     }
 
-    // Liberamos la memoria del arreglo de distancias entre ciudades
-    delete[] city_distances;
   }catch(const std::exception &e){
     std::cout << "Ha ocurrido un error:\n" << e.what() << "\n Terminando programa\n";
   }
   
+  // Liberamos la memoria del arreglo de distancias entre ciudades
+  delete[] city_distances;
+
   return 0;
 }

@@ -9,6 +9,13 @@
 
 namespace scatter{
   void Solve(const ProblemMetadata &p_meta, std::set<travel_path::Solution, travel_path::SolutionCompare> &solutions){
+    /*
+      Función para resolver el problema dado con el algoritmo scatter-search
+      Input:
+        const ProblemMetadata & - Estructura con los metadatos del problema
+        std::set<travel_path::Solution, travel_path::SolutionCompare> & - Conjunto de soluciones (recorrido y distancia), ordenadas y sin duplicación
+    */
+
     std::cout << "Scatter\n";
    
     // Generamos dos iteradores (posteriormente se acutalizarán para apuntar a indice de solución seleccionada (select_indexes))
@@ -89,15 +96,24 @@ namespace scatter{
   }
   
   void CombineSolutions(const std::vector<int> &a, const std::vector<int> &b, std::unordered_set<int> &new_solution){
+    /*
+      Función para combinar dos recorridos distintos
+      Input:
+        const std::vector<int> & - Primer recorrido para combinar
+        const std::vector<int> & - Segundo recorrido para combinar
+        std::unordered_set<int> & - Estructura para guardar resultado de combinación
+    */
+  
+    // Validación interna (manejo de iteradores)
     if(a.size() != b.size()){
       std::cout << "Error " << a.size() << "!=" << b.size() << "\n";
       throw std::runtime_error("Error: Las soluciones a combinar son de distintos tamaños");
     }
     
+    // Recorremos ambas soluciones y tomamos las ciudades por orden de aparición
     for(int i=0; i<static_cast<int>(a.size()); ++i){
       new_solution.insert(a.at(i));
       new_solution.insert(b.at(i));
-      //std::cout << a.at(i) << "-" << b.at(i) << "| ";
     }
   }
 }

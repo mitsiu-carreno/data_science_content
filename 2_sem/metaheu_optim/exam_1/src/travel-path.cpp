@@ -12,10 +12,9 @@ namespace travel_path{
     /*
       Función para generar n distintas soluciones de camino
       Input: 
-        int &n_cities - Cantidad de ciudades disponibles
-        int &n_solutions - Cantidad de soluciones distintas esperadas
+        const int &n_cities - Cantidad de ciudades disponibles
+        const int &n_solutions - Cantidad de soluciones distintas esperadas
         std::set<travel_path::Solution, travel_path::SolutionCompare> & - Conjunto para guardar las soluciones creadas
-      Output:
     */
   
     // Generamos una solución ordenada (1,2,3,4,5 ... n_cities)
@@ -30,7 +29,8 @@ namespace travel_path{
     while(static_cast<int>(solutions.size()) < n_solutions){
       // Aleatorizamos los elementos de la solución base [start, end, función de randomizado)
       std::shuffle(base_solution.begin(), base_solution.end(), utils::RandomFunction());
-
+  
+      // Insertamos la nueva solución en set (si esta duplicada la ignora de automático)
       solutions.insert({std::vector<int>(base_solution), travel_path::EvalSolution(base_solution)});
 
     }
@@ -42,10 +42,11 @@ namespace travel_path{
       Input:
         std::vector<int> - Solución base
         std::set<travel_path::Solution, travel_path::SolutionCompare> & - Conjunto para guardar las soluciones creadas
-        const int & - Cantidad de soluciones distintas a generar
+        const int & - Cantidad de soluciones distintas en total
+        const int & - Cantidad de ciudades total en el problema
+        int - Número de iteración actual
     */
     
-
     // Se van a generar n_solutions nuevas, todas únicas
     while(static_cast<int>(solutions.size()) < n_solutions){
       std::vector<int> base_solution_backup(base_solution);
@@ -60,34 +61,25 @@ namespace travel_path{
           break;
         case 1: 
 //std::cout << "1--";
-          // Incrementar cada ciudad + acc
           // Rotar los últimos elementos al principio de la ruta
           std::rotate(base_solution_backup.rbegin(), base_solution_backup.rbegin() + (acc%n_cities)+1, base_solution_backup.rend());
           break;
         case 2:
 //std::cout << "2--";
-          // Incrementar cada ciudad + acc
           // Rotar los primeros elementos al final de la ruta
           std::rotate(base_solution_backup.begin(), base_solution_backup.begin() + (acc%n_cities)+1, base_solution_backup.end());
           break;
         case 3:
 //std::cout << "3--";
-          // Incrementar cada ciudad + acc
           // Intercambiar dos elementos
           std::swap(base_solution_backup.at(acc%n_cities), base_solution_backup.at((acc-1)%n_cities));
           break;
         default:
 //std::cout << "4--";
-          // Incrementar cada ciudad + acc
           // Aleatorizar la posición de todos los elementos
           std::shuffle(base_solution_backup.begin(), base_solution_backup.end(), utils::RandomFunction());
       } 
-/*
-for (auto el : base_solution_backup) {
- std::cout << el << ' ';
-}
-std::cout << "\n";
-*/
+      
       // Se inserta la nueva solución al conjunto
       solutions.insert({std::vector<int>(base_solution_backup), travel_path::EvalSolution(base_solution_backup)});
       ++acc;
@@ -120,14 +112,15 @@ std::cout << "\n";
       Input:
         int city_A - Identificador de ciudad A [1, n_cities]
         int city_B - Identificador de ciudad B [1, n_cities]
-        float *city_distances - Arreglo unidimensional de todas las distancias entre ciudades
-        int &n_cities - Total de ciudades existentes
+        float *pcity_distances - Arreglo unidimensional de todas las distancias entre ciudades
+        int &pn_cities - Total de ciudades existentes
       Output:
         float  - Distancia entre las ciudades ingresadas
     */
 
-    // Store array in internal function state
+    // Guardamos arreglo de distancias entre ciudades para no soliciarlo multiples veces
     static const float *city_distances = pcity_distances;
+    // Guardamos cantidad de ciudades para no solicitarlo multipes veces
     static const int n_cities = pn_cities;
     
     if(city_A == city_B){
@@ -159,6 +152,11 @@ std::cout << "\n";
   }
 
   void PrintSolution(const travel_path::Solution &solution){
+    /*
+      Función para imprimir en formato una solución (recorrido y distancia)
+      Input:
+        const travel_path::Solution - Estructura con el recorrido y distancia a imprimir
+    */
     std::cout << "Ruta: [";
     for(auto &city: solution.path){
       std::cout << " " << city << " ";
@@ -167,6 +165,11 @@ std::cout << "\n";
   }
 
   void PrintSolutions(const std::set<travel_path::Solution, travel_path::SolutionCompare> &solutions){
+    /*
+      Función para imprimir en formato un conjunto de soluciones (recorridos y distancias)
+      Input:
+        const std::set<travel_path::Solution, travel_path::SolutionCompare> & - Conjunto de soluciones
+    */
     for(auto &solution : solutions){
       PrintSolution(solution);
     }

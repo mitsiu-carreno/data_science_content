@@ -8,6 +8,7 @@
 #include "problem-metadata.hpp"
 
 namespace utils{
+  // Enumerador de tipos de datos validos para que ingrese el usuario
   enum kDataTypes{
     kInteger,
     kString,

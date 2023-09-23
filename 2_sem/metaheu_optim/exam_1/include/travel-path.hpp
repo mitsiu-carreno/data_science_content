@@ -12,7 +12,7 @@ namespace travel_path{
     float distance;
   };
 
-  // Definimos el método de comparación entre soluciones para ordenarlas (basados reduciren distancia) 
+  // Definimos el método de comparación entre soluciones para ordenarlas (basados en reducir distancia) (requerido para std::set)
   struct SolutionCompare{
     bool operator()(const Solution &left, const Solution &right) const{
       return left.distance < right.distance;
