@@ -8,16 +8,25 @@
 #include "tabu.hpp"
 #include "scatter-search.hpp"
 
-void DefineProblem(ProblemMetadata &p_meta){
+bool DefineProblem(ProblemMetadata &p_meta){
   /*
     Función para preguntar los parametros generales del problema
     Input:
       ProblemMetadata * - Variable donde guardar los valores ingresados
   */
 
+
   // Número de ciudades
   int *n_cities = new int;
   utils::AskValue("\nIngresa la cantidad de ciudades", n_cities, utils::kInteger);
+
+  // Ingresar distancias de ciudades
+  int *dynamic =new int;
+  utils::AskValue("\nDeseas ingresar las distancias entre ciudades de manera manual o tomar los valores de moodle [Manual-1 Moodle-0]", dynamic, utils::kInteger);
+  if(*dynamic != 1){
+    std::cout << "Tomando distancias predefinidas, se tomarán las 8 ciudades de moodle como base\n";
+  }
+
 
   // Número de soluciones
   int *n_solutions = new int;
@@ -87,7 +96,8 @@ void DefineProblem(ProblemMetadata &p_meta){
   delete n_solutions;  
   delete n_iters;
   delete n_algorithm;
-
+  
+  return *dynamic;
 }
 
 float* ConnectCities(int &n_cities, bool interactive){
@@ -128,16 +138,34 @@ float* ConnectCities(int &n_cities, bool interactive){
       ++city_b;
     }
   }else{
-    city_distances[0] = 12; 
-    city_distances[1] = 5;
-    city_distances[2] = 11; 
-    city_distances[3] = 42;
-    city_distances[4] = 31;
-    city_distances[5] = 23;
-    city_distances[6] = 17;
-    city_distances[7] = 6;
-    city_distances[8] = 8;
-    city_distances[9] = 3;
+    city_distances[0] = 15; 
+    city_distances[1] = 11;
+    city_distances[2] = 21; 
+    city_distances[3] = 9;
+    city_distances[4] = 18;
+    city_distances[5] = 22;
+    city_distances[6] = 25;
+    city_distances[7] = 10;
+    city_distances[8] = 15;
+    city_distances[9] = 28;
+    city_distances[10] = 22;
+    city_distances[11] = 21;
+    city_distances[12] = 31;
+    city_distances[13] = 21;
+    city_distances[14] = 13;
+    city_distances[15] = 17;
+    city_distances[16] = 20;
+    city_distances[17] = 28;
+    city_distances[18] = 18;
+    city_distances[19] = 11;
+    city_distances[20] = 31;
+    city_distances[21] = 22;
+    city_distances[22] = 31;
+    city_distances[23] = 23;
+    city_distances[24] = 18;
+    city_distances[25] = 26;
+    city_distances[26] = 21;
+    city_distances[27] = 16;
   }
   return city_distances;
 }
@@ -146,17 +174,13 @@ int main(){
   try{
     // Preguntamos valores generales para saber el problema y como resolverlo
     ProblemMetadata p_meta;
-    //DefineProblem(p_meta);    // debug
-p_meta.n_cities = 5;
-p_meta.n_solutions = 5;
-p_meta.n_iters = 5;
-p_meta.algo = Algorithms::scatter_search;
-p_meta.tabu_size = 3;
-p_meta.scatter_pairs  = 2;
-p_meta.scatter_percen = 50;
-
+    bool dynamic = DefineProblem(p_meta);
+std::cout << dynamic << "\n";
+    if(!dynamic){
+      p_meta.n_cities = 8;
+    }
     // Generamos arreglo con distancias entre ciudades
-    float *city_distances = ConnectCities(p_meta.n_cities, false);
+    float *city_distances = ConnectCities(p_meta.n_cities, dynamic);
 
     // Guardar arrelgo de distancias en estado interno de cities::GetDistances
     // Probablemente OOP hubiera almacenado el estado de mejor manera pero por ahora lo 
