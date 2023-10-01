@@ -1,0 +1,61 @@
+#include <cmath>
+#include <iostream>
+#include <set>
+#include <string>
+#include <vector>
+#include <random>
+ 
+struct Point { 
+    std::vector<int> x; 
+    int y; 
+};
+ 
+struct PointCmp
+{
+    bool operator()(const Point& lhs, const Point& rhs) const
+    {
+        //return std::hypot(lhs.x, lhs.y) < std::hypot(rhs.x, rhs.y);
+        return rhs.y < lhs.y;
+    }
+};
+ 
+void PrintSet(const std::set<Point, PointCmp>& z){
+    for (auto& p : z){
+        std::cout << "([";
+        for(auto& e: p.x){
+            std::cout << e;
+        }
+        std::cout << "]," << p.y << ") ";
+    }
+    std::cout << '\n';    
+}
+ 
+int main()
+{
+    std::vector<int> v {1, 2, 3, 4, 5};
+    
+    std::random_device rd;
+    std::mt19937 g(rd());
+    
+    // custom comparison
+    //std::set<Point, PointCmp> z = {{2, 5}, {3, 4}, {1, 1}};
+    std::set<Point, PointCmp> z;
+    z.insert({std::vector<int>(v), 11}); 
+    
+    PrintSet(z);
+    
+    std::shuffle(v.begin(), v.end(), g);
+    z.insert({std::vector<int>(v), 9});
+    
+    PrintSet(z);
+    
+    std::shuffle(v.begin(), v.end(), g);
+    z.insert({std::vector<int>(v), 10});
+    
+    PrintSet(z);
+    
+    z.insert({std::vector<int>({1,2,3,4,5}), 12});
+    
+    PrintSet(z);    
+    
+}

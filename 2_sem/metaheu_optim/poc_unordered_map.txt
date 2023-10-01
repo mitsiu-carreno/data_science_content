@@ -1,0 +1,82 @@
+#include <algorithm>
+#include <iostream>
+#include <iterator>
+#include <random>
+#include <vector>
+#include <unordered_map>
+ 
+struct customHash{
+    inline std::size_t operator()(std::vector<int> const& vec) const {
+        std::size_t seed = vec.size();
+        for(auto x : vec) {
+            x = ((x >> 16) ^ x) * 0x45d9f3b;
+            x = ((x >> 16) ^ x) * 0x45d9f3b;
+            x = (x >> 16) ^ x;
+            seed ^= x + 0x9e3779b9 + (seed << 6) + (seed >> 2);
+        }
+        return seed;
+    }
+};
+
+void PrintMap(const std::unordered_map<std::vector<int>, int, customHash> &dict){
+    std::cout << "Tamanio " << dict.size() << "\n";
+    
+    std::cout << "dict: { ";
+    for (auto const& [key, value] : dict){
+        std::cout << "[";
+        for(auto city : key){
+            std::cout << city;    
+        }
+        std::cout << "]=" << value << " ";
+    }
+        
+    std::cout << "}\n\n";
+}
+ 
+bool comp(const std::pair<std::vector<int>, int> &a, const std::pair<std::vector<int>, int> &b){
+    return a.second > b.second; 
+}
+ 
+int main()
+{
+    std::vector<int> v {1, 2, 3, 4, 5};
+ 
+    std::random_device rd;
+    std::mt19937 g(rd());
+ 
+    //std::shuffle(v.begin(), v.end(), g);
+
+    std::unordered_map<std::vector<int>, int, customHash> dict;
+    dict.insert({std::vector<int>(v), 10});
+
+    
+
+    PrintMap(dict);
+ 
+    std::shuffle(v.begin(), v.end(), g);
+    dict.insert({std::vector<int>(v), 9});
+    
+    PrintMap(dict);
+    
+    std::shuffle(v.begin(), v.end(), g);
+    dict.insert({std::vector<int>(v), 7});
+    
+    PrintMap(dict);
+    
+    std::shuffle(v.begin(), v.end(), g);
+    dict.insert({std::vector<int>(v), 4});
+    
+    PrintMap(dict);
+    
+    dict.insert({std::vector<int>({1,2,3,4,5}), 21});
+    
+    PrintMap(dict);
+    
+    // CANNOT PARTIAL SORT!!!!!
+    //std::partial_sort(dict.begin(), dict.begin(), dict.end(), comp);
+    //std::cout << "Order top 3\n";
+    //PrintMap(dict);
+}
+
+
+

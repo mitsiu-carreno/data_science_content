@@ -1,0 +1,48 @@
+#include <algorithm>
+#include <iostream>
+#include <random>
+#include <vector>
+#include <map>
+
+// CANNOT SORT BASED ON VALUES
+struct cmp {
+    bool operator()(std::vector<int> a, std::vector<int> b) const { return a.at(0) > b.at(0); }
+};
+
+void PrintMap(const std::map<std::vector<int>, int, cmp> &dict){
+    std::cout << "Tamanio " << dict.size() << "\n";
+    
+    std::cout << "dict: { ";
+    for (auto const& [key, value] : dict){
+        std::cout << "[";
+        for(auto city : key){
+            std::cout << city;    
+        }
+        std::cout << "]=" << value << " ";
+    }
+        
+    std::cout << "}\n\n";
+}
+
+int main()
+{
+    std::vector<int> v {1, 2, 3, 4, 5};
+ 
+    std::random_device rd;
+    std::mt19937 g(rd());
+    
+    std::map<std::vector<int>, int, cmp> dict;
+    dict.insert({std::vector<int>(v), 10});
+    PrintMap(dict);
+    
+    std::shuffle(v.begin(), v.end(), g);
+    dict.insert({std::vector<int>(v), 9});
+    
+    PrintMap(dict);
+    
+    std::shuffle(v.begin(), v.end(), g);
+    dict.insert({std::vector<int>(v), 11});
+    
+    PrintMap(dict);
+    
+}
