@@ -1,60 +1,51 @@
-#include <iostream>
-#include <sstream>
-#include <fstream>
-#include <string>
-#include <vector>
-
-#include "ships.hpp"
+#include "ship.hpp"
+#include "container.hpp"
 #include "read-csv.hpp"
 
 
 namespace utils{
-
-  void* ReadCsv(std::string path, utils::ParseEntities entity){
-    std::ifstream read_file(path);
-    std::string line;
-    std::vector<Ship>* ships = new std::vector<Ship>;
-    int row = 1;
-   
-    while(std::getline(read_file, line)){
-      if(row == 1){
-        ++row;
-        continue;
-      }
-      std::stringstream lineStream(line);
-      std::string value;
-      Ship new_ship;
-
-      int index = 0;
-      while(std::getline(lineStream, value, ',')){
-        try{
-          utils::ParseCsv(entity, index, value, new_ship);
-        }catch(const std::exception &e){
-          std::cout << "Error al leer " << row << ":" << index  << " con valor "<< value << "\n";
-        }
-        ++index;
-      }
-
-      std::cout << "Summary Code" << new_ship.code << " cost " << new_ship.cost << "\n";
-      ships->push_back(new_ship);
-      ++row;
-    }
-    return static_cast<void*>(ships);
+  void ParseEntity(int data_index, std::string value, Ship &ship){
+    switch(data_index){
+      case static_cast<int>(ShipAttr::kCode):
+        ship.code = value;
+        break;
+      case static_cast<int>(ShipAttr::kCost):
+        ship.cost = std::stof(value);
+        break;
+      case static_cast<int>(ShipAttr::kMax_weight):
+        ship.max_weight = std::stof(value);
+        break;
+      case static_cast<int>(ShipAttr::kMax_n_containers):
+        ship.max_n_containers = stoi(value);
+      default:
+        std::cout << "Barco: columna " << data_index << " no reconocida\n";
+        break;
+    } 
   }
 
-  void ParseCsv(utils::ParseEntities entity, int data_index, std::string value, Ship &ship){
-    if(entity == utils::ParseEntities::kShip){
-      switch(data_index){
-        case static_cast<int>(ShipAttr::kCode):
-          ship.code = value;
-          break;
-        case static_cast <int>(ShipAttr::kCost):
-          ship.cost = std::stof(value);
-          break;
-        default:
-          std::cout << "Columna " << data_index << " no reconocida\n";
-          break;
-      }
+  void ParseEntity(int data_index, std::string value, Container &container){
+    switch(data_index){
+      case static_cast<int>(ContainerAttr::kCode):
+        container.code = value;
+        break;
+      case static_cast<int>(ContainerAttr::kCost):
+        container.cost = std::stof(value);
+        break;
+      case static_cast<int>(ContainerAttr::kCharge):
+        container.charge = std::stof(value);
+        break;
+      case static_cast<int>(ContainerAttr::kImmediacy):
+        container.immediacy = std::stoi(value);
+        break;
+      case static_cast<int>(ContainerAttr::kPriority):
+        container.priority = std::stoi(value);
+        break;
+      case static_cast<int>(ContainerAttr::kWeight):
+        container.weight = std::stof(value);
+        break;
+      default:
+        std::cout << "Contenedor: columna " << data_index << " no reconocida\n";
+        break;
     } 
   }
 }

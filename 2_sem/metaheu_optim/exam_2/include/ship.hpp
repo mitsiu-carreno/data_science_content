@@ -14,7 +14,7 @@ struct Ship{
   std::string code;
   float cost;
   float max_weight;
-  float max_n_containers;
+  int max_n_containers;
 };
 
 #endif
