@@ -1,6 +1,8 @@
 #ifndef SHIPS_HPP
 #define SHIPS_HPP
 
+#include <string>
+
 enum class ShipAttr{
   kCode,
   kCost,

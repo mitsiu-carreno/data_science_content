@@ -18,7 +18,7 @@ BUILD_TARGET  := build
 EXEC_TARGET   := bin
 
 # Executable options
-EXEC_TARGET_NAME  := metah_viajero
+EXEC_TARGET_NAME  := algo_genet_contenedores
 EXEC_FULL_PATH    := $(EXEC_TARGET)/$(EXEC_TARGET_NAME)
 
 # Code extension

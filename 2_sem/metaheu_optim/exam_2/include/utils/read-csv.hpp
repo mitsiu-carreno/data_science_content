@@ -2,6 +2,7 @@
 #define READ_CSV_HPP
 
 #include <string>
+#include "ships.hpp"
 
 namespace utils{
 
@@ -10,8 +11,8 @@ namespace utils{
     kContainer
   };
 
-  void ReadCsv(std::string, utils::ParseEntities);
-  void ParseCsv(utils::ParseEntities, int, std::string);
+  void* ReadCsv(std::string, utils::ParseEntities);
+  void ParseCsv(utils::ParseEntities, int, std::string, Ship &);
 }
 
 #endif
