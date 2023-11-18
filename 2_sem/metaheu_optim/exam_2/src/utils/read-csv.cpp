@@ -17,6 +17,7 @@ namespace utils{
         break;
       case static_cast<int>(ShipAttr::kMax_n_containers):
         ship.max_n_containers = stoi(value);
+        break;
       default:
         std::cout << "Barco: columna " << data_index << " no reconocida\n";
         break;
