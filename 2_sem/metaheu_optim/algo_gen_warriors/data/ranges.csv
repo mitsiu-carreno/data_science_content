@@ -1,0 +1,11 @@
+property,min,max
+attack,1,100
+defense,1,100
+shield,1,5
+health,1,100
+health_reg,1,10
+aggressive,1,50
+intel,1,5
+control_resis,0,10
+control,1,10
+build,1,10
