@@ -34,7 +34,6 @@ namespace utils{
         int index = 0;
         while(std::getline(lineStream, value, ',')){
           try{
-            //utils::ParseEntity(index, value, new_entity);
             parser(index, value, new_entity);
           }catch(const std::exception &e){
             std::cout << "Error al importar " << path << " " << row << ":" << index  << " con valor "<< value << "\n";

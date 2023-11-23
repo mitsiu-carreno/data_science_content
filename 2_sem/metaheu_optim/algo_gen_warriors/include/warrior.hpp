@@ -28,6 +28,8 @@ struct Warrior{
   int control;
   int build;
 
+  Warrior(){}
+
   Warrior(int attack, int defense, int shield, int health, int health_reg, int aggressive, int intel, int control_resis, int control, int build) : 
     attack {attack},
     defense {defense},

@@ -10,7 +10,8 @@ enum class AttrRangeDescrip{
 };
 
 struct AttrRange{
-  std::string attr;
+  //std::string attr;
+  WarriorAttr attr;
   int min;
   int max;
 };

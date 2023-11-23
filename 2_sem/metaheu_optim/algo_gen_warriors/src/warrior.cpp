@@ -2,12 +2,40 @@
 #include "attr-range.hpp"
 #include "csv.hpp"
 #include "constants.hpp"
+#include "gen-random.hpp"
 
 namespace warrior{
+  WarriorAttr MapAttr(std::string attr_str){
+    if(attr_str == "attack"){
+      return WarriorAttr::kAttack;
+    }else if(attr_str == "defense"){
+      return WarriorAttr::kDefense;
+    }else if(attr_str == "shield"){
+      return WarriorAttr::kShield;
+    }else if(attr_str == "health"){
+      return WarriorAttr::kHealth;
+    }else if(attr_str == "health_reg"){
+      return WarriorAttr::kHealthReg;
+    }else if(attr_str == "aggressive"){
+      return WarriorAttr::kAggressive;
+    }else if(attr_str == "intel"){
+      return WarriorAttr::kIntel;
+    }else if(attr_str == "control_resis"){
+      return WarriorAttr::kControlResis;
+    }else if(attr_str == "control"){
+      return WarriorAttr::kControl;
+    }else if(attr_str == "build"){
+      return WarriorAttr::kBuild;
+    }
+    std::cout << "Attribute not mapped " << attr_str << "\n";
+    return WarriorAttr::kAttack;
+  }
+
   void ParseWarriorAttributeRange(int data_index, std::string value, AttrRange &attr_range){
     switch(data_index){
       case static_cast<int>(AttrRangeDescrip::kAttr):
-        attr_range.attr = value;
+        attr_range.attr = MapAttr(value);
+        //attr_range.attr = value;
         break;
       case static_cast<int>(AttrRangeDescrip::kMin):
         attr_range.min = std::stoi(value);
@@ -21,19 +49,44 @@ namespace warrior{
     }
   }
 
-  void GenWarriors(std::vector<Warrior> &army){
+  void GenWarriors(std::vector<Warrior> &warrior_pool){
 
     std::vector<AttrRange> warrior_attrs_range;
     utils::ReadCsv("data/ranges.csv", warrior_attrs_range, warrior::ParseWarriorAttributeRange);
-  
-    for(int i{0}; i< Constants::kWarriorsPool; ++i){
-      //Warrior new_warrior;
-      for(AttrRange attr_range : warrior_attrs_range){
-        //switch(attr_range){
-        //  case static_cast<int>(WarriorAttr::kAttack):
-        //    new_warrior.attack = 10;
-        //} 
-      army.emplace_back(1,2,3,4,5,6,7,8,9,10);
+    
+    for(AttrRange attr_range : warrior_attrs_range){
+      for(int i{0}; i < Constants::kWarriorsPool; ++i){
+        if(attr_range.attr == WarriorAttr::kAttack){
+          warrior_pool.at(i).attack = 
+            utils::RandomInInterval(attr_range.min, attr_range.max);
+        }else if(attr_range.attr == WarriorAttr::kDefense){
+          warrior_pool.at(i).defense = 
+            utils::RandomInInterval(attr_range.min, attr_range.max);
+        }else if(attr_range.attr == WarriorAttr::kShield){
+          warrior_pool.at(i).shield = 
+            utils::RandomInInterval(attr_range.min, attr_range.max);
+        }else if(attr_range.attr == WarriorAttr::kHealth){
+          warrior_pool.at(i).health = 
+            utils::RandomInInterval(attr_range.min, attr_range.max);
+        }else if(attr_range.attr == WarriorAttr::kHealthReg){
+          warrior_pool.at(i).health_reg = 
+            utils::RandomInInterval(attr_range.min, attr_range.max);
+        }else if(attr_range.attr == WarriorAttr::kAggressive){
+          warrior_pool.at(i).aggressive = 
+            utils::RandomInInterval(attr_range.min, attr_range.max);
+        }else if(attr_range.attr == WarriorAttr::kIntel){
+          warrior_pool.at(i).intel = 
+            utils::RandomInInterval(attr_range.min, attr_range.max);
+        }else if(attr_range.attr == WarriorAttr::kControlResis){
+          warrior_pool.at(i).control_resis = 
+            utils::RandomInInterval(attr_range.min, attr_range.max);
+        }else if(attr_range.attr == WarriorAttr::kControl){
+          warrior_pool.at(i).control = 
+            utils::RandomInInterval(attr_range.min, attr_range.max);
+        }else if(attr_range.attr == WarriorAttr::kBuild){
+          warrior_pool.at(i).build = 
+            utils::RandomInInterval(attr_range.min, attr_range.max);
+        }
       }
     }
   }
