@@ -1,3 +1,5 @@
+//https://stackoverflow.com/questions/39668561/allocate-n-bytes-by-new-and-fill-it-with-any-type
+
 #include <vector>
 #include <iostream>
 
