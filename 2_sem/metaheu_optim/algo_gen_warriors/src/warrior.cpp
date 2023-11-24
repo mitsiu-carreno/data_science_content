@@ -27,7 +27,7 @@ namespace warrior{
     }else if(attr_str == "build"){
       return WarriorAttr::kBuild;
     }
-    std::cout << "Attribute not mapped " << attr_str << "\n";
+    std::cout << "Unknown attribute " << attr_str << "\n";
     return WarriorAttr::kAttack;
   }
 

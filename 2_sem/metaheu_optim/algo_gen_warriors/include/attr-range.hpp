@@ -2,6 +2,7 @@
 #define ATTR_RANGE_HPP
 
 #include <string>
+#include "warrior.hpp"
 
 enum class AttrRangeDescrip{
   kAttr,
