@@ -30,7 +30,6 @@ struct Warrior{
   int final_attack;
   int final_defense;
   int final_shield;
-/*
   Warrior(){}
 
   Warrior(int attack, int defense, int shield, int health, int health_reg, int aggressive, int intel, int control_resis, int control, int build) : 
@@ -45,7 +44,6 @@ struct Warrior{
     control {control},
     build {build}
   {}
-  */
 };
 
 namespace warrior{

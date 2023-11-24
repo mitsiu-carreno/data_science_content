@@ -1,0 +1,17 @@
+trigger,target,operator,operand
+shield,defense,*,1.2
+shield,attack,-,20
+health_reg,health,*,1.2
+health_reg,attack,-,10
+aggressive,attack,+,20
+aggressive,defense,-,40
+intel,attack,-,40
+intel,control_resis,+,5
+intel,defense,*,1.2
+intel,build,*,1.3
+control_resis,defense,+,20
+control,attack,-,20
+control,defense,-,30
+control,health,*,1.2
+build,attack,-,50
+build,defense,+,40

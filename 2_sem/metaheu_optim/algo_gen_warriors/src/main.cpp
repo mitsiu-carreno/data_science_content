@@ -1,15 +1,22 @@
-//https://stackoverflow.com/questions/39668561/allocate-n-bytes-by-new-and-fill-it-with-any-type
-
 #include <vector>
 #include <iostream>
+#include <set>
 
 #include "warrior.hpp"
 #include "constants.hpp"
+#include "army.hpp"
 
 int main(){
 
   std::vector<Warrior> warrior_pool(Constants::kWarriorsPool);
+  std::cout << warrior_pool.size() << "\n";
   warrior::GenWarriors(warrior_pool);
+
+  std::set<ArmyT, ArmyComparator> armies;
+  Army::Generate(Constants::kArmyPopulation, Constants::kWarrirosInArmy, armies, warrior_pool);
+
+  
+
   for(int i{Constants::kWarriorsPool - 10}; i < Constants::kWarriorsPool -1; ++i){
   
     std::cout << 

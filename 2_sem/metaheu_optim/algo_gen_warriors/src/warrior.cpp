@@ -50,39 +50,55 @@ namespace warrior{
   }
 
   void GenWarriors(std::vector<Warrior> &warrior_pool){
-
+    std::cout << "Leyendo rangos de atributos...\n";
     std::vector<AttrRange> warrior_attrs_range;
     utils::ReadCsv("data/ranges.csv", warrior_attrs_range, warrior::ParseWarriorAttributeRange);
     
+    std::cout << "Generando gerreros...\n";
     for(AttrRange attr_range : warrior_attrs_range){
       for(int i{0}; i < Constants::kWarriorsPool; ++i){
         if(attr_range.attr == WarriorAttr::kAttack){
           warrior_pool.at(i).attack = 
             utils::RandomInInterval(attr_range.min, attr_range.max);
+          // Debug
+          warrior_pool.at(i).final_attack = warrior_pool.at(i).attack;
+
         }else if(attr_range.attr == WarriorAttr::kDefense){
           warrior_pool.at(i).defense = 
             utils::RandomInInterval(attr_range.min, attr_range.max);
+          // Debug
+          warrior_pool.at(i).final_defense = warrior_pool.at(i).defense;
+
         }else if(attr_range.attr == WarriorAttr::kShield){
           warrior_pool.at(i).shield = 
             utils::RandomInInterval(attr_range.min, attr_range.max);
+          // Debug
+          warrior_pool.at(i).final_shield = warrior_pool.at(i).shield;
+          
         }else if(attr_range.attr == WarriorAttr::kHealth){
           warrior_pool.at(i).health = 
             utils::RandomInInterval(attr_range.min, attr_range.max);
+
         }else if(attr_range.attr == WarriorAttr::kHealthReg){
           warrior_pool.at(i).health_reg = 
             utils::RandomInInterval(attr_range.min, attr_range.max);
+
         }else if(attr_range.attr == WarriorAttr::kAggressive){
           warrior_pool.at(i).aggressive = 
             utils::RandomInInterval(attr_range.min, attr_range.max);
+
         }else if(attr_range.attr == WarriorAttr::kIntel){
           warrior_pool.at(i).intel = 
             utils::RandomInInterval(attr_range.min, attr_range.max);
+
         }else if(attr_range.attr == WarriorAttr::kControlResis){
           warrior_pool.at(i).control_resis = 
             utils::RandomInInterval(attr_range.min, attr_range.max);
+
         }else if(attr_range.attr == WarriorAttr::kControl){
           warrior_pool.at(i).control = 
             utils::RandomInInterval(attr_range.min, attr_range.max);
+
         }else if(attr_range.attr == WarriorAttr::kBuild){
           warrior_pool.at(i).build = 
             utils::RandomInInterval(attr_range.min, attr_range.max);
