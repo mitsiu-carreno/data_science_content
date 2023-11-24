@@ -18,7 +18,6 @@ namespace Army{
   void Generate(const int n_armies, const int n_warriors, std::set<ArmyT, ArmyComparator> &armies, const std::vector<Warrior> &warrior_pool){
     std::cout << "Generando ejercitos aleatorios\n";
     while(static_cast<int>(armies.size()) < n_armies){
-      std::cout << "armies size " << armies.size() << "\n";  
       ArmyT new_army;
       while(static_cast<int>(new_army.warriors.size()) < n_warriors){
         new_army.warriors.insert(utils::RandomInInterval(0, Constants::kWarriorsPool -1));

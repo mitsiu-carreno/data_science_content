@@ -13,7 +13,7 @@ struct ArmyT{
 
 struct ArmyComparator{
   bool operator()(const ArmyT &left, const ArmyT &right) const{
-    return left.score < right.score;
+    return left.score > right.score;
   }
 };
 
