@@ -26,4 +26,16 @@ namespace Army{
       armies.insert(new_army);
     } 
   }
+
+  void Crossover(const std::set<int> &parent_1, const std::set<int> &parent_2, std::set<int> &new_army){
+    std::cout << "Parent_1\n";
+    for(int w_id : parent_1){
+      std::cout << w_id << "\t";
+    }
+    std::cout << "\nParent_2\n";
+    for(int w_id : parent_2){
+      std::cout << w_id << "\t";
+    }
+    std::cout << "\n";
+  }
 }
