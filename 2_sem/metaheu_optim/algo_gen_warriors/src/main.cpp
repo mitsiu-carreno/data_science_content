@@ -27,21 +27,10 @@ int main(){
   std::advance(last_selected, tot_armies_selection);
 
   for(std::set<ArmyT, ArmyComparator>::iterator it = armies.begin(); it != last_selected; std::advance(it, 2)){
-    std::cout << "In\n";
 
-    std::set<ArmyT, ArmyComparator>::iterator next_it = std::next(it);
-    
-    // Resetamos nuestos iteradores al inicio de las soluciones
-    //std::set<ArmyT, ArmyComparator>::iterator first_army = armies.begin();
-    //std::set<ArmyT, ArmyComparator>::iterator second_army = armies.begin();
-
-    // Adelantamos el apuntador a la posici├│n del primer indice seleccionado
-    //std::advance(first_army, it);
-    //std::advance(second_army, *next_it);
-    
     // Generamos una nueva solución combinando las anteriores seleccionadas
     std::set<int> new_army;
-    Army::Crossover(it->warriors, next_it->warriors, new_army);
+    Army::Crossover(it->warriors, std::next(it)->warriors, new_army);
     //new_gen.insert()
   }
 
