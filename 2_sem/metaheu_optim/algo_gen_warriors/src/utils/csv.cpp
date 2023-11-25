@@ -43,5 +43,17 @@ namespace utils{
     }
     write_file.close();   
   }
+
+  void SaveScores(const std::vector<double> &scores){
+    std::ofstream write_file;
+    write_file.open("output/best.csv", std::ofstream::trunc);
+    write_file << "gen,max_score\n";
+    int index = 1;
+    for(double score : scores){
+      write_file << index << "," << score << "\n";
+      ++index;
+    }
+    write_file.close();
+  }
 }
 

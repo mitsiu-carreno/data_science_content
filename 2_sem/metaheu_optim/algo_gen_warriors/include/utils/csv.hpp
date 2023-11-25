@@ -14,6 +14,7 @@ namespace utils{
   
   //void ParseEntity(int, std::string, AttrRange &);
   void Export(const std::vector<Warrior> &);
+  void SaveScores(const std::vector<double> &);
 
   template <typename T> 
     void ReadCsv(std::string path, std::vector<T> &vec, void (*parser)(int, std::string, T&)){

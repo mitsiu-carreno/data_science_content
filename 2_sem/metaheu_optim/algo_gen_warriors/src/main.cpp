@@ -25,7 +25,10 @@ int main(){
     tot_armies_selection 
     : tot_armies_selection + 1;
 
+  std::vector<double> all_scores;
   for(int n_gen {0}; n_gen < Constants::kNGenerations; ++n_gen){
+
+
     std::cout << "////////////////////////////////////////////\nGen " << n_gen << "\n";
     std::cout << "Current armies\n";
     for(ArmyT army : armies){
@@ -70,8 +73,11 @@ int main(){
 
     std::cout << "Tamaño de población: " << armies.size() << "\n";
 
+    all_scores.push_back(armies.begin()->score);
   }
   
+
+  utils::SaveScores(all_scores);
   std::cout << "Resultado final: \n";
   std::set<ArmyT, ArmyComparator>::iterator best_it = armies.begin();
 
