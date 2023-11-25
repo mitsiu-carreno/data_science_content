@@ -28,7 +28,7 @@ namespace Army{
   }
 
   void Crossover(const std::set<int> &parent_1, const std::set<int> &parent_2, const int n_warriors, std::set<ArmyT, ArmyComparator> &new_gen_armies, const std::vector<Warrior> &warrior_pool){
-    // Child getting one-one bite from parents front to back
+    // Child getting one-one byte from parents front to back
     ArmyT child_1;
     std::set<int>::iterator it_p1 = parent_1.begin();
     std::set<int>::iterator it_p2 = parent_2.begin();
@@ -51,7 +51,7 @@ namespace Army{
 
     new_gen_armies.insert(child_1);
 
-    // Child getting one-one bite from parents back to front
+    // Child getting one-one byte from parents back to front
     ArmyT child_2;
 
     std::set<int>::reverse_iterator rit_p1 = parent_1.rbegin();
@@ -75,7 +75,50 @@ namespace Army{
 
     new_gen_armies.insert(child_2);
 
-/*
+    // Child getting one-one byte from parent starting at random points
+    ArmyT child_3;
+
+    it_p1 = parent_1.begin();
+    it_p2 = parent_2.begin();
+
+    std::advance(it_p1, utils::RandomInInterval(0, n_warriors));
+    std::advance(it_p2, utils::RandomInInterval(0, n_warriors));
+
+    while(static_cast<int>(child_3.warriors.size()) < n_warriors){
+      if(it_p1 != parent_1.end()){
+        child_3.warriors.insert(*it_p1);
+        std::advance(it_p1, 1);
+      }else{
+        child_3.warriors.insert(utils::RandomInInterval(0, Constants::kWarriorsPool -1));
+      }
+      if(it_p2 != parent_2.end()){
+        child_3.warriors.insert(*it_p2);
+        std::advance(it_p2, 1);
+      }else{
+        child_3.warriors.insert(utils::RandomInInterval(0, Constants::kWarriorsPool -1));
+      }
+    }
+    child_3.score = Score(child_3.warriors, warrior_pool);
+
+    new_gen_armies.insert(child_3);
+
+    // Child getting random byte from random parent
+    ArmyT child_4;
+    while(static_cast<int>(child_4.warriors.size()) < n_warriors){
+      int which_parent = utils::RandomInInterval(0,1);
+      it_p1 = which_parent ? parent_1.begin() : parent_2.begin();
+      
+      std::advance(it_p1, utils::RandomInInterval(0, Constants::kWarriorsInArmy));
+      child_4.warriors.insert(*it_p1);
+    }
+    child_4.score = Score(child_4.warriors, warrior_pool);
+
+    new_gen_armies.insert(child_4);
+
+
+    
+    
+    /*
     std::cout << "Parent_1\n";
     for(int w_id : parent_1){
       std::cout << w_id << "\t";
