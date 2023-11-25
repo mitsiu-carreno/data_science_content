@@ -7,7 +7,6 @@ namespace Constants{
   const int kArmyPopulation = 100;
   const int kPercentagePopulationSelection = 20;
   const int kNGenerations = 1000;
-  //const int kNGenerations = 10;
 
 }
 

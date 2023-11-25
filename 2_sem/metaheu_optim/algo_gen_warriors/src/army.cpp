@@ -114,28 +114,5 @@ namespace Army{
     child_4.score = Score(child_4.warriors, warrior_pool);
 
     new_gen_armies.insert(child_4);
-
-
-    
-    
-    /*
-    std::cout << "Parent_1\n";
-    for(int w_id : parent_1){
-      std::cout << w_id << "\t";
-    }
-    std::cout << "\nParent_2\n";
-    for(int w_id : parent_2){
-      std::cout << w_id << "\t";
-    }
-    std::cout << "\nChild_forward\n";
-    for(int w_id : child_1.warriors){
-      std::cout << w_id << "\t";
-    }
-    std::cout << "\nChild backward\n";
-    for(int w_id : child_2.warriors){
-      std::cout << w_id << "\t";
-    }
-    std::cout << "\n\n";
-    */
   }
 }
