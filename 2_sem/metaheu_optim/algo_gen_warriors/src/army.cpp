@@ -75,7 +75,7 @@ namespace Army{
 
     new_gen_armies.insert(child_2);
 
-
+/*
     std::cout << "Parent_1\n";
     for(int w_id : parent_1){
       std::cout << w_id << "\t";
@@ -93,5 +93,6 @@ namespace Army{
       std::cout << w_id << "\t";
     }
     std::cout << "\n\n";
+    */
   }
 }

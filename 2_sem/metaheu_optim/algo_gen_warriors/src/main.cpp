@@ -34,8 +34,32 @@ int main(){
     // Generamos una nueva solución combinando las anteriores seleccionadas
     std::set<int> new_army;
     Army::Crossover(it->warriors, std::next(it)->warriors, Constants::kWarriorsInArmy, new_gen_armies, warrior_pool);
-    //new_gen.insert()
+
   }
+  std::cout << "New gen armies\n";
+  for(ArmyT army : new_gen_armies){
+    std::cout << army.warriors.size() << " - " << army.score << "\n";
+  }
+  
+  std::cout << "Uniendo nueva generación a la población (elitismo)...\n";
+  armies.insert(new_gen_armies.begin(), new_gen_armies.end());
+
+  std::cout << "Inter size " << armies.size() << "\n";
+
+  std::cout << "Borrando peores ejercitos...\n";
+
+  std::set<ArmyT, ArmyComparator>::iterator cut_it = armies.begin();
+  std::advance(cut_it, Constants::kArmyPopulation);
+
+  armies.erase(cut_it, armies.end());
+
+  std::cout << armies.size();
+
+  for(auto army : armies){
+    std::cout << army.warriors.size() << "\n";
+  }
+
+
   /*POC
 
     merged.insert(y.begin(), y.end()); //add contents of y to merged
