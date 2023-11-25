@@ -5,6 +5,7 @@
 #include "warrior.hpp"
 #include "constants.hpp"
 #include "army.hpp"
+#include "csv.hpp"
 
 int main(){
 
@@ -13,6 +14,9 @@ int main(){
 
   std::set<ArmyT, ArmyComparator> armies;
   Army::Generate(Constants::kArmyPopulation, Constants::kWarriorsInArmy, armies, warrior_pool);
+
+  
+  utils::Export(warrior_pool);
   
   int tot_armies_selection = Constants::kArmyPopulation 
     * (Constants::kPercentagePopulationSelection / 100.0);
