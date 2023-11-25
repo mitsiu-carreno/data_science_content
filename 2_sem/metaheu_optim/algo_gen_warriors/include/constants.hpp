@@ -3,7 +3,7 @@
 
 namespace Constants{
   const int kWarriorsPool = 10000;
-  const int kWarrirosInArmy = 50;
+  const int kWarriorsInArmy = 50;
   const int kArmyPopulation = 100;
   const int kPercentagePopulationSelection = 20;
   const int kNGenerations = 1000;

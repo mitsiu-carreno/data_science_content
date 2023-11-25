@@ -13,7 +13,7 @@ int main(){
   warrior::GenWarriors(warrior_pool);
 
   std::set<ArmyT, ArmyComparator> armies;
-  Army::Generate(Constants::kArmyPopulation, Constants::kWarrirosInArmy, armies, warrior_pool);
+  Army::Generate(Constants::kArmyPopulation, Constants::kWarriorsInArmy, armies, warrior_pool);
   
   int tot_armies_selection = Constants::kArmyPopulation 
     * (Constants::kPercentagePopulationSelection / 100.0);
@@ -21,19 +21,36 @@ int main(){
   tot_armies_selection = tot_armies_selection % 2 == 0 ? 
     tot_armies_selection 
     : tot_armies_selection + 1;
-  
+
+  std::cout << "Seleccionando y cruzando mejores parejas\n"; 
   // Iteramos por par nuestros indices seleccionados
   std::set<ArmyT, ArmyComparator>::iterator last_selected = armies.begin();
   std::advance(last_selected, tot_armies_selection);
+
+  std::set<ArmyT, ArmyComparator> new_gen_armies;
 
   for(std::set<ArmyT, ArmyComparator>::iterator it = armies.begin(); it != last_selected; std::advance(it, 2)){
 
     // Generamos una nueva solución combinando las anteriores seleccionadas
     std::set<int> new_army;
-    Army::Crossover(it->warriors, std::next(it)->warriors, new_army);
+    Army::Crossover(it->warriors, std::next(it)->warriors, Constants::kWarriorsInArmy, new_gen_armies, warrior_pool);
     //new_gen.insert()
   }
+  /*POC
 
+    merged.insert(y.begin(), y.end()); //add contents of y to merged
+
+      // Creamos un iterador apuntando a donde comienza el corte de poblaci├│n
+      auto cut_it = solutions.begin();
+      std::advance(cut_it, new_pob_leng);
+      
+      std::cout << "Mantenemos top " << new_pob_leng << " soluciones y generamos nuevas aleatorias\n";
+ 
+      // Borramos las soluciones fuera del porcentaje seleccionado
+      solutions.erase(cut_it, solutions.end());
+
+  
+    */
 
   /*
   std::set<ArmyT, ArmyComparator>::iterator it = armies.begin();

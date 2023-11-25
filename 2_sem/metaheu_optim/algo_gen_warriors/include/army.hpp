@@ -20,7 +20,7 @@ struct ArmyComparator{
 namespace Army{
   long Score(const std::set<int> &, const std::vector<Warrior> &);
   void Generate(const int, const int, std::set<ArmyT, ArmyComparator> &, const std::vector<Warrior> &); 
-  void Crossover(const std::set<int> &, const std::set<int> &, std::set<int> &);
+  void Crossover(const std::set<int> &, const std::set<int> &, const int, std::set<ArmyT, ArmyComparator> &, const std::vector<Warrior> &);
 }
 
 #endif
