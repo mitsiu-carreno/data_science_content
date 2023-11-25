@@ -5,7 +5,7 @@
 namespace utils{
   void Export(const std::vector<Warrior> &warrior_pool){
     std::ofstream write_file;
-    write_file.open("data/pool.csv", std::ofstream::trunc);
+    write_file.open("output/pool.csv", std::ofstream::trunc);
     write_file 
       << "index" << ","
       << "attack" << "," 
