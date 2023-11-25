@@ -5,8 +5,8 @@
 #include "constants.hpp"
 
 namespace Army{
-  long Score(const std::set<int> &army, const std::vector<Warrior> &warrior_pool){
-    int score {0};
+  double Score(const std::set<int> &army, const std::vector<Warrior> &warrior_pool){
+    double score {0};
     for (std::set<int>::iterator it=army.begin(); it!=army.end(); ++it){
       score += warrior_pool.at(*it).final_attack 
         + warrior_pool.at(*it).final_defense
@@ -91,11 +91,13 @@ namespace Army{
       }else{
         child_3.warriors.insert(utils::RandomInInterval(0, Constants::kWarriorsPool -1));
       }
-      if(it_p2 != parent_2.end()){
-        child_3.warriors.insert(*it_p2);
-        std::advance(it_p2, 1);
-      }else{
-        child_3.warriors.insert(utils::RandomInInterval(0, Constants::kWarriorsPool -1));
+      if(static_cast<int>(child_3.warriors.size()) < n_warriors){
+        if(it_p2 != parent_2.end()){
+          child_3.warriors.insert(*it_p2);
+          std::advance(it_p2, 1);
+        }else{
+          child_3.warriors.insert(utils::RandomInInterval(0, Constants::kWarriorsPool -1));
+        }
       }
     }
     child_3.score = Score(child_3.warriors, warrior_pool);

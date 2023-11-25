@@ -49,6 +49,69 @@ namespace warrior{
     }
   }
 
+  void ApplyRules(std::vector<Warrior> &warrior_pool){
+    for(int i{0}; i < Constants::kWarriorsPool; ++i){
+      //3
+      if(warrior_pool.at(i).shield){
+        warrior_pool.at(i).final_defense *= 1.2;
+        warrior_pool.at(i).final_attack = 
+          warrior_pool.at(i).final_attack - 20 >= 1 
+          ? warrior_pool.at(i).final_attack - 20 
+          : 1; 
+      }
+      //5
+      if(warrior_pool.at(i).health_reg){
+        warrior_pool.at(i).health *= 1.2;
+        warrior_pool.at(i).final_attack =
+          warrior_pool.at(i).final_attack - 10 >= 1
+          ? warrior_pool.at(i).final_attack - 10
+          : 1;
+      }
+      //6
+      if(warrior_pool.at(i).aggressive){
+        warrior_pool.at(i).final_attack += 20;
+        warrior_pool.at(i).final_defense =
+          warrior_pool.at(i).final_defense - 40 >= 1
+          ? warrior_pool.at(i).final_defense - 40
+          : 1;
+      }
+      //7
+      if(warrior_pool.at(i).intel){
+        warrior_pool.at(i).final_attack = 
+          warrior_pool.at(i).final_attack - 40 >= 1
+          ? warrior_pool.at(i).final_attack - 40
+          : 1;
+        warrior_pool.at(i).control_resis += 5;
+        warrior_pool.at(i).final_defense *= 1.2;
+        warrior_pool.at(i).build *= 1.3;
+      }
+      //8
+      if(warrior_pool.at(i).control_resis){
+        warrior_pool.at(i).final_defense += 20;
+      }
+      //9
+      if(warrior_pool.at(i).control){
+        warrior_pool.at(i).final_attack = 
+          warrior_pool.at(i).final_attack - 20 >= 1
+          ? warrior_pool.at(i).final_attack - 20
+          : 1;
+        warrior_pool.at(i).final_defense = 
+          warrior_pool.at(i).final_defense - 30 >= 1
+          ? warrior_pool.at(i).final_defense - 30
+          : 1;
+        warrior_pool.at(i).health *= 1.2;
+      }
+      //10
+      if(warrior_pool.at(i).build){
+        warrior_pool.at(i).final_attack = 
+          warrior_pool.at(i).final_attack - 50 >= 1
+          ? warrior_pool.at(i).final_attack - 50
+          : 1;
+        warrior_pool.at(i).final_defense += 40;
+      }
+    }
+  }
+
   void GenWarriors(std::vector<Warrior> &warrior_pool){
     std::cout << "Leyendo rangos de atributos...\n";
     std::vector<AttrRange> warrior_attrs_range;
@@ -61,19 +124,19 @@ namespace warrior{
           warrior_pool.at(i).attack = 
             utils::RandomInInterval(attr_range.min, attr_range.max);
           // Debug
-          warrior_pool.at(i).final_attack = warrior_pool.at(i).attack;
+          warrior_pool.at(i).final_attack = static_cast<double>(warrior_pool.at(i).attack);
 
         }else if(attr_range.attr == WarriorAttr::kDefense){
           warrior_pool.at(i).defense = 
             utils::RandomInInterval(attr_range.min, attr_range.max);
           // Debug
-          warrior_pool.at(i).final_defense = warrior_pool.at(i).defense;
+          warrior_pool.at(i).final_defense = static_cast<double>(warrior_pool.at(i).defense);
 
         }else if(attr_range.attr == WarriorAttr::kShield){
           warrior_pool.at(i).shield = 
             utils::RandomInInterval(attr_range.min, attr_range.max);
           // Debug
-          warrior_pool.at(i).final_shield = warrior_pool.at(i).shield;
+          warrior_pool.at(i).final_shield = static_cast<double>(warrior_pool.at(i).shield);
           
         }else if(attr_range.attr == WarriorAttr::kHealth){
           warrior_pool.at(i).health = 
@@ -105,5 +168,6 @@ namespace warrior{
         }
       }
     }
+    ApplyRules(warrior_pool);
   }
 }
