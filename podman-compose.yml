@@ -2,7 +2,8 @@ version: 3.7
 
 services:
   tf:
-    image: docker.io/tensorflow/tensorflow:latest-gpu-jupyter
+    build: .
+    #image: docker.io/tensorflow/tensorflow:latest-gpu-jupyter
     container-name: tf
     ports:
       - 8888:8888
