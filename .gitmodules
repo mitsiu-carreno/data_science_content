@@ -1,0 +1,3 @@
+[submodule "2_sem/redes_neur/s16_final_project/ML_landsat_denue_ucags"]
+	path = 2_sem/redes_neur/s16_final_project/ML_landsat_denue_ucags
+	url = https://github.com/mitsiu-carreno/ML_landsat_denue_ucags.git
