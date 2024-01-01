@@ -1,0 +1,7 @@
+Reseña del docente:
+
+El Dr. Alfredo Mendoza González es profesor asociado de investigación en diferentes universidades de México y América Latina. Es ingeniero en sistemas informáticos de la Universidad Autónoma de Aguascalientes (2008), tiene una maestría en Inteligencia Artificial por la Universidad Autónoma de Aguascalientes (2013), en el campo de los algoritmos bioinspirados, y un doctorado en Ciencias de la Computación de la Universidad Autónoma de Tabasco (2017), en el área de Interacción Humano Computadora.  Realizó en 2019 una estancia posdoctoral en la Universidad Autónoma de Zacatecas, sobre interfaces infotainment y otra en 2020 en la Université Paul Sabatier III en Toulouse, Francia, sobre la definición de tareas del usuario en la interacción humano computador. Actualmente es Jefe del Departamento de Diseño de Procedimientos de Registros Administrativos en INEGI. Sus temas de interés son la interacción humano-computadora, la experiencia del usuario y la accesibilidad de las nuevas tecnologías a personas con discapacidad cognitiva.
+
+Objetivos del curso
+
+El objetivo de la materia es proporcionar a los estudiantes las habilidades y el conocimiento necesarios para aplicar con éxito técnicas de metaheurísticas en la resolución de problemas de optimización en el campo de la Ciencia de Datos. Los estudiantes serán capaces de aplicar diferentes técnicas de metaheurísticas a problemas reales de la industria o de investigación, lo que implica seleccionar la técnica adecuada para un problema específico y ajustar sus parámetros de manera efectiva.

@@ -1,0 +1,37 @@
+SEMANA 7: RE-ENCADENAMIENTO DE TRAYECTORIAS
+
+El algoritmo de reencadenamiento de trayectorias, también conocido como Path Relinking, es una técnica utilizada en la optimización combinatoria. Específicamente, es un procedimiento que se utiliza para mejorar soluciones encontradas por algoritmos heurísticos o metaheurísticos como el algoritmo genético, la búsqueda tabú y otros métodos de búsqueda local.
+
+El proceso de reencadenamiento de trayectorias se puede describir de la siguiente manera:
+
+    Generación de Soluciones Iniciales: Se comienza generando una población de soluciones iniciales para el problema dado utilizando un algoritmo heurístico.
+
+    Selección de Parejas de Soluciones: Se seleccionan dos soluciones de la población de manera aleatoria o mediante algún criterio específico.
+
+    Construcción del Camino (Path): Se construye un camino entre las dos soluciones seleccionadas. Este camino representa una secuencia de soluciones intermedias que conectan las dos soluciones originales.
+
+    Mejora del Camino (Path Relinking): Se mejora iterativamente el camino generado. En cada iteración, se seleccionan dos soluciones consecutivas en el camino y se intenta mejorar una de ellas moviéndose hacia la otra. Si la solución puede ser mejorada, se actualiza el camino. Este proceso se repite hasta que no se puedan encontrar más mejoras en el camino.
+
+    Reemplazo en la Población: Si la solución final del camino mejorado es mejor que una de las soluciones originales en la población, la solución original se reemplaza por la nueva solución.
+
+    Criterio de Parada: Se establece un criterio de parada, como un número máximo de iteraciones o un nivel de calidad de la solución alcanzado.
+
+La idea detrás del reencadenamiento de trayectorias es que, al construir y mejorar iterativamente un camino entre dos soluciones, se pueden descubrir soluciones de alta calidad que están en una región del espacio de búsqueda que no se ha explorado lo suficiente por el algoritmo heurístico original. Este enfoque permite una exploración más intensiva del espacio de soluciones y puede conducir a la identificación de soluciones óptimas o cercanas al óptimo.
+
+El reencadenamiento de trayectorias es una técnica flexible y se puede aplicar en combinación con una variedad de algoritmos heurísticos y metaheurísticos para mejorar la calidad de las soluciones encontradas para problemas de optimización combinatoria.
+
+Ventajas del Reencadenamiento de Trayectorias:
+
+    Exploración intensiva del espacio de soluciones en regiones específicas.
+    Puede encontrar soluciones de alta calidad mediante la mejora iterativa de caminos.
+    Enfoque flexible y compatible con varias metaheurísticas.
+
+Desventajas del Reencadenamiento de Trayectorias:
+
+    Puede ser computacionalmente costoso debido a la construcción y mejora de caminos.
+    Sensible a la selección de las soluciones iniciales y los criterios de parada.
+
+MATERIAL ADICIONAL
+
+
+https://www.youtube.com/watch?v=lzg69fbl3Q0

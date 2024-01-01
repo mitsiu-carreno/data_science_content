@@ -1,0 +1,124 @@
+SEMANA 3: Algoritmo GRASP (Parte 2)
+
+A continuación se presenta el código del GRASP en java:
+
+
+
+
+public class Grasp1 {
+    public static void main(String[] args) {
+//parámetros del GRASP
+        int n_iteraciones = 10;  // Número de iteraciones
+        int n = 5; //número de individuos en cada población
+        int[] mejorSolucionIteracion; //aqui se guarda la mejor solución encontrada en una generación
+        int[] mejorSolucionAlgoritmo = null;//aqui se guarda la mejor solución encontrada hasta ese momento
+        int[][] vecinos = new int[2][5];//la búsqueda local se hace sobre los dos vecinos más cercanos, y se guardan aqui
+//definimos la matriz de distancias, las distancias entre ciudades (la modifiqué para hacerlo un poquito más complejo)
+        int[][] matrizDistancias = {
+            {0, 12, 5, 11, 42},
+            {12, 0, 31, 23, 17},
+            {5, 31, 0, 6, 8},
+            {11, 23, 6, 0, 3},
+            {42, 17, 8, 3, 0}
+        };
+
+        //el grasp está dentro de este for
+        for (int i = 0; i < n_iteraciones; i++) {
+            System.out.println("=================  ITERACION " + (i + 1) + "  ==================");
+            //generamos la primer población
+            List poblacionGenerada = generarListasPoblacion(n, matrizDistancias);
+            //ordenamos la población
+            poblacionGenerada.sort((a, b) -> Integer.compare(calcularDistancia(a, matrizDistancias), calcularDistancia(b, matrizDistancias)));
+            //guardamos la mejor solución
+            mejorSolucionIteracion = poblacionGenerada.get(0);
+            //si es la primera iteraciones, entonces esa solución se guarda como la mejor encontrada hasta ahora
+            if (i == 0) {
+                mejorSolucionAlgoritmo = mejorSolucionIteracion;
+            }
+            System.out.println("Mejor solución :");
+            System.out.println("    " + arrayToString(mejorSolucionIteracion) + " - Distancia recorrida: " + calcularDistancia(mejorSolucionIteracion, matrizDistancias));
+            //Aqui realizaremos la búsqueda local
+            //buscamos en los dos vecinos más cercanos (+1 y -1) vecinos cercanos
+            vecinos = localSearch_vec1(mejorSolucionIteracion);
+            System.out.println("Vecino 1:" + arrayToString(vecinos[0]) + " - Distancia recorrida: " + calcularDistancia(vecinos[0], matrizDistancias));
+            System.out.println("Vecino 2:" + arrayToString(vecinos[1]) + " - Distancia recorrida: " + calcularDistancia(vecinos[1], matrizDistancias));
+            //comparamos las soluciones encontradas en las vecindades
+            //si alguna es mejor que la que ya tenemos, hacemos el cambio
+            if ((calcularDistancia(vecinos[0], matrizDistancias)) < (calcularDistancia(mejorSolucionIteracion, matrizDistancias))) {
+                mejorSolucionIteracion = vecinos[0];
+            }
+            if ((calcularDistancia(vecinos[1], matrizDistancias)) < (calcularDistancia(mejorSolucionIteracion, matrizDistancias))) {
+                mejorSolucionIteracion = vecinos[1];
+            }
+            //si la solución encontrada en esta iteración es mejor que la que ya teníamos, hacemos el cambio
+            if ((calcularDistancia(mejorSolucionAlgoritmo, matrizDistancias)) > (calcularDistancia(mejorSolucionIteracion, matrizDistancias))) {
+                mejorSolucionAlgoritmo = mejorSolucionIteracion;
+            }
+            System.out.println("Mejor solución hasta ahora:" + arrayToString(mejorSolucionAlgoritmo) + " con " + calcularDistancia(mejorSolucionAlgoritmo, matrizDistancias));
+        }
+    }
+
+    public static int calcularDistancia(int[] individuo, int[][] matrizDistancias) {
+        int distanciaTotal = 0;
+        for (int i = 0; i < individuo.length - 1; i++) {
+            distanciaTotal += matrizDistancias[individuo[i]][individuo[i + 1]];
+        }
+        distanciaTotal += matrizDistancias[individuo[individuo.length - 1]][individuo[0]];  // Volver al punto de inicio
+        return distanciaTotal;
+    }
+
+    public static List generarListasPoblacion(int numIndividuos, int[][] matrizDistancias) {
+        int longitudMatriz = matrizDistancias.length;
+        List poblacion = new ArrayList<>();
+        for (int k = 0; k < numIndividuos; k++) {
+            List valoresDisponibles = new ArrayList<>();
+            for (int i = 0; i < longitudMatriz; i++) {
+                valoresDisponibles.add(i);
+            }
+            int[] listaIndividuo = new int[longitudMatriz];
+            for (int i = 0; i < longitudMatriz; i++) {
+                int randomIndex = new Random().nextInt(valoresDisponibles.size());
+                int valor = valoresDisponibles.get(randomIndex);
+                listaIndividuo[i] = valor;
+                valoresDisponibles.remove(randomIndex);
+            }
+            poblacion.add(listaIndividuo);
+        }
+        return poblacion;
+    }
+
+    public static String arrayToString(int[] array) {
+        StringBuilder stringBuilder = new StringBuilder("[");
+        for (int i = 0; i < array.length; i++) {
+            stringBuilder.append(array[i]);
+            if (i < array.length - 1) {
+                stringBuilder.append(", ");
+            }
+        }
+        stringBuilder.append("]");
+        return stringBuilder.toString();
+    }
+    //la función de local search devuelve una matriz, que son las dos soluciones de los vecinos
+    //el primero se genera sumando 1 a las ciudades
+    //el segundo se genera restando 1 a las ciudades
+    private static int[][] localSearch_vec1(int[] mejorSolucion) {
+        int[][] vecinos = new int[2][5];
+        //genera el vecino con +1
+        for (int j = 0; j < mejorSolucion.length; j++) {
+            vecinos[0][j] = mejorSolucion[j] + 1;
+            if (vecinos[0][j] == 5) {
+                vecinos[0][j] = 0;
+            }
+        }
+        //genera el vecino con -1
+        for (int j = 0; j < mejorSolucion.length; j++) {
+            vecinos[1][j] = mejorSolucion[j] - 1;
+            if (vecinos[1][j] == -1) {
+                vecinos[1][j] = 4;
+            }
+        }
+        return vecinos;
+    }
+}
+
+

@@ -1,0 +1,54 @@
+SEMANA 9: ALGORITMOS GENÉTICOS (BASES CONCEPTUALES)
+
+Un algoritmo genético (AG) es una técnica de optimización inspirada en la evolución biológica que se utiliza para encontrar soluciones aproximadas a problemas de optimización, búsqueda y selección. Aquí está una explicación detallada de cómo funciona un algoritmo genético:
+1. Inicialización:
+
+    Se comienza generando una población inicial de soluciones. Cada solución se representa como un cromosoma, que puede ser una cadena de bits, números, permutaciones, o cualquier otra representación adecuada para el problema que se está resolviendo.
+
+2. Evaluación de Aptitud (Fitness):
+
+    Cada cromosoma en la población se evalúa en función de su aptitud con respecto al problema. La función de aptitud asigna un valor que cuantifica la calidad de la solución representada por el cromosoma.
+
+3. Selección:
+
+    Se seleccionan cromosomas de la población actual para formar una población de padres. Los cromosomas se seleccionan de manera proporcional a su aptitud, lo que significa que los cromosomas más aptos tienen una mayor probabilidad de ser seleccionados.
+
+4. Reproducción (Cruce):
+
+    Los cromosomas seleccionados como padres se cruzan para generar una nueva población de descendientes. El cruce combina partes de los cromosomas padres para producir uno o más cromosomas hijos.
+
+5. Mutación:
+
+    Ocasionalmente, algunos de los cromosomas descendientes pueden sufrir una mutación, que implica cambios aleatorios en su estructura. La mutación introduce variabilidad en la población y permite explorar soluciones nuevas y diferentes.
+
+6. Evaluación de Aptitud de la Nueva Generación:
+
+    Los cromosomas descendientes se evalúan en función de su aptitud con respecto al problema.
+
+7. Selección de Supervivientes:
+
+    Se seleccionan los cromosomas que formarán la población de la próxima generación. Esto se hace utilizando un mecanismo de selección que puede ser basado en la aptitud o en otros criterios, como la selección de los mejores cromosomas de la población actual y la población de descendientes.
+
+8. Criterio de Parada:
+
+    Se verifica un criterio de parada, que puede ser un número máximo de generaciones, una calidad de solución alcanzada o un límite de tiempo. Si se cumple el criterio, el algoritmo se detiene.
+
+9. Elitismo (Opcional):
+
+    En algunos casos, se puede aplicar elitismo, lo que implica la preservación de los mejores cromosomas de la población actual en la siguiente generación sin cambios.
+
+10. Convergencia:
+
+    Durante la ejecución del algoritmo, se observa la convergencia, es decir, la mejora gradual de la aptitud de la población. Si la población converge a una solución óptima o cercana al óptimo, el algoritmo puede detenerse antes de cumplir el criterio de parada.
+
+11. Solución Final:
+
+    La mejor solución encontrada a lo largo de las generaciones se informa como resultado del algoritmo genético.
+
+Los algoritmos genéticos son muy versátiles y se pueden aplicar a una amplia gama de problemas de optimización combinatoria. La elección de los operadores de selección, cruce y mutación, así como los parámetros del algoritmo, depende de la naturaleza del problema y debe ajustarse cuidadosamente para obtener buenos resultados. Los AGs son eficaces para encontrar soluciones aproximadas en problemas complejos y multidimensionales.
+
+MATERIAL ADICIONAL
+
+https://www.youtube.com/watch?v=RBrXGyo0kIw
+
+https://www.youtube.com/watch?v=Bhme3i8jHpU

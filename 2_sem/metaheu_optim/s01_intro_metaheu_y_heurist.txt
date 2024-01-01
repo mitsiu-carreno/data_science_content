@@ -1,0 +1,35 @@
+SEMANA 1: INTRODUCCIÓN A LAS HEURÍSTICAS Y METAHEURÍSTICAS
+
+Las heurísticas y las metaheurísticas son enfoques utilizados en la resolución de problemas, especialmente en aquellos que son complejos y difíciles de abordar mediante métodos exactos. Ambos conceptos pertenecen al campo de la inteligencia artificial y la optimización.
+
+    Heurísticas: Las heurísticas son estrategias o técnicas que se utilizan para resolver problemas de manera aproximada y rápida, sin garantizar necesariamente la solución óptima. Estas técnicas se basan en reglas empíricas, experiencia y sentido común, en lugar de seguir un procedimiento matemático formal. Las heurísticas son particularmente útiles cuando no es posible o práctico encontrar una solución exacta debido a la complejidad del problema.
+
+Ejemplos de heurísticas incluyen el algoritmo greedy (codicioso), que toma decisiones basadas en la elección óptima en cada paso sin considerar el panorama completo, y el algoritmo de búsqueda local, que explora iterativamente el vecindario de una solución en busca de mejoras locales.
+
+    Metaheurísticas: Las metaheurísticas son enfoques generales y abstractos para resolver problemas de optimización que no están limitados a un dominio o tipo de problema en particular. Estas técnicas proporcionan un marco flexible para explorar el espacio de soluciones en busca de soluciones de alta calidad, aunque no se garantiza que encuentren la solución óptima.
+
+Las metaheurísticas son algoritmos más avanzados y sofisticados que las heurísticas. Suelen utilizar conceptos de búsqueda global y exploración eficiente del espacio de soluciones. Ejemplos de metaheurísticas incluyen el algoritmo genético, que se inspira en la evolución biológica para generar y mejorar soluciones, y el recocido simulado, que se basa en el proceso de enfriamiento de metales para encontrar soluciones óptimas a través de la exploración aleatoria controlada.
+
+En resumen, las heurísticas son enfoques más simples y específicos para resolver problemas, mientras que las metaheurísticas son enfoques más generales y complejos que se pueden aplicar a una amplia gama de problemas de optimización. Ambas son herramientas valiosas para abordar problemas difíciles en diversas áreas, como la optimización de rutas, la planificación, el diseño y muchos otros campos.
+
+Videos
+
+https://www.youtube.com/watch?v=WHHzu8V3it4
+
+https://www.youtube.com/watch?v=pJI8LfnPPB8
+
+Sitios complementarios:
+
+    https://optimizacionheuristica.blogs.upv.es/2015/02/22/que-son-las-metaheuristicas/
+    http://www.cs.us.es/~fsancho/?e=207
+    https://www.virtualpro.co/revista/investigacion-de-operaciones-primera-entrega/17
+
+Documentos:
+
+    https://core.ac.uk/download/pdf/236383515.pdf
+    http://sedici.unlp.edu.ar/bitstream/handle/10915/19670/Documento_completo.pdf?sequence=1
+
+Literatura de referencia:
+
+    http://eio.usc.es/pub/mte/descargas/ProyectosFinMaster/Proyecto_782.pdf
+    https://sisbib.unmsm.edu.pe/bibvirtualdata/monografias/basic/riojas_ca/cap2.pdf

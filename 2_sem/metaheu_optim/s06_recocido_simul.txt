@@ -1,0 +1,24 @@
+SEMANA 6: RECOCIDO SIMULADO
+
+El algoritmo de recocido simulado o Simulated Annealing (SA) es un algoritmo de optimización aleatoria. A diferencia de algoritmos como el ascenso de colinas, donde dado un punto se busca solamente mejorar, el algoritmo de recocido simulado te permite hacer un poco mas de exploración.Se entiende que con esta exploración aumentas la probabilidad de llegar a un óptimo global y no un óptimo local.
+
+El termino “recocido” o “annealing” es un término utilizado en metalurgia donde el objetivo es calentar y enfriar un metal constantemente para que este se vuelva mas fuerte. Al realizar este proceso las moléculas del metal se reagrupan, y esta reagrupación lo vuelve cada vez mas rígido. Esta analogía es aplicada en el algoritmo de recocido simulado dado que el proceso para encontrar el punto óptimo sera acercarnos a una solución, alejarnos de esa posible solución explorando nuevas alternativas y después volvernos a acercar a la respuesta.
+Este algoritmo se compone de 4 pasos:
+
+    Comenzamos en un punto aleatorio x.
+    Escogemos un punto nuevo xⱼ dentro de una vecindad N(x).
+    Decidimos si nos movemos al nuevo punto xⱼ. Esta decisión se hará en base a la función de probabilidad P(x,xⱼ,T) que explicaremos a continuación.
+    Disminuimos T.
+
+Como hemos mencionado antes la función de probabilidad P(x,xⱼ,T) sera la que nos ayude a decidir si nos movemos al nuevo punto, esta función se ve de esta forma:
+
+<img src="s06_recocido_simul_formula.png">
+
+Lecturas adicionales:
+
+    https://oa.upm.es/968/1/03199401.pdf
+    https://ccc.inaoep.mx/~emorales/Cursos/Busqueda/sa.pdf
+    https://www.scielo.cl/pdf/ingeniare/v19n3/art15.pdf
+
+
+

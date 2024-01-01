@@ -1,0 +1,44 @@
+SEMANA 8: Búsqueda por Entornos Variables
+
+La Búsqueda por Entornos Variables (Variable Neighborhood Search, VNS) es una metaheurística que se utiliza para resolver problemas de optimización combinatoria. Fue propuesta por Pierre Hansen y Nenad Mladenovic en la década de 1990. La idea principal detrás de VNS es explorar diferentes estructuras de vecindad para las soluciones, permitiendo una búsqueda más diversificada y efectiva del espacio de soluciones. Aquí está el proceso detallado del algoritmo de Búsqueda por Entornos Variables:
+1. Inicialización:
+
+    Se genera una solución inicial para el problema en cuestión. Esta solución puede ser generada aleatoriamente o mediante un heurístico específico para el problema.
+
+2. Búsqueda Local:
+
+    Se aplica un algoritmo de búsqueda local a la solución actual para encontrar una solución óptima o subóptima en el entorno de la solución actual. Este entorno está definido por una estructura de vecindad específica.
+
+3. Cambio de Entorno (Shaking):
+
+    Se aplica una perturbación a la solución obtenida en el paso anterior para escapar de óptimos locales. Esta perturbación puede ser aleatoria y puede implicar cambios significativos en la solución, como intercambios de elementos o inversiones de subcadenas.
+
+4. Búsqueda Local en un Nuevo Entorno:
+
+    Se aplica un algoritmo de búsqueda local a la solución perturbada para encontrar una nueva solución óptima o subóptima en un entorno diferente al utilizado en el paso 2. Este nuevo entorno puede ser más amplio o más restrictivo que el anterior.
+
+5. Criterio de Mejora:
+
+    Se compara la calidad de la solución encontrada en el paso 4 con la solución obtenida en el paso 2. Si la nueva solución es mejor, se reemplaza la solución actual. Si no es mejor, se vuelve al paso 3 y se aplica una nueva perturbación.
+
+6. Criterio de Parada:
+
+    El algoritmo se detiene cuando se alcanza un cierto número de iteraciones sin mejorar la solución global o cuando se cumple otro criterio de parada predefinido, como un límite de tiempo o un número máximo de evaluaciones de la función objetivo.
+
+7. Mejor Solución Encontrada:
+
+    La mejor solución encontrada durante todo el proceso se devuelve como resultado del algoritmo.
+
+Características Clave de VNS:
+
+    Exploración de Múltiples Vecindades: VNS explora múltiples estructuras de vecindad, lo que permite una búsqueda más diversificada y la capacidad de escapar de óptimos locales.
+    Flexibilidad y Adaptabilidad: VNS es flexible y puede adaptarse fácilmente a diferentes problemas simplemente modificando las estructuras de vecindad y los operadores de perturbación utilizados.
+    Escapar de Óptimos Locales: La perturbación en el paso 3 permite que el algoritmo escape de óptimos locales, lo que mejora la capacidad de exploración del espacio de soluciones.
+
+Es importante destacar que la efectividad de la Búsqueda por Entornos Variables depende en gran medida de la definición adecuada de las estructuras de vecindad y los operadores de perturbación para el problema específico que se está abordando. Estos deben diseñarse cuidadosamente para garantizar una búsqueda efectiva y eficiente del espacio de soluciones.
+
+MATERIAL ADICIONAL
+
+https://www.youtube.com/watch?v=Ztrtfl5Y4MA
+
+https://www.youtube.com/watch?v=_byWEY0e0TU

@@ -1,0 +1,33 @@
+SEMANA 5: BÚSQUEDA DISPERSA
+
+Scatter Search o búsqueda dispersa, es un algoritmo poblacional que construye soluciones mediante la combinación de otras soluciones.
+
+Originalmente fue propuesto para combinar reglas de decisión en el contexto de programación entera.
+
+La idea era generar nuevas reglas mediante una combinación pesada de reglas existentes. Después se extendió a una combinación pesada de restricciones para reflejar qué tanto se violaban ciertas restricciones (surrogate constraints).
+
+Opera sobre un conjunto de puntos, llamados puntos de referencia (reference points), que constituyen ``buenas'' soluciones obtenidas anteriormente.
+
+El algoritmo genera sistemáticamente combinaciones de estos puntos de referencia (soluciones) para obtener nuevos puntos (soluciones).
+
+Las combinaciones son formas generalizadas de combinaciones lineales, acompañadas de procesos adaptativos para garantizar condiciones de factibilidad.
+
+El algoritmo prosigue de la siguiente forma (ver tabla 8.1):
+
+    Genera un conjunto inicial de soluciones que garantice cierto nivel de diversidad. Selecciona un subconjunto de las mejores soluciones, en cuanto a evaluación de función objetivo y en cuanto a diversidad.
+    Crea nuevas soluciones mediante combinaciones de subconjuntos de las soluciones de referencia. Se buscan soluciones tanto dentro como fuera de las regiones convexas de las soluciones de referencia y su posible modificación para hacerlas aceptables (soluciones factibles).
+    Extrae las mejores soluciones y añádelas al conjunto de soluciones de referencia.
+
+El proceso consiste de 5 métodos:
+
+    Generación de diversificación: genera una colección de soluciones diversas. Estas son típicamente 10 veces más que el conjunto de referencia.
+    Mejoramiento: transforma una solución en otra u otras mejores. Puede ser porque se violen ciertas restricciones.
+    Actualización del conjunto de referencia: construye y mantiene un conjunto con las $N$ mejores soluciones (donde $N$ típicamente es pequeño, alrededor de 20, y el concepto de mejor no es solo en términos de evaluación de la función objetivo, sino también en términos de diversidad).
+    Generación de un subconjunto: considerando el conjunto de referencia, generar un conjunto de posibles soluciones combinadas (lo más común es considerar todos los pares en las soluciones de referencia).
+    Combinación: transformar el subconjunto generado en una o más soluciones combinadas. Cada vez que se genera una nueva solución combinada, si ésta es mejor que la peor del conjunto de referencia, se reemplaza y se vuelven a generar los sobconjuntos necesarios.
+
+En el siguiente enlace encontrarás un artículo que permitirá conocer más a fondo el algoritmo de búsqueda dispersa: https://www.inf.utfsm.cl/~mcriff/IA-avanzada/Scatter-Search.pdf
+
+En este mismo sentido, se presenta el siguiente video:
+
+https://www.youtube.com/watch?v=ZXHeG5jeE_o

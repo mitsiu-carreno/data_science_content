@@ -1,0 +1,33 @@
+SEMANA 2: ALGORITMO GRASP (Parte 1)
+
+El GRASP (Greedy Randomized Adaptive Search Procedure) es un algoritmo metaheurístico utilizado para resolver problemas de optimización combinatoria. Fue propuesto por primera vez por Feo y Resende en 1989. El enfoque central de GRASP es combinar una búsqueda voraz (greedy) con elementos de aleatoriedad y adaptación para encontrar soluciones de alta calidad en problemas difíciles de optimización.
+
+El algoritmo GRASP se caracteriza por los siguientes componentes principales:
+
+    Fase de construcción: En esta etapa, se generan soluciones candidatas utilizando una estrategia voraz. La estrategia voraz se basa en la elección de elementos o decisiones que maximizan una función de valor local en cada paso. Sin embargo, la voracidad se combina con un elemento de aleatoriedad para evitar quedarse atascado en óptimos locales. Se pueden generar múltiples soluciones candidatas en esta fase.
+
+    Fase de mejora local: Una vez que se ha construido una solución candidata, se aplica una búsqueda de mejora local para refinarla. Esta fase busca realizar cambios en la solución para mejorarla iterativamente, considerando vecindarios de soluciones cercanas.
+
+    Iteraciones: El algoritmo GRASP repite las fases de construcción y mejora local durante un número determinado de iteraciones o hasta que se alcance un criterio de parada definido.
+
+    Adaptación: La adaptación es un componente clave de GRASP. A medida que el algoritmo progresa a través de las iteraciones, la función de valor utilizada en la fase de construcción puede adaptarse para cambiar la forma en que se seleccionan los elementos en función del rendimiento previo.
+
+    Elementos aleatorios: La aleatoriedad se introduce en la fase de construcción para permitir la exploración de diferentes soluciones candidatas. Esto ayuda a evitar que el algoritmo se quede atrapado en un óptimo local y a mejorar la diversidad de las soluciones exploradas.
+
+El GRASP es una técnica versátil que se ha aplicado con éxito en diversos problemas de optimización combinatoria, como el Problema del Viajante (TSP), el Problema de la Mochila (KP), la Planificación de Tareas y muchos otros. Su enfoque híbrido de búsqueda voraz, aleatoriedad y mejora local lo convierte en una herramienta valiosa para encontrar soluciones de alta calidad en problemas difíciles de optimización.
+
+Videos
+
+    https://www.youtube.com/watch?v=3XaqEng_K5s
+    https://www.youtube.com/watch?v=HzeK7g8cD0Y
+
+Páginas web:
+
+    https://www.freecodecamp.org/news/greedy-algorithms/
+    https://www.geeksforgeeks.org/greedy-algorithms/
+    https://www.programiz.com/dsa/greedy-algorithm#google_vignette
+
+Literatura adicional:
+
+    https://jeffe.cs.illinois.edu/teaching/algorithms/book/04-greedy.pdf
+    https://home.csulb.edu/~tebert/teaching/lectures/528/greedy/greedy.pdf

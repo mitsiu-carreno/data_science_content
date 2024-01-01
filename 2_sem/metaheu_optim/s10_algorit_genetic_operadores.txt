@@ -1,0 +1,69 @@
+SEMANA 10: ALGORITMOS GENÉTICOS (OPERADORES)
+
+Operador de Cruzamiento en Algoritmos Genéticos Básicos
+En los algoritmos genéticos, el cruzamiento (también conocido como crossover o recombination) es una técnica fundamental que se utiliza para combinar la información genética de dos padres y generar descendencia. El objetivo del cruzamiento es explorar el espacio de soluciones de manera efectiva, buscando soluciones óptimas o cercanas a óptimas para un problema dado. Hay varias técnicas de cruzamiento que se utilizan en algoritmos genéticos. A continuación, se describen algunas de las técnicas de cruzamiento más comunes:
+
+1. Cruzamiento de un punto (Single-Point Crossover):
+
+En esta técnica, un punto de corte se elige aleatoriamente en los padres. Los bits antes del punto de corte en un padre se intercambian con los bits después del punto de corte en el otro padre, generando dos descendientes.
+
+Ejemplo:
+
+Padre 1: 01101010
+
+Padre 2: 11010100
+
+Punto de corte: (4)
+
+Descendiente 1: 01110100
+
+Descendiente 2: 11001010
+
+
+2. Cruzamiento de dos puntos (Two-Point Crossover):
+
+En este método, dos puntos de corte se seleccionan aleatoriamente en los padres. Todo el material genético entre estos dos puntos se intercambia entre los padres, generando dos descendientes.
+
+Ejemplo:
+
+Padre 1: 011|01|010
+
+Padre 2: 110|10|100
+
+Puntos de corte: 3,5
+
+Descendiente 1: 011|10|010
+
+Descendiente 2: 110|01|100
+
+
+3. Cruzamiento uniforme (Uniform Crossover):
+
+En esta técnica, cada bit en los descendientes se elige aleatoriamente del correspondiente bit en uno de los padres. La elección se hace de forma independiente para cada bit. Esto permite una mayor diversidad genética en la descendencia.
+
+Ejemplo:
+
+Padre 1: 01101010
+
+Padre 2: 11010100
+
+Descendiente 1: 11100010
+
+Descendiente 2: 00011100
+
+
+4. Cruzamiento basado en máscaras (Mask-Based Crossover):
+
+En este enfoque, se utiliza una máscara binaria que indica qué bits se toman del primer padre y cuáles del segundo. La máscara se genera aleatoriamente y se utiliza para crear los descendientes.
+
+Ejemplo:
+
+Padre 1: 01101010
+
+Padre 2: 11010100
+
+Máscara: 10111110
+
+Descendiente 1: 11101010
+
+Descendiente 2: 00010100
