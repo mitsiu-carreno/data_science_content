@@ -1,0 +1,25 @@
+El documento anexo contiene información a detalle. 
+Referencias Book
+
+    Yu, Liguo & Li, Yingmei. (2023). Meet Industry Needs in the Big Data Era: Data Science Curricula Development. 10.4018/979-8-3693-0049-7.ch025. 
+    Fox, Charles. (2018). “Data Science” and “Big Data”. 10.1007/978-3-319-72953-4_1.
+    Leung, Carson. (2020). Data Science for Big Data Applications and Services: Data Lake Management, Data Analytics and Visualization. 10.1007/978-981-15-8731-3_3.
+    Ali, Wajid & Shafique, Muhammad Usman & Majeed, Muhammad & Raza, Ahmad. (2020). A Review of Data Science and Big Data Computing. Asian Journal of Computer Science and Information Technology. 6. 1-11. 10.9734/AJRCOS/2020/v6i330158.
+    Nasution, Mahyuddin & Sitompul, Opim & Elveny, Marischa & Syah, B R. (2021). Data science: A Review towards the Big Data Problems. Journal of Physics: Conference Series. 1898. 012006. 10.1088/1742-6596/1898/1/012006.
+    Subhadra, Akella. (2020). The Art of Data Science and Big Data Analytics: Inspecting and Transforming Data. Asian Journal of Computer Science and Technology. 9. 45-56. 10.51983/ajcst-2020.9.1.2151.
+    Pooja, Mrs & Sheth, Mrs. (2023). Data Science and its Relationship to Big Data and Data-Driven Decision Making. International Journal of Advanced Research in Science, Communication and Technology. 321-326. 10.48175/IJARSCT-8163. 
+    Tahir, Komal. (2023). INTERNET OF THINGS AND BIG DATA IN THE CONTEXTS OF EDUCATION AND SCIENCE. Pakistan Journal of Educational Research. 6. 10.52337/pjer.v6i2.796.
+    Kalyani, V.. (2023). Big Data and Social Science Data Science Methods and Tools for Research and Practice. Journal of the Royal Statistical Society Series A: Statistics in Society. 10.1093/jrsssa/qnad109. 
+    Sharma, Sahil. (2023). Rise of Big Data in the Industry 4.0 Era and the Crucial Need for Data Science in Sustainable Tourism. 10.1108/978-1-80455-157-820231009.
+    Potter, Kaledio & Blessing, Elisha & Eric, Charles. (2023). Innovative Horizons: A Deep Dive into the Synergies of Data Analytics, Big Data, and Data Science in International Business and Financial Services Transformation. Data Science. 10.5281/zenodo.10253156.
+    Potter, Kaledio & Blessing, Elisha. (2023). Navigating the Digital Frontier: A Comprehensive Exploration of Data Analytics, Big Data, Data Science, and Their Impact on International Business and Financial Services. The Journal of Business. 10.5281/zenodo.10253092.
+    Potter, Kaledio & Blessing, Elisha & Eric, Charles. (2023). Unleashing Data Dynamics: A Strategic Approach to Data Analytics, Big Data, and Data Science in the Realm of International Business and Financial Services. Data Science. 10.5281/zenodo.10253139.
+    Blessing, Elisha & Eric, Charles. (2023). Beyond Numbers: Unveiling the Power of Data Analytics, Big Data, and Data Science in Shaping the Future of International Business and Financial Services. Data Science. 10.5281/zenodo.10253134. 
+
+E-books
+
+    Ortega Candel, J. M. (2022). Big data, machine learning y data science en Python: (1 ed.). RA-MA Editorial. https://elibro.net/es/lc/ucags/titulos/230290
+    Maldonado, S. (2022). Analytics y Big Data: ciencia de los Datos aplicada al mundo de los negocios: (1 ed.). RIL editores. https://elibro.net/es/lc/ucags/titulos/225562
+    Macías, M. & Gómez, M. (2015). Introducción a Apache Spark: para empezar a programar el big data: ( ed.). Editorial UOC. https://elibro.net/es/lc/ucags/titulos/58454
+    Hernández Aguilar, J. A. (Il.), Zavala Díaz, J. C. (Il.) & Alonso Pecina, F. (Il.). (2018). Big Data Analytics: una perspectiva multidisciplinaria para la mejora del proceso de toma de decisiones en las organizaciones: ( ed.). Bonilla Artigas Editores. https://elibro.net/es/lc/ucags/titulos/175511
+    Colmenarejo Fernández, R. (2018). Una ética para Big data: introducción a la gestión ética de datos masivos: ( ed.). Editorial UOC. https://elibro.net/es/lc/ucags/titulos/116328
