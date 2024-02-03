@@ -1,0 +1,42 @@
+Detección de anomalías de trafico en servidores web
+Problema: Identificar en tiempo real (soft) tráfico anómalo en servidores web 
+Objetivos: Generar una red neuronal tipo autoencoder para aprender el tráfico normal y poder determinar el grado de anomalía en el tráfico
+Variables: 
+
+37.187.215.255 - - [27/Jun/2023:05:07:33 -0600] "GET / HTTP/1.1" 502 173 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:58.0) Gecko/20100101 Firefox/58.0"
+IP (Remote addr) -- [Timestamp]         "Request" Status body_bytes_sent "hppt_referer" "http user agent" "gzip_ratio"
+
+Georeferenciar IP 
+
+DEterminar que casos si se pueden detectar y cuales no  cuales son mis variables y cual es su relación
+
+
+
+Optimización de gestión de memoria heap en sistemas linux
+Problema: Generar estratégias para la asignación de memoria "heap" en sistemas linux
+Objetivo: Mediante aprendizaje por refuerzo optimizar las estratégias de asignación de memoria "heap" en sistemas linux
+Variables: 
+Tamaño total de heap
+Bloque reservado/liberado
+Timestamp
+Dirección asociada
+
+https://github.com/KDE/heaptrack
+https://www.baeldung.com/linux/find-heap-memory-running-process
+pmap
+
+
+Esta modificado el kernel?
+Buscar set de datos
+https://pages.cs.wisc.edu/~fischer/cs536.s08/lectures/Lecture31.4up.pdf
+https://web.archive.org/web/20230702130954/https://levelup.gitconnected.com/understand-heap-memory-allocation-a-hands-on-approach-775151caf2ea?gi=1ba8a67ab169
+https://sam4k.com/linternals-memory-allocators-part-1/
+https://link.springer.com/chapter/10.1007/978-3-319-65482-9_4
+https://stackoverflow.com/questions/8367001/how-to-check-heap-size-for-a-process-on-linux
+https://web.archive.org/web/20230702130954/https://levelup.gitconnected.com/understand-heap-memory-allocation-a-hands-on-approach-775151caf2ea?gi=1ba8a67ab169
+https://stackoverflow.com/questions/65587937/what-does-memory-allocation-failure-in-kernel-logs-mean
+https://www.kernel.org/doc/html/latest/core-api/memory-allocation.html
+https://sam4k.com/linternals-memory-allocators-part-1/
+https://lass.cs.umass.edu/~shenoy/courses/spring20/lectures/Lec21.pdf
+https://pages.cs.wisc.edu/~fischer/cs536.s08/lectures/Lecture31.4up.pdf
+https://www.kaggle.com/code/caesarlupum/anomaly-detection-software-operational-data/notebook

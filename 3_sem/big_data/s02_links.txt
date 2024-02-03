@@ -1,0 +1,12 @@
+Flourish
+https://app.flourish.studio/templates
+Plataforma en línea que permite a los usuarios crear visualizaciones de datos interactivas y atractivas sin requerir habilidades avanzadas en programación.
+https://www.youtube.com/@madewithflourish/search
+
+Gapminder
+Herramienta y organización que se centra en la visualización de datos relacionados con el desarrollo global. Su objetivo principal es proporcionar una comprensión más profunda de las tendencias y patrones en temas como salud, ingresos y educación en todo el mundo.
+https://www.youtube.com/@gapminder/videos
+
+Herramienta Gephi
+Herramienta para analistas de datos y científicos interesados en explorar y comprender gráficos. Al igual que Photoshop™, pero para datos gráficos, el usuario interactúa con la representación, manipula las estructuras, formas y colores para revelar patrones ocultos. El objetivo es ayudar a los analistas de datos a formular hipótesis, descubrir patrones de forma intuitiva, aislar singularidades o fallos de estructura durante la obtención de datos. Es una herramienta complementaria a la estadística tradicional, ya que ahora se reconoce que el pensamiento visual con interfaces interactivas facilita el razonamiento. Se trata de un software para el Análisis Exploratorio de Datos, un paradigma aparecido en el campo de investigación de la Analítica Visual.
+https://www.youtube.com/@gephi-official/videos
