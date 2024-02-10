@@ -1,0 +1,14 @@
+Introducción:
+Se propone generar un sistema que permita analizar tráfico a servidores web y estimar su grado de anomalía.
+
+Problematica:
+La cantidad de tráfico que recibe un servidor web con acceso a internet es inmenso, el cuál recibe peticiones de usuarios reales, peticiones de bots, peticiones automatizadas y peticiones de usuarios con intenciones maliciosas, solo analizar la cantidad de información generada de manera manual es una tarea imposible.
+El tráfico de servidores web tiene claras tendencias como recursos solicitados, región geográfica de donde se solicita, hora en que se solicitó, cantidad de bytes enviados, por lo que identificar las tendencias y detectar las anomalías es un trabajo que puede ser automatizado.
+Dada la tendencia de alojar datos sensibles aumenta la importancia a evaluar que y cómo se estan accediendo a los recursos solicitados, así como desarrollar herramientas que fáciliten filtrar las anomalías para tomar acciones correctivas.
+
+Analisis de datos
+  -Analisis de medias
+  -Regresión líneal (sencilla)
+  -K-means
+
+Sabado 10 - PDF

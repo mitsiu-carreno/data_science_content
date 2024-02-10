@@ -10,6 +10,19 @@ Georeferenciar IP
 
 DEterminar que casos si se pueden detectar y cuales no  cuales son mis variables y cual es su relación
 
+https://stackoverflow.com/questions/13231262/reg-exp-to-match-a-specific-http-response-code-in-apache-or-nginx-server-logs
+https://stackoverflow.com/questions/64066941/regex-how-to-filter-this-nginx-log-message
+https://codereview.stackexchange.com/questions/238232/regex-for-nginx-log-parser
+
+https://www.stationx.net/how-to-use-shodan/
+https://help.shodan.io/developer-fundamentals/looking-up-ip-info
+https://medium.com/@digomic_88027/shodan-101-a-step-by-step-beginners-guide-83079332e2dd
+
+https://www.nginx.com/blog/monitoring-nginx/
+https://nginx.org/en/docs/syslog.html
+
+
+
 
 
 Optimización de gestión de memoria heap en sistemas linux

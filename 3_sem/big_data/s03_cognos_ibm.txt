@@ -1,0 +1,15 @@
+IBM Cognos Analytics es una solución de inteligencia empresarial (BI) basada en la nube que ofrece una gama completa de capacidades para ayudar a las organizaciones a tomar mejores decisiones. Sus principales características incluyen:​
+
+
+    Preparación de datos: proporciona herramientas para preparar y limpiar datos de múltiples fuentes, incluyendo bases de datos, hojas de cálculo, aplicaciones de terceros y archivos. Estas herramientas incluyen la detección de errores, la normalización de datos y la creación de campos calculados.​
+
+    Creación de informes: plantillas y herramientas para crear informes personalizados que se adapten a las necesidades de su organización. Estas herramientas incluyen la creación de gráficos, tablas, mapas y otras visualizaciones.​
+
+    Creación de paneles de control: crear paneles de control interactivos que le permiten visualizar datos en tiempo real. Estos paneles de control pueden utilizarse para monitorizar el rendimiento, identificar tendencias y tomar decisiones informadas.​
+
+    Análisis de datos: herramientas de análisis para explorar y analizar sus datos. Estas herramientas incluyen análisis descriptivo, análisis predictivo y análisis prescriptivo.​
+
+    Gestión de datos: acceso, autenticación, autorización, la auditoría de datos y la administración de versiones.
+
+
+https://myibm.ibm.com/dashboard/

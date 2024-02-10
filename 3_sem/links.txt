@@ -1,2 +1,4 @@
 https://www.geeksforgeeks.org/map-reduce-in-hadoop/
 https://colab.research.google.com/notebooks/pro.ipynb
+
+https://github.com/RoseSecurity/Red-Teaming-TTPs/blob/main/Shodan_Guide.pdf
