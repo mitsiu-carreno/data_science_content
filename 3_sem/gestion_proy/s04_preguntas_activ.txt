@@ -1,0 +1,86 @@
+Andres
+
+Predicción de demanda de productos alimenticios perecederos
+1 Relevancia tema
+Alta, Desperdicio de comida
+y conciencia ecologica
+
+2 viabilidad técnica
+Dificil para obtener los datos?
+Tiene los conocimientos técnicos y el contexto se da
+
+3 Desafios técnicos
+Cifra negra
+Homologación de datos / Digitalizar datos
+
+4 factibilidad económica
+Ok
+Factible si encuentra programa de gobierno orientado a tiendas con sus caracteristicas (riesgo cero)
+
+5 riesgos asociados
+poco
+Personas se reusan a compartir datos
+
+6 indicadores de exito
+
+Entregables medibles que se convierten en indicadores clave
+
+7 gestión de cambios de requisitos
+
+Métodología agil
+
+8 investigador capaz en tiempo y objetivos
+
+
+
+No será mejor apuntar a centros más grandes como el agropecuario?
+
+
+
+Yo
+Agregar ciberseguridad al titulo (ciberataque)
+
+
+Kevin
+#Predicción de demanda de productos alimenticios perecederos
+Predecir la esperanza de vida con variables del clima
+1 Relevancia tema
+Eco-conciencia
+Peligroso asumir el cambio climático (tema polémico)
+2 viabilidad técnica
+Cómo se mide el cambio climatico y la esperanza de vida
+3 Desafios técnicos
+
+4 factibilidad económica
+
+5 riesgos asociados
+
+6 indicadores de exito
+
+7 gestión de cambios de requisitos
+
+8 investigador capaz en tiempo y objetivos
+
+
+Ulises
+Planificación urbana para mejorar movilidad
+Impacto ambiental del transporte 
+Nivel de congestión vehicular y como afecta la movilidad
+
+1 Relevancia tema
+
+2 viabilidad técnica
+
+3 Desafios técnicos
+
+4 factibilidad económica
+
+5 riesgos asociados
+
+6 indicadores de exito
+
+7 gestión de cambios de requisitos
+
+8 investigador capaz en tiempo y objetivos
+
+

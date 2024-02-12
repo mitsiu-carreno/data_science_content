@@ -11,4 +11,13 @@ Analisis de datos
   -Regresión líneal (sencilla)
   -K-means
 
+Numero de veces que pegas por get/post + cantidad de parametros para cada methodo medias de parametros & media de methodo y media de endpoint
+Ajustar mis dos variables  (reg lineal)
+Separar por argumentos
+
+
+Puntos extra por documento bonito (como paper) (basarme en documento de sem 1)
+
+Si no acabo de tiempo usar los datos que alcance y alv
+
 Sabado 10 - PDF
