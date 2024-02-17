@@ -26,13 +26,14 @@ void DefineProblem(ProblemMetadata &p_meta){
   for(int group {0}; group < p_meta.k; group++){
     p_meta.data.at(group).resize(p_meta.ni);
     for(int example {0}; example < p_meta.ni; example++){
-      std::string prompt = std::string("\nIngresa el dato del grupo ") 
+      std::string prompt = std::string("Ingresa el dato del grupo ") 
         + std::to_string(group+1)
         + std::string(", renglon ")
         + std::to_string(example+1); 
 
       utils::AskValue(prompt, &(p_meta.data.at(group).at(example)), utils::kFloat);
     }
+    std::cout << "\n";
   }
 }
 
@@ -52,7 +53,7 @@ int main(){
 
 
     for(int group{0}; group < p_meta.k; group++){
-      std::cout << "Promedio grupo " << group +1 << ": " << p_meta.avgs.at(group);
+      std::cout << "Promedio grupo " << group +1 << ": " << p_meta.avgs.at(group) << "\n";
     }
     std::cout << "Promedio general: " << p_meta.total_avg << "\n";
 
@@ -85,7 +86,7 @@ int main(){
     
     std::cout << "Error. Cuadrado medio: " << error_suma/(p_meta.N - p_meta.k) << "\n";
 
-    std::cout << "Factor. F: " << (factor_suma/(p_meta.k -1))/(error_suma/(p_meta.N - p_meta.k)) << "\n";
+    std::cout << "\nFactor. F: " << (factor_suma/(p_meta.k -1))/(error_suma/(p_meta.N - p_meta.k)) << "\n";
 
 
     std::cout << "\n------------------------------------\nTotal: \n";
@@ -101,6 +102,10 @@ int main(){
     std::cout << "Total. Suma de cuadrados: " << total_suma << "\n";
   
     std::cout << "Total. Grados de libertad: " << p_meta.N - 1 << "\n";
+
+    std::string s;
+    utils::AskValue("\n Enter para terminar", &s, utils::kString);
+
 
   }catch(const std::exception &e){
     std::cout << "Ha ocurrido un error:\n" << e.what() << "\n Terminando programa\n";
