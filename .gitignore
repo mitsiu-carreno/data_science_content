@@ -5,3 +5,7 @@
 **/s12_cassandra/node1
 **/s12_cassandra/node2
 
+**/bin/*
+**/build/*
+
+**/__pycache__/*

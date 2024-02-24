@@ -83,4 +83,61 @@ Nivel de congestión vehicular y como afecta la movilidad
 
 8 investigador capaz en tiempo y objetivos
 
+Andrea
+Optimización de estrategias de seguridad publica mediantes analisis topologico de datos de incidencia predictiva
+1 Relevancia tema
+Puede ser relevante
+2 viabilidad técnica
+Datos limitados a fuente de internet, como replicar aquí?
+3 Desafios técnicos
+La clasificación de delincuencia cambia según la legislación
+4 factibilidad económica
+
+5 riesgos asociados
+
+6 indicadores de exito
+
+7 gestión de cambios de requisitos
+
+8 investigador capaz en tiempo y objetivos
+
+
+
+Omar
+Diagnostico automatizado de enfermedades comúnes
+Enfermedades crónicas, infecciosas, transmisibles, no transmisibles
+1 Relevancia tema
+
+2 viabilidad técnica
+
+3 Desafios técnicos
+
+4 factibilidad económica
+
+5 riesgos asociados
+
+6 indicadores de exito
+
+7 gestión de cambios de requisitos
+
+8 investigador capaz en tiempo y objetivos
+
+
+Marco
+Predicción de ausentismo laboral al momento de planear actividades laborales
+1 Relevancia tema
+
+2 viabilidad técnica
+
+3 Desafios técnicos
+
+4 factibilidad económica
+
+5 riesgos asociados
+
+6 indicadores de exito
+
+7 gestión de cambios de requisitos
+
+8 investigador capaz en tiempo y objetivos
 
