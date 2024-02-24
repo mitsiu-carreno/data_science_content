@@ -1,0 +1,29 @@
+E-books​
+
+    Bouso Freijo, J. (2018). El paquete estadístico R: (2 ed.). CIS - Centro de Investigaciones Sociológicas. https://elibro.net/es/lc/ucags/titulos/105698​
+
+    Royé, D. & Serrano Notivoli, R. (2019). Introducción a los SIG con R: ( ed.). Prensas de la Universidad de Zaragoza. https://elibro.net/es/lc/ucags/titulos/122173​
+
+    Mas Elias, J. (2020). Análisis de datos con R en estudios internacionales: ( ed.). Editorial UOC. https://elibro.net/es/lc/ucags/titulos/167261​
+
+    Alonso, J. C. & Largo, M. F. (2022). Empezando a visualizar datos con R y ggplot2: (1 ed.). Editorial Universidad Icesi. https://elibro.net/es/lc/ucags/titulos/225846​
+
+    Pujol Jover, M. & Pujol Jover, M. (2017). Análisis cuantitativo con R: matemáticas, estadística y econometría: ( ed.). Editorial UOC. https://elibro.net/es/lc/ucags/titulos/58652​
+
+    Cabrero Ortega, M. Y. & García Pérez, A. (2022). Análisis estadístico de datos espaciales con QGIS y R: (1 ed.). UNED - Universidad Nacional de Educación a Distancia. https://elibro.net/es/lc/ucags/titulos/218566​
+
+    Gil Pascual, J. A. (2021). Minería de texto con R: aplicaciones y técnicas estadísticas de apoyo: ( ed.). UNED - Universidad Nacional de Educación a Distancia. https://elibro.net/es/lc/ucags/titulos/188719​
+
+    Iryopogu, J. (2021). Análisis de datos con Power BI, R-RStudio y Knime: curso práctico: (1 ed.). RA-MA Editorial. https://elibro.net/es/lc/ucags/titulos/222665
+
+Referencias​
+
+    Shalabh, Shalabh. (2023). The Big R-Book: From Data Science to Learning Machines and Big Data. Journal of the Royal Statistical Society Series A: Statistics in Society. 186. 896-897. 10.1093/jrsssa/qnad029. ​
+
+    Balazka, Dominik & Rodighiero, Dario. (2020). Big Data and the Little Big Bang: An Epistemological (R)evolution. Frontiers in Big Data. 3. 1-13. 10.3389/fdata.2020.00031. ​
+
+    Hodeghatta, U.R. & Nayak, U.. (2016). Business analytics using R-A practical approach. 10.1007/978-1-4842-2514-1. ​
+
+    Tripathi, Subhashini. (2016). Learn Business Analytics in Six Steps Using SAS and R. 10.1007/978-1-4842-1001-7. ​
+
+    Ohri, Ajay. (2013). R for Business Analytics. 10.1007/978-1-4614-4343-8. 

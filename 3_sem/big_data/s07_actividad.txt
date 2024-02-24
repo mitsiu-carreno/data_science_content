@@ -1,0 +1,17 @@
+        3.1.3 Caso práctico: El estado de ánimo de mi libro o la noticia del día
+        3.1.4 Codificación en “R” v. Corpus del documento
+        3.1.5 Palabras de opinión negativa
+
+En el contexto de la ciencia de datos, un corpus se refiere a una colección estructurada de textos o datos lingüísticos que se utiliza como base para análisis, modelado y extracción de información. Estos textos pueden ser documentos, artículos, transcripciones, correos electrónicos, mensajes de redes sociales o cualquier otro tipo de datos de texto.
+
+Los corpus son fundamentales en diversas tareas de procesamiento de lenguaje natural (NLP) y minería de texto, ya que proporcionan la materia prima para entrenar modelos de aprendizaje automático, realizar análisis estadísticos, extraer conocimiento, identificar patrones lingüísticos. Además, los corpus pueden estar etiquetados o anotados con metadatos que proporcionan información adicional sobre los textos, como categorías temáticas, sentimientos, etiquetas gramaticales, entre otros.
+
+Algunos ejemplos comunes de corpus en ciencia de datos incluyen:
+
+    Texto general: Colecciones de textos diversos que abarcan una amplia gama de temas y estilos, como noticias, blogs, libros, entre otros.
+    Especializados: Conjuntos de textos que se centran en dominios específicos, como la medicina, la biología, la informática, el derecho, entre otros.
+    Etiquetados: Textos que han sido manual o automáticamente etiquetados con información adicional, como partes del discurso, entidades nombradas, sentimientos, temas, entre otros.
+    Multilingües: Colecciones de textos en varios idiomas que se utilizan para tareas de NLP multilingües.
+
+
+Los corpus en ciencia de datos suelen ser preparados, limpiados y preprocesados antes de utilizarlos en análisis o modelos, ya que la calidad y la consistencia de los datos pueden influir significativamente en los resultados de las aplicaciones de NLP y minería de texto.
