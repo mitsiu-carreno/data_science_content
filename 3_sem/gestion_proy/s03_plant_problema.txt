@@ -1,0 +1,13 @@
+En la etapa del planteamiento del problema en un proyecto de I+D+i, se lleva a cabo un proceso crucial de definición y delimitación del problema que se abordará en la investigación o desarrollo.  Independientemente de la metodología que siga el líder del proyecto o el investigador, el planteamiento del problema integra los siguientes elementos:
+
+    Identificación del contexto y justificación: Se comienza por comprender el contexto más amplio en el que se sitúa el problema, identificando las necesidades, desafíos o oportunidades que lo hacen relevante. Es importante justificar por qué es importante abordar este problema y cómo se alinea con los objetivos estratégicos de la organización o las demandas del mercado.
+
+    Revisión de la literatura: Se lleva a cabo una revisión exhaustiva de la literatura existente relacionada con el problema identificado. Esto implica analizar investigaciones previas, estudios relevantes, proyectos similares y cualquier otro tipo de información disponible que pueda aportar conocimientos sobre el problema en cuestión y las posibles soluciones propuestas anteriormente.
+
+    Definición del problema: Basándose en la información recopilada, se procede a definir de manera clara y precisa el problema que se abordará en el proyecto. Esto implica identificar las causas subyacentes, los efectos observados y los aspectos específicos que se pretenden investigar o mejorar. La definición del problema debe ser lo suficientemente específica como para orientar el trabajo futuro, pero lo bastante flexible como para permitir la exploración de diferentes enfoques y soluciones.
+
+    Establecimiento de objetivos y preguntas de investigación: Se formulan objetivos claros y alcanzables que guiarán el desarrollo del proyecto y permitirán evaluar su éxito. Además, se plantean preguntas de investigación específicas que ayudarán a enfocar la indagación y a generar conocimiento relevante sobre el problema identificado.
+
+    Identificación de variables e indicadores: Se identifican las variables relevantes que están relacionadas con el problema y que serán objeto de estudio durante la investigación o desarrollo. Además, se definen los indicadores que se utilizarán para medir el progreso hacia la resolución del problema y el logro de los objetivos establecidos.
+
+El investigador puede optar por una metodología procedimental o iterativa. Esto dependerá de su experiencia y estilo para abordar problemas de ciencia de datos aplicados.

@@ -1,0 +1,25 @@
+La planeación de proyectos de I+D+i (Investigación, Desarrollo e Innovación) es fundamental para garantizar el éxito y la eficiencia en la ejecución de iniciativas que buscan generar conocimiento, desarrollar nuevos productos, procesos o servicios, y promover la innovación.
+
+A continuación se presentan los 4 elementos fundamentales de la planeación de un proyecto de I+D+i:
+
+    Definición del objetivo y alcance del proyecto: En esta etapa, se establece claramente el propósito del proyecto de I+D+i y se definen los resultados esperados. Es esencial comprender qué se busca lograr y cómo contribuirá al avance del conocimiento o a la innovación en el mercado. Delimitar el alcance del proyecto ayuda a evitar confusiones y a mantener el enfoque en los objetivos principales, identificando qué actividades se llevarán a cabo y cuáles no.
+
+    Análisis de viabilidad: Aquí se evalúa la viabilidad técnica, económica y operativa del proyecto. Se considera si los objetivos propuestos son alcanzables con los recursos disponibles y si los beneficios potenciales justifican los costos y riesgos asociados. Identificar y abordar los riesgos desde el principio es clave para garantizar el éxito del proyecto y evitar sorpresas desagradables más adelante.
+
+    Planificación temporal: En esta fase, se establece un plan detallado que define las actividades necesarias para alcanzar los objetivos del proyecto y su secuencia lógica. Se asignan recursos a cada tarea y se desarrolla un cronograma que establece fechas de inicio y finalización, así como hitos importantes. Identificar las dependencias entre las actividades ayuda a asegurar que el proyecto avance de manera eficiente y se cumplan los plazos.
+
+    Gestión de recursos: Aquí se asignan roles y responsabilidades a los miembros del equipo y se estiman los recursos necesarios para llevar a cabo el proyecto. Se desarrolla un presupuesto detallado que refleja los costos asociados con cada actividad y se monitorea el gasto para mantenerlo dentro de los límites establecidos. Gestionar eficazmente los recursos garantiza que el proyecto se lleve a cabo de manera eficiente y se maximice el retorno de la inversión.
+
+
+Definición y alcance del proyecto
+La etapa previa a la definición del objetivo y alcance del proyecto, donde se busca identificar un problema o tema con la posibilidad de abordarlo, implica un proceso de exploración y análisis para encontrar la mejor opción. Aquí se detallan los pasos que podrían comprender esta etapa:
+
+    Identificación de áreas de interés: Se comienza por identificar áreas de interés o sectores relevantes donde se podría llevar a cabo el proyecto de I+D+i. Esto puede basarse en tendencias del mercado, necesidades identificadas en la sociedad, avances tecnológicos recientes u oportunidades estratégicas para la organización.
+
+    Recolección de información: Se realiza una investigación exhaustiva para recopilar información relevante sobre diferentes temas o problemas que podrían ser abordados en el proyecto. Esto puede incluir revisión de literatura científica, análisis de informes de mercado, consulta con expertos en el campo, entre otros.
+
+    Generación de alternativas: A partir de la información recopilada, se generan varias alternativas de temas o problemas que podrían ser objeto de investigación o desarrollo. Estas alternativas deben ser evaluadas en función de su relevancia, viabilidad técnica, potencial de impacto y alineación con los objetivos estratégicos de la organización.
+
+    Análisis y selección: Se lleva a cabo un análisis comparativo de las diferentes alternativas, considerando sus ventajas y desventajas en términos de factibilidad técnica, viabilidad económica, potencial de innovación y alineación con los recursos y capacidades disponibles. Se pueden utilizar herramientas como matrices de decisión o análisis costo-beneficio para facilitar este proceso.
+
+    Elección final: Finalmente, se elige el tema o problema más prometedor y relevante para ser abordado en el proyecto de I+D+i. Esta elección se realiza considerando cuidadosamente los criterios establecidos durante el análisis y asegurando que el tema seleccionado tenga el potencial de generar resultados significativos y contribuir al logro de los objetivos organizacionales.
