@@ -1,0 +1,15 @@
+Identificación de fuente de voz:
+Fetch:
+Prepare:
+Google Speaker id
+
+Raw:
+Get labeled samples
+Reduce noise
+Gen spectrogram
+Neural network (on image)
+
+
+https://cloud.google.com/blog/products/ai-machine-learning/google-cloud-announces-speaker-id
+https://developer.nvidia.com/blog/essential-guide-to-automatic-speech-recognition-technology/
+https://en.wikipedia.org/wiki/Speaker_recognition
