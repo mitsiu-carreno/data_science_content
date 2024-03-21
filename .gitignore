@@ -5,6 +5,8 @@
 **/s12_cassandra/node1
 **/s12_cassandra/node2
 
+**/tweets/data
+
 **/bin/*
 **/build/*
 

