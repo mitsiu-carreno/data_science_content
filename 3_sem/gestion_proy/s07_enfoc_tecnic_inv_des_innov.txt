@@ -1,0 +1,17 @@
+ENFOQUE TÉCNICO DE UN PROYECTO I+D+i
+
+El enfoque técnico en la gestión administrativa de un proyecto de I+D+i implica la implementación de procesos y estrategias específicas para garantizar una ejecución eficiente y efectiva del proyecto, maximizando el uso de los recursos disponibles y cumpliendo con los objetivos establecidos. 
+
+Los siguientes puntos describen las principales características y actividades asociadas con este enfoque:
+
+    Planificación Estratégica: Se elabora un plan estratégico detallado que define los objetivos del proyecto, las actividades necesarias para alcanzarlos, los recursos requeridos y el cronograma de ejecución. Esta planificación considera aspectos como el alcance del proyecto, los plazos de entrega, los presupuestos asignados y los riesgos potenciales.
+
+    Gestión de Recursos: Se lleva a cabo una gestión eficiente de los recursos disponibles, incluyendo el personal asignado, el presupuesto financiero, los equipos y las instalaciones necesarias para la realización del proyecto. Se establecen mecanismos de control y seguimiento para asegurar que los recursos se utilicen de manera óptima y se mantenga la viabilidad del proyecto.
+
+    Coordinación Interdepartamental: Se establece una estructura de coordinación clara entre los diferentes departamentos o equipos involucrados en el proyecto, garantizando una comunicación efectiva y una colaboración fluida entre ellos. Esto incluye la designación de responsabilidades, la definición de canales de comunicación y la resolución de conflictos que puedan surgir durante el desarrollo del proyecto.
+
+    Seguimiento y Control: Se implementan sistemas de seguimiento y control para monitorear el progreso del proyecto en relación con los objetivos y las métricas establecidas. Esto incluye la elaboración de informes periódicos de avance, la identificación y mitigación de desviaciones, y la toma de acciones correctivas cuando sea necesario para mantener el proyecto en el rumbo correcto.
+
+    Gestión de Riesgos: Se identifican y evalúan los riesgos potenciales que podrían afectar el éxito del proyecto, y se desarrollan estrategias para mitigarlos o gestionarlos adecuadamente. Esto implica la elaboración de planes de contingencia y la asignación de recursos adicionales para hacer frente a posibles contratiempos.
+
+    Evaluación de Resultados y Lecciones Aprendidas: Al finalizar el proyecto, se lleva a cabo una evaluación exhaustiva de los resultados obtenidos en relación con los objetivos establecidos. Se identifican las lecciones aprendidas durante el proceso y se documentan para su aplicación en futuros proyectos, contribuyendo así a la mejora continua de la gestión de la I+D+i en la organización.

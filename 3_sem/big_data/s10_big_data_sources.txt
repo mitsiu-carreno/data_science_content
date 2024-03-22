@@ -1,0 +1,92 @@
+Ejemplos de fuentes de grandes volúmenes de datos para análisis con Python:​
+
+​Datos gubernamentales:​
+
+    https://en.www.inegi.org.mx/  (Instituto Nacional de Estadística y Geografía): Ofrece información estadística sobre México, incluyendo datos demográficos, económicos, sociales y ambientales.​
+
+    https://datos.gob.mx/  : Portal de datos abiertos del gobierno de México, con información de diversas entidades públicas.​
+
+​Datos financieros:​
+
+    https://finance.yahoo.com/  : Ofrece datos históricos y en tiempo real sobre acciones, bonos, divisas y otros instrumentos financieros.​
+
+    https://data.nasdaq.com/publishers/QDL  : Base de datos de series temporales sobre diversos temas, incluyendo economía, finanzas y energía.
+
+Datos de redes sociales:​
+
+    https://developer.twitter.com/en/docs/twitter-api  : Permite acceder a datos de tweets, usuarios y hashtags.​
+
+    https://developers.facebook.com/docs/graph-api/  : Permite acceder a datos de usuarios, publicaciones, páginas y grupos de Facebook.​
+
+​Datos de sensores:​
+
+    https://www.kaggle.com/  : Ofrece una variedad de conjuntos de datos para análisis, incluyendo datos de sensores.​
+
+    https://opendatacommons.org/  : Catálogo de conjuntos de datos abiertos, incluyendo datos de sensores.​
+
+​Datos científicos:​
+
+    https://www.genome.gov/human-genome-project : Proyecto Genoma Humano, con información sobre la secuencia de ADN del genoma humano.​
+
+    https://www.sdss.org/ : Encuesta digital del cielo, con información sobre millones de objetos celestes.
+
+Existen numerosas fuentes de datos masivos que pueden ser analizadas con Python para extraer información valiosa.​
+
+    Redes Sociales.​
+
+    Sensores IoT (Internet de las Cosas).​
+
+    Aplicaciones y Plataformas Web.
+
+    Datos Geoespaciales.​
+
+    Datos de Transacciones Financieras.​
+
+    Datos de Salud.​
+
+    Datos de Medios de Comunicación.
+
+Temporal
+
+Gestión de datos: Python ofrece una amplia gama de bibliotecas para la gestión de datos, como NumPy, Pandas y Scikit-learn. Estas bibliotecas permiten realizar tareas como:
+
+    Lectura y escritura de datos desde diferentes formatos, como CSV, JSON, XML y bases de datos.
+
+    Limpieza y transformación de datos para eliminar errores, inconsistencias y valores perdidos.
+
+    Exploración de datos para obtener una comprensión básica de los datos.
+
+    Análisis de datos para identificar patrones y tendencias.
+
+    Visualización de datos para comunicar los resultados del análisis de forma clara y concisa.
+
+
+Exploración de datos: Python ofrece una serie de herramientas para la exploración de datos, como:
+
+    Matplotlib para crear gráficos y diagramas.
+
+    Seaborn para crear visualizaciones de datos más sofisticadas.
+
+    Jupyter Notebook para crear documentos interactivos que combinan código, texto y visualizaciones.
+
+
+Visualización de datos: La visualización de datos es una herramienta esencial para comunicar los resultados del análisis de datos de forma clara y concisa. Python ofrece una amplia gama de bibliotecas para la visualización de datos, como:
+
+    Matplotlib para crear gráficos y diagramas.
+
+    Seaborn para crear visualizaciones de datos más sofisticadas.
+
+    Bokeh para crear visualizaciones interactivas.
+
+    Plotly para crear visualizaciones 3D.
+
+Artículos arbitrados relacionados con Big Data & Python URL
+
+    Belcastro, L., Cantini, R., Marozzo, F. et al. Programming big data analysis: principles and solutions. J Big Data 9, 4 (2022). https://doi.org/10.1186/s40537-021-00555-2
+    Angskun, J., Tipprasert, S. & Angskun, T. Big data analytics on social networks for real-time depression detection. J Big Data 9, 69 (2022). https://doi.org/10.1186/s40537-022-00622-2
+    Medeiros, D.S.V., Cunha Neto, H.N., Lopez, M.A. et al. A survey on data analysis on large-Scale wireless networks: online stream processing, trends, and challenges. J Internet Serv Appl 11, 6 (2020). https://doi.org/10.1186/s13174-020-00127-2
+    Kolajo, T., Daramola, O. & Adebiyi, A. Big data stream analysis: a systematic literature review. J Big Data 6, 47 (2019). https://doi.org/10.1186/s40537-019-0210-7
+    Sohangir, S., Wang, D., Pomeranets, A. et al. Big Data: Deep Learning for financial sentiment analysis. J Big Data 5, 3 (2018). https://doi.org/10.1186/s40537-017-0111-6
+    Landset, S., Khoshgoftaar, T.M., Richter, A.N. et al. A survey of open source tools for machine learning with big data in the Hadoop ecosystem. Journal of Big Data 2, 24 (2015). https://doi.org/10.1186/s40537-015-0032-1
+    Al-Molhem, N.R., Rahal, Y. & Dakkak, M. Social network analysis in Telecom data. J Big Data 6, 99 (2019). https://doi.org/10.1186/s40537-019-0264-6
+    Singh, A., Glińska-Neweś, A. Modeling the public attitude towards organic foods: a big data and text mining approach. J Big Data 9, 2 (2022). https://doi.org/10.1186/s40537-021-00551-6
