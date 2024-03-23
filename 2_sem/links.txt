@@ -31,6 +31,8 @@ https://developers.google.com/edu/c++
 
 
 
+https://vadimkravcenko.com/shorts/code-reviews/
+https://ivdl.co.za/2024/03/02/pretending-to-be-postgresql-part-one-1/
 https://practicalsecurityanalytics.com/how-to-emulate-a-ransomware-attack/
 https://tomstu.art/hello-declarative-world
 https://blog.cloudflare.com/stronger-than-a-promise-proving-oblivious-http-privacy-properties
