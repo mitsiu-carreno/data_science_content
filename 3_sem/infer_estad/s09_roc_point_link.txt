@@ -1,0 +1,2 @@
+https://pythonhint.com/post/2484755733190893/roc-curve-and-cut-off-point-python
+https://towardsdatascience.com/demystifying-roc-curves-df809474529a
