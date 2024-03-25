@@ -31,6 +31,15 @@ https://developers.google.com/edu/c++
 
 
 
+
+
+
+
+
+https://medium.com/@aleksamajkic/fake-sms-how-deep-does-the-rabbit-hole-really-go-17e25c42f986
+https://medium.com/@red.whisperer/5-advanced-ways-i-test-for-file-upload-vulnerabilities-5b01358f87d1
+https://pythonhint.com/post/2484755733190893/roc-curve-and-cut-off-point-python
+https://www.righto.com/2024/03/8088-prefetch-circuitry.html
 https://vadimkravcenko.com/shorts/code-reviews/
 https://ivdl.co.za/2024/03/02/pretending-to-be-postgresql-part-one-1/
 https://practicalsecurityanalytics.com/how-to-emulate-a-ransomware-attack/
