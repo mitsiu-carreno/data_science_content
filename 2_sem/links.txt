@@ -33,9 +33,12 @@ https://developers.google.com/edu/c++
 
 
 
-
-
-
+https://explainextended.com/2023/12/31/happy-new-year-15/
+https://vi.stackexchange.com/questions/3115/find-and-replace-using-regular-expressions
+https://mijailovic.net/2024/04/04/bandcamp-auth/
+https://stackoverflow.com/questions/4153118/list-of-concurrency-models
+https://www.tedinski.com/2018/11/06/concurrency-models.html
+https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim/1220118#1220118
 https://medium.com/@aleksamajkic/fake-sms-how-deep-does-the-rabbit-hole-really-go-17e25c42f986
 https://medium.com/@red.whisperer/5-advanced-ways-i-test-for-file-upload-vulnerabilities-5b01358f87d1
 https://pythonhint.com/post/2484755733190893/roc-curve-and-cut-off-point-python
