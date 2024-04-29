@@ -27,8 +27,17 @@ https://www.crowdstrike.com/cybersecurity-101/malware/trojan-zeus-malware/
 
 https://google.github.io/styleguide/cppguide.html#Exceptions
 https://developers.google.com/edu/c++
+https://codereview.stackexchange.com/questions/248701/c-sockets-sending-structs-for-p2p-communication
+https://newsletter.systemdesign.one/p/uber-eta
 
 
+
+https://stackoverflow.com/questions/42744315/cmake-with-subdirectories
+https://postgres.ai/blog/20230722-10-postgres-tips-for-beginners
+https://postgres.ai/blog/20220525-common-db-schema-change-mistakes
+
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10660124/
 
 
 
