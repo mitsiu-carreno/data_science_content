@@ -31,8 +31,16 @@ https://codereview.stackexchange.com/questions/248701/c-sockets-sending-structs-
 https://newsletter.systemdesign.one/p/uber-eta
 
 
-
+https://cliutils.gitlab.io/modern-cmake/
+https://cacm.acm.org/research/10-things-software-developers-should-learn-about-learning/
+https://www.youtube.com/watch?v=4_uL43V79xw
+https://www.youtube.com/watch?v=Q6ovtLdSbEA
 https://stackoverflow.com/questions/42744315/cmake-with-subdirectories
+https://www.youtube.com/watch?v=XTarTSsEDAo
+https://stackoverflow.com/questions/7019831/bulk-batch-update-upsert-in-postgresql#20224370
+https://m4xshen.dev/posts/vim-command-workflow/
+
+
 https://postgres.ai/blog/20230722-10-postgres-tips-for-beginners
 https://postgres.ai/blog/20220525-common-db-schema-change-mistakes
 
@@ -41,7 +49,7 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10660124/
 
 
 
-
+https://blog.nandan.dev/system-design-databases-and-dbms
 https://developers.redhat.com/articles/2022/10/13/advanced-regex-capture-groups-lookaheads-and-lookbehinds#
 https://explainextended.com/2023/12/31/happy-new-year-15/
 https://vi.stackexchange.com/questions/3115/find-and-replace-using-regular-expressions
