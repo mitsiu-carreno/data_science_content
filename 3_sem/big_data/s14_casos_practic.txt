@@ -1,0 +1,155 @@
+Casos prácticos de análisis y visualización de grandes volúmenes de datos. 
+
+1. Análisis de datos de redes sociales: 
+
+Análisis de tweets: 
+
+Objetivo: Estudiar el sentimiento público hacia un evento o marca. 
+
+Herramientas: Tweepy, Python, Pandas, Matplotlib. 
+
+Pasos:  
+
+Recopilar tweets usando Tweepy. 
+
+Limpiar y preprocesar los datos. 
+
+Analizar el sentimiento usando VADER. 
+
+Visualizar los resultados usando Matplotlib. 
+
+Análisis de redes sociales: 
+
+Objetivo: Identificar comunidades y líderes de opinión en una red social. 
+
+Herramientas: NetworkX, Python, Pandas. 
+
+Pasos:  
+
+Extraer la red social de la API. 
+
+Calcular métricas de centralidad. 
+
+Visualizar la red usando NetworkX. 
+
+2. Análisis de datos financieros: 
+
+Análisis del mercado de valores: 
+
+Objetivo: Predecir el precio de las acciones. 
+
+Herramientas: Pandas, NumPy, scikit-learn. 
+
+Pasos:  
+
+Descargar datos históricos del mercado de valores. 
+
+Preprocesar y limpiar los datos. 
+
+Entrenar un modelo de aprendizaje automático. 
+
+Evaluar el modelo y realizar predicciones. 
+
+Análisis de riesgo crediticio: 
+
+Objetivo: Predecir la probabilidad de que un cliente incumpla con un préstamo. 
+
+Herramientas: Pandas, NumPy, scikit-learn. 
+
+Pasos:  
+
+Descargar datos históricos de préstamos. 
+
+Preprocesar y limpiar los datos. 
+
+Entrenar un modelo de aprendizaje automático. 
+
+Evaluar el modelo y realizar predicciones. 
+
+3. Análisis de datos de sensores: 
+
+Análisis de datos de IoT: 
+
+Objetivo: Monitorizar y analizar datos de sensores en tiempo real. 
+
+Herramientas: Apache Kafka, Spark Streaming, Python. 
+
+Pasos:  
+
+Ingerir datos de sensores en tiempo real a través de Apache Kafka. 
+
+Procesar y analizar los datos en tiempo real con Spark Streaming. 
+
+Visualizar los resultados en tiempo real usando un panel de control. 
+
+Análisis de datos de salud: 
+
+Objetivo: Monitorizar la salud de los pacientes y detectar anomalías. 
+
+Herramientas: Pandas, NumPy, scikit-learn. 
+
+Pasos:  
+
+Descargar datos de salud de los pacientes. 
+
+Preprocesar y limpiar los datos. 
+
+Aplicar algoritmos de detección de anomalías. 
+
+Alertar al personal médico sobre posibles problemas de salud. 
+
+4. Análisis de datos de imágenes: 
+
+Reconocimiento facial: 
+
+Objetivo: Identificar personas en imágenes o videos. 
+
+Herramientas: OpenCV, dlib, Python. 
+
+Pasos:  
+
+Entrenar un modelo de reconocimiento facial. 
+
+Detectar rostros en imágenes o videos. 
+
+Identificar las personas en las imágenes. 
+
+Clasificación de imágenes: 
+
+Objetivo: Clasificar imágenes en categorías predefinidas. 
+
+Herramientas: TensorFlow, Keras, Python. 
+
+Pasos:  
+
+Entrenar un modelo de deep learning para la clasificación de imágenes. 
+
+Predecir la categoría de una imagen nueva. 
+
+5. Análisis de datos de texto: 
+
+Análisis de sentimientos: 
+
+Objetivo: Identificar el sentimiento de un texto. 
+
+Herramientas: TextBlob, VADER, Python. 
+
+Pasos:  
+
+Descargar un conjunto de datos de entrenamiento para el análisis de sentimientos. 
+
+Entrenar un modelo de análisis de sentimientos. 
+
+Predecir el sentimiento de un texto nuevo. 
+
+Extracción de entidades: 
+
+Objetivo: Extraer información relevante de un texto, como nombres de personas, lugares u organizaciones. 
+
+Herramientas: spaCy, NLTK, Python. 
+
+Pasos:  
+
+Entrenar un modelo de extracción de entidades. 
+
+Extraer entidades de un texto nuevo. 
