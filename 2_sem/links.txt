@@ -24,7 +24,6 @@ https://learning.edx.org/course/course-v1:LinuxFoundationX+LFS158x+1T2022/home
 
 
 https://www.csoonline.com/article/547432/data-protection-coding-flaw-leaves-zeus-admin-panels-easily-exploited.html
-https://en.wikipedia.org/wiki/Zeus_(malware)
 https://www.crowdstrike.com/cybersecurity-101/malware/trojan-zeus-malware/
 
 https://google.github.io/styleguide/cppguide.html#Exceptions
@@ -49,6 +48,14 @@ https://postgres.ai/blog/20220525-common-db-schema-change-mistakes
 
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10660124/
 
+
+https://cstack.github.io/db_tutorial/
+https://ai.stanford.edu/~kzliu/blog/unlearning
+https://www.bogdandeac.com/return-oriented-programming-on-risc-v/
+https://thesecuritypivot.com/2024/05/06/reverse-shell-attack-and-reverse-ssh-tunneling/
+https://hereket.com/posts/from-scratch-x11-windowing/
+https://lwn.net/Articles/444910/
+https://briefer.cloud/blog/posts/logarithms/
 
 
 https://blog.nandan.dev/system-design-databases-and-dbms

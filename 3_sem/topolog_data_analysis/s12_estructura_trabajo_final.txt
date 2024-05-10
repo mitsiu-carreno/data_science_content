@@ -1,0 +1,18 @@
+Portada
+Introduccion
+Problematica
+Estado del arte
+   -Aqui van como subtemas cada uno de los metodos que ustedes han estado implementando durante nuestras clases relacionadas a su trabajo final 
+
+Caso de uso 
+   -Ustedes deben seleccionar de los temas aplicados en el estado del arte cual es la mejor opcion para el problema que van a modelar 
+   -Debe incluir aqui una prediccion del modelo que ustedes modelaron con un margen de error que ustedes deben calcular en base a los casos de uso que ejecuten 
+
+Conclusiones 
+Referencias
+  -utilizar referencias de maximo 3 años de antiguedad
+
+
+
+Formato del archivo PDF
+
