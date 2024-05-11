@@ -56,6 +56,7 @@ https://thesecuritypivot.com/2024/05/06/reverse-shell-attack-and-reverse-ssh-tun
 https://hereket.com/posts/from-scratch-x11-windowing/
 https://lwn.net/Articles/444910/
 https://briefer.cloud/blog/posts/logarithms/
+https://blog.twitter.com/engineering/en_us/topics/insights/2021/graph-neural-networks-through-the-lens-of-differential-geometry-
 
 
 https://blog.nandan.dev/system-design-databases-and-dbms
