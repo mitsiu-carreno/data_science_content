@@ -1,0 +1,3 @@
+https://medium.com/@fareedkhandev/handling-large-datasets-in-python-42f57ccbbd1b
+https://eelectronics.medium.com/single-core-vs-multi-core-processor-a-detailed-comparison-8b29deeac01c
+https://medium.com/@smallfishbigsea/basic-concepts-in-gpu-computing-3388710e9239
