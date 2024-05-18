@@ -1,4 +1,7 @@
 https://scientyficworld.org/set-up-ci-cd-pipelines-for-dockerized-rn-apps/
+https://www.d3indepth.com/introduction/
+
+https://media.ccc.de/v/mch2022-236-non-euclidean-doom-what-happens-to-a-game-when-pi-is-not-3-14159-#t=78
 
 https://compilergym.com/getting_started.html
 https://www.iforce2d.net/b2dtut/setup-linux
@@ -21,6 +24,7 @@ https://jaycarlson.net/embedded-linux/
 
 https://learning.edx.org/course/course-v1:LinuxFoundationX+LFS158x+1T2022/home
 
+http://www.unixwiz.net/techtips/gnu-c-attributes.html
 
 
 https://www.csoonline.com/article/547432/data-protection-coding-flaw-leaves-zeus-admin-panels-easily-exploited.html
@@ -34,12 +38,18 @@ https://newsletter.systemdesign.one/p/uber-eta
 
 https://cliutils.gitlab.io/modern-cmake/
 https://cacm.acm.org/research/10-things-software-developers-should-learn-about-learning/
+https://www.experimental-history.com/p/how-to-get-7th-graders-to-smoke
 https://www.youtube.com/watch?v=4_uL43V79xw
 https://www.youtube.com/watch?v=Q6ovtLdSbEA
 https://stackoverflow.com/questions/42744315/cmake-with-subdirectories
 https://www.youtube.com/watch?v=XTarTSsEDAo
 https://stackoverflow.com/questions/7019831/bulk-batch-update-upsert-in-postgresql#20224370
 https://m4xshen.dev/posts/vim-command-workflow/
+
+https://www.cs.utexas.edu/~bornholt/post/memory-models.html
+
+https://thechipletter.substack.com/p/compiler-explorer
+https://www.grymoire.com/Unix/Sh.html
 
 
 https://postgres.ai/blog/20230722-10-postgres-tips-for-beginners
@@ -58,6 +68,15 @@ https://lwn.net/Articles/444910/
 https://briefer.cloud/blog/posts/logarithms/
 https://blog.twitter.com/engineering/en_us/topics/insights/2021/graph-neural-networks-through-the-lens-of-differential-geometry-
 
+https://immersivemath.com/ila/tableofcontents.html?
+https://stevenharman.net/so-we-have-a-memory-leak
+https://www.scientificamerican.com/article/system-analysis-and-programming-christopher-strachey/
+https://chipsandcheese.com/2024/03/27/why-x86-doesnt-need-to-die/
+https://www.regular-expressions.info/catastrophic.html
+
+
+
+https://www.elopezr.com/life-and-death-of-a-graphics-programmer/
 
 https://blog.nandan.dev/system-design-databases-and-dbms
 https://developers.redhat.com/articles/2022/10/13/advanced-regex-capture-groups-lookaheads-and-lookbehinds#
