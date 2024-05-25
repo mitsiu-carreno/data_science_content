@@ -1,0 +1,15 @@
+1 docker-pyspark
+README
+  Build
+
+2 docker_database
+README
+  BUILD
+
+3 pyspark
+run simple.py local
+
+4 entrar a container de docker-pyspark
+correr python pyspark_example.py 
+
+5 repetir 4 con archivo super grande
