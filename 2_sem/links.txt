@@ -1,6 +1,10 @@
 https://scientyficworld.org/set-up-ci-cd-pipelines-for-dockerized-rn-apps/
 https://www.d3indepth.com/introduction/
 
+https://www.sassnow.ski/rigid-body-collisions/1
+
+https://github.com/mcinglis/c-style
+
 https://media.ccc.de/v/mch2022-236-non-euclidean-doom-what-happens-to-a-game-when-pi-is-not-3-14159-#t=78
 
 https://compilergym.com/getting_started.html
@@ -77,6 +81,11 @@ https://www.regular-expressions.info/catastrophic.html
 
 
 https://www.elopezr.com/life-and-death-of-a-graphics-programmer/
+https://la.blogs.nvidia.com/blog/que-es-la-computacion-en-el-borde/
+
+https://austinmorlan.com/posts/unity_jumbo_build/
+
+https://thenameless.net/astral-kit/anthropic-peit-00
 
 https://blog.nandan.dev/system-design-databases-and-dbms
 https://developers.redhat.com/articles/2022/10/13/advanced-regex-capture-groups-lookaheads-and-lookbehinds#

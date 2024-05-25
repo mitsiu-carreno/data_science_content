@@ -1,0 +1,15 @@
+Prompt para chat gpt: Como puedo evaluar la claridad de objetivos en un proyecto de ciencia de datos
+Pregunta en respuesta de escala: Media ni buena ni mala Mismos buenos que malos (3, 5 opciones)
+Al evaluar, porque esta en esa categoría, y hay que indicar que hace falta para mejorar (alcanzar siguiente escala)
+
+Evaluación de proyectos:
+1- Claridad de objetivos:
+El objetivo general es claro, mejorar el perfomance, sin embargo 
+2- Viabilidad técnica:
+
+3- Viabilidad financiera:
+4- Impacto y beneficios:
+5- Visión a futuro:
+
+Excelente, Satisfactorio, Neutral, Limitado, Deficiente
+
