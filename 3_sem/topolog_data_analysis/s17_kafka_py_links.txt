@@ -1,0 +1,2 @@
+https://andres-plazas.medium.com/leer-y-escribir-datos-en-kafka-usando-python-2696154c3948
+
