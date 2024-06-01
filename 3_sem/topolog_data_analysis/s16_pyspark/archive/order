@@ -13,3 +13,12 @@ run simple.py local
 correr python pyspark_example.py 
 
 5 repetir 4 con archivo super grande
+
+
+----------- Segunda sesión
+1 docker_database
+podman-compose up
+
+2 python_postgres
+create_table.py
+insert.py
