@@ -1,9 +1,20 @@
 https://scientyficworld.org/set-up-ci-cd-pipelines-for-dockerized-rn-apps/
+https://hllmn.net/blog/2023-09-18_h1x-net/
 https://www.d3indepth.com/introduction/
+
+https://maskray.me/blog/2024-05-26-evolution-of-elf-object-file-format
+https://ipullrank.com/google-algo-leak
+
+https://maheshba.bitbucket.io/blog/2023/07/12/Design.html
+
+https://levelup.gitconnected.com/api-design-101-from-basics-to-best-practices-a0261cdf8886
 
 https://www.sassnow.ski/rigid-body-collisions/1
 
 https://github.com/mcinglis/c-style
+
+
+https://www.statology.org/mann-whitney-u-test-python/
 
 https://media.ccc.de/v/mch2022-236-non-euclidean-doom-what-happens-to-a-game-when-pi-is-not-3-14159-#t=78
 
