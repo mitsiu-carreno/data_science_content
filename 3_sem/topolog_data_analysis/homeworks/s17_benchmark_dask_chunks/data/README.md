@@ -2,9 +2,9 @@
 Este script genera varios archivos de distintas longitudes para usar en los benchmarks de dask y chunks
 
 ## Uso
-Dentro del directorio de `gen_data.py` 
+Dentro del directorio `data` se deberá ejecutar el archivo `gen_data.py` con el sigiuente comando: 
 ```bash
-podman run -v .:/usr/src/app:Z -w /usr/src/app python:3.9.19-alpine3.20 sh -c "pip install pandas && python gen_data.py"
+podman run --rm -v .:/usr/src/app:Z -w /usr/src/app python:3.9.19-alpine3.20 sh -c "pip install pandas && python gen_data.py"
 ```
 
 ## Salida
