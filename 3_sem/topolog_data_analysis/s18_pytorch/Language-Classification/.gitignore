@@ -1,0 +1,5 @@
+.git/*
+.idea/*
+venv/*
+Web_Interface/__pycache__/*
+Modules/__pycache__/*
