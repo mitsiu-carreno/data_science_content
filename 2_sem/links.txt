@@ -2,6 +2,15 @@ https://scientyficworld.org/set-up-ci-cd-pipelines-for-dockerized-rn-apps/
 https://hllmn.net/blog/2023-09-18_h1x-net/
 https://www.d3indepth.com/introduction/
 
+
+https://krisnova.net/posts/linux-accept-queues/
+https://encore.dev/blog/queueing
+
+https://samcurry.net/hacking-millions-of-modems
+https://www.cultured.systems/2024/04/24/Soft-delete/
+
+https://book.systemsapproach.org/
+
 https://maskray.me/blog/2024-05-26-evolution-of-elf-object-file-format
 https://ipullrank.com/google-algo-leak
 

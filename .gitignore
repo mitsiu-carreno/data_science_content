@@ -4,6 +4,7 @@
 **/node_modules
 **/s12_cassandra/node1
 **/s12_cassandra/node2
+**/s15_big_data_code/**/benchmarking_data.csv
 
 **/tweets/data
 

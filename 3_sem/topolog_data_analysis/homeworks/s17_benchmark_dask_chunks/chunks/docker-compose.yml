@@ -1,0 +1,35 @@
+version: '3.9'
+
+services:
+  chunks:
+    build: .
+    ports:
+      - 9117:9117
+    volumes:
+      - ${PWD}/../data:/usr/src/app/data:Z 
+      - ${PWD}/../shared_scripts:/usr/src/app/shared_scripts:Z
+      - ${PWD}:/usr/src/app:Z
+    network_mode: host
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      - INSERT_MODE=single
+      - FILE_PATH=./data/10k_benchmarking_data.csv
+    env_file:
+      - ../shared_scripts/postgres.env
+
+  postgres:
+    image: postgres:14-alpine
+    ports:
+      - 5432:5432
+    network_mode: host
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U topol -d benchm"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    env_file:
+      - ../shared_scripts/postgres.env
+
+#podman run --rm --expose 4117 -p 4117:4117 --volume ${PWD}/../data:/usr/src/app/data:Z --volume ${PWD}:/usr/src/app:Z -w /usr/src/app --name "chunks" python:3.9.19-alpine3.20 python chunks_benchm.py
