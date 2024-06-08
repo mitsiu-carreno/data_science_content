@@ -8,6 +8,7 @@ if "FILE_PATH" in os.environ:
     path = os.environ["FILE_PATH"]
 
 conn_ready = False
+total = 0
 
 for i in range(5):
     try:
@@ -20,9 +21,14 @@ for i in range(5):
         print("Database not connected")
 
 def processThread(row):
+    global total
+    # V1
     insertRow(row)
+    # V2
+    #total = total + 1
 
 def startBenchm():
+    global total
     print("---------start------------")
     start = time.perf_counter()
     ddf = dd.read_csv(path)
@@ -30,6 +36,7 @@ def startBenchm():
     t = ddf.apply(processThread, axis=1)
     t.compute()
 
+    print(f"Total {total}")
     print(f"Completed execution in {time.perf_counter() - start} seconds")
 
 if conn_ready:
