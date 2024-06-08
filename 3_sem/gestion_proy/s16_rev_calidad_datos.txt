@@ -1,0 +1,48 @@
+La revisión de la calidad de los datos es una etapa crítica en cualquier proyecto de ciencia de datos. Esta etapa asegura que los datos utilizados sean adecuados, precisos, completos y relevantes para los objetivos del proyecto. A continuación se describe en detalle el proceso y los componentes clave de esta etapa.
+Objetivo
+
+El objetivo de la revisión de la calidad de los datos es garantizar que los datos disponibles cumplen con los estándares de calidad necesarios para realizar análisis precisos y obtener resultados confiables. Esto implica la identificación y corrección de errores, la evaluación de la integridad de los datos y la validación de la adecuación de los datos para los objetivos del proyecto.
+Componentes de la Revisión de la Calidad de los Datos
+
+1. Evaluación de la Calidad de los Datos:
+
+        Exactitud: Verificar que los datos reflejan con precisión la realidad que pretenden representar. Comparar los datos con fuentes confiables o realizar auditorías para detectar discrepancias.
+        Completitud: Asegurarse de que no falten datos esenciales. Identificar y abordar valores faltantes en los conjuntos de datos.
+        Consistencia: Verificar que los datos sean consistentes a lo largo de todas las fuentes y dentro del mismo conjunto de datos. Revisar la uniformidad de formatos, unidades de medida y nomenclaturas.
+        Validez: Asegurarse de que los datos cumplen con las reglas de negocio y restricciones definidas. Validar que los datos están dentro de los rangos esperados y no contienen valores fuera de lugar.
+        Puntualidad: Evaluar si los datos están actualizados y si la frecuencia de actualización es adecuada para los requerimientos del proyecto.
+        Accesibilidad: Asegurar que los datos son accesibles y que los permisos y derechos necesarios están en lugar para su uso.
+
+2. Técnicas de Limpieza de Datos:
+
+        Detección y Corrección de Errores: Identificar y corregir errores tipográficos, duplicados y registros inconsistentes.
+        Tratamiento de Valores Faltantes: Imputación de datos, eliminación de registros incompletos o sustitución de valores faltantes utilizando métodos estadísticos o de machine learning.
+        Normalización y Estandarización: Convertir los datos a un formato común para asegurar la uniformidad. Por ejemplo, convertir todas las fechas a un formato único o estandarizar las unidades de medida.
+
+3. Herramientas y Métodos:
+
+        Exploración de Datos: Utilizar herramientas de análisis exploratorio de datos (EDA) como gráficos, tablas de resumen y estadísticas descriptivas para entender la distribución y las características de los datos.
+        Análisis de Discrepancias: Emplear técnicas como el análisis de outliers y el clustering para identificar patrones inusuales o inconsistencias en los datos.
+        Software de Calidad de Datos: Utilizar herramientas especializadas como OpenRefine, Talend, o Python (pandas, numpy) y R (dplyr, tidyr) para realizar operaciones de limpieza y transformación de datos.
+
+Procedimiento para la Revisión de la Calidad de los Datos
+
+    Planificación de la Revisión:
+        Definir los criterios de calidad de los datos específicos para el proyecto.
+        Establecer un plan detallado para la evaluación y mejora de la calidad de los datos, incluyendo un cronograma y los responsables de cada tarea.
+
+    Evaluación Inicial de la Calidad:
+        Realizar un análisis exploratorio para evaluar el estado actual de los datos.
+        Documentar cualquier problema de calidad detectado y priorizar los problemas según su impacto en el proyecto.
+
+    Implementación de Técnicas de Limpieza:
+        Aplicar las técnicas de limpieza de datos para corregir los problemas identificados.
+        Realizar pruebas iterativas para asegurar que los problemas se han resuelto adecuadamente.
+
+    Validación de la Calidad de los Datos:
+        Validar los datos limpiados contra los criterios de calidad definidos.
+        Utilizar técnicas de validación cruzada para asegurar que los datos son consistentes y precisos.
+
+    Documentación y Comunicación:
+        Documentar todas las actividades realizadas durante la revisión de calidad, incluyendo las técnicas utilizadas y los resultados obtenidos.
+        Comunicar los hallazgos y las acciones tomadas al equipo de proyecto y a los stakeholders relevantes.
