@@ -1,0 +1,30 @@
+digraph ORG {
+
+  ranksep=0.2;
+
+  node[shape=box3d width=2 height=0.7 fontname="Arial"];
+
+  CEO     [ label = "Responsable de proyecto"      ]
+  HR     [ label = "Responsable de financiamiento" ]
+  CFO      [ label = "Lider de desarrollo"    ]
+
+
+  staff_1 [ label = "Científico de datos"]
+  staff_2 [ label = "Ingeniero de software"]
+  staff_3 [ label = "Ingeniero devops"]
+  staff_4 [ label = "Responsable de manejo de clientes"]
+
+  node[shape=none, width=0, height=0, label=""];
+
+  edge[dir=none];
+
+  CEO -> hierarchy_1 -> hierarchy_2 -> hierarchy_3;
+
+  {rank=same; CFO -> hierarchy_1 -> HR;}
+  {rank=same; staff_1 -> staff_2 -> hierarchy_4 -> staff_3 -> staff_4 }
+
+  hierarchy_3 -> hierarchy_4
+
+
+}
+
