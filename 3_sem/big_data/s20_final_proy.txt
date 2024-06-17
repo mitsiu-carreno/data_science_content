@@ -1,0 +1,20 @@
+Proyecto integrador Maestría en Ciencia de Datos – UCAgs.
+
+Objetivo
+
+Recolectar información de una red social para el análisis de grandes volúmenes de datos, que permitan generar por lo menos un indicador que genere valor agregado al proyecto realizado en el curso de ingeniería de datos.
+
+Antecedente
+
+Combinar información estadística del Directorio Estadístico Nacional de Unidades Económicas por sus siglas (DENUE), con información geoespacial imágenes satelitales (NASA - Landsat) y/o (ESA - Sentinel), utilizando la Geomediana del estado de Aguascalientes México, considerando los siguientes puntos.
+
+    Clasificar cada unidad económica por su actividad con base en El Sistema de Clasificación Industrial de América del Norte por sus siglas (SCIAN), utilizando solo dos dígitos.
+    Para algunas (o todas) las unidades económicas generar vecinos más cercanos.
+    Los anteriores recortes deberán permitir entrenar un modelo de “deep learning”, para clasificar todo el territorio seleccionado.
+    Generar evaluaciones, visualizaciones, productos del modelo, y el mapa.
+
+Notas:
+
+    La Geomediana es una técnica de procesamiento de imágenes satelitales que consiste en buscar la imagen que mejor representa todas las imágenes de un mismo año.
+    La decisión de usar imágenes geoespaciales (Landsat y/o Sentinel), es dependiente si se cuenta con suficiente capacidad computacional para trabajar con los datasets.
+    Los insumos requeridos para el proyecto en su mayor parte son "datos abiertos", para el uso de las imágenes geoespaciales ESA - Sentinel, es gracias al apoyo colaborativo del artículo Coronado, Abel, Argumedo, Jesús, & Juárez, Jimena. (2022). AgsSAT Multiannual (2017-2021) Sentinel-2 Geomedian Composites [Data set]. Zenodo. https://doi.org/10.5281/zenodo.6908357 

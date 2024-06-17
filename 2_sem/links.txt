@@ -2,6 +2,12 @@ https://scientyficworld.org/set-up-ci-cd-pipelines-for-dockerized-rn-apps/
 https://hllmn.net/blog/2023-09-18_h1x-net/
 https://www.d3indepth.com/introduction/
 
+https://stackoverflow.com/questions/11528267/how-do-i-read-the-source-code-of-shell-commands
+https://www.youtube.com/watch?v=rL5mCSa4JUk&t=3s
+https://tembo.io/blog/optimizing-memory-usage
+
+https://www.udemy.com/course/part-1-video-coding-with-ffmpeg-and-c-in-replit-online-ide/
+
 
 https://krisnova.net/posts/linux-accept-queues/
 https://encore.dev/blog/queueing
