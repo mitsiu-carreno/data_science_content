@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  fastapi:
+    build: ./api/
+    ports:
+      - 8000:8000
+    network_mode: host
+
+  postgres:
+    image: postgres:14-alpine
+    ports:
+      - 5432:5432
+    network_mode: host
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U topol -d logs"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    env_file:
+      - postgres.env
