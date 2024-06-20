@@ -1,11 +1,19 @@
 version: '3.9'
 
 services:
-  fastapi:
+  api:
     build: ./api/
+    volumes:
+      - ${PWD}/api:/usr/src/api:Z
+      - ${PWD}/data:/usr/src/api/data:Z
     ports:
       - 8000:8000
     network_mode: host
+    depends_on:
+      postgres:
+        condition: service_healthy
+    env_file:
+      - postgres.env
 
   postgres:
     image: postgres:14-alpine
@@ -17,5 +25,7 @@ services:
       interval: 5s
       timeout: 5s
       retries: 10
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data:Z
     env_file:
       - postgres.env

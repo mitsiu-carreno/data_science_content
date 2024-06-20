@@ -1,2 +1,6 @@
 fastapi>=0.111
 pydantic>=2.7.0,<3.0.0
+pandas
+fastparquet
+SQLAlchemy
+psycopg2-binary
