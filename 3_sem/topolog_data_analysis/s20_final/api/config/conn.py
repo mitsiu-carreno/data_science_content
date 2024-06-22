@@ -19,6 +19,9 @@ def testConn():
     cursor = conn.cursor()
     return conn
 
+def getConn():
+    return conn
+
 def setup():
     cursor.execute("""
         DROP SCHEMA public CASCADE
@@ -41,6 +44,7 @@ def setup():
             remote_usr TEXT,
             date DATE,
             time TIME,
+            weekday SMALLINT,
             request TEXT,
             req_method http_method,
             req_uri TEXT,
@@ -73,8 +77,21 @@ def createIndex():
     cursor.execute("""
         CREATE INDEX idx_logs_fabstime ON logs(fabstime)
     """)
+    
+    cursor.execute("""
+        CREATE INDEX idx_logs_weekday ON logs(weekday)
+    """)
 
     conn.commit()
 
     print("Index created sucessfully")
 
+
+def query():
+    try:
+        cursor.execute("""SELECT COUNT(*) FROM logs""")
+        records = cursor.fetchall()
+        return records
+    except Exception as e:
+        print(e)
+        conn.rollback()
