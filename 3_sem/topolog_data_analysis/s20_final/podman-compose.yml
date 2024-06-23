@@ -8,8 +8,7 @@ services:
       - ${PWD}/data:/usr/src/api/data:Z
     ports:
       - 8000:8000
-    networks:
-      - topol-net
+    network_mode: host
     depends_on:
       postgres:
         condition: service_healthy
@@ -23,8 +22,7 @@ services:
     image: postgres:14-alpine
     ports:
       - 5432:5432
-    networks:
-      - topol-net
+    network_mode: host
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U topol -d logs"]
       interval: 5s
@@ -38,6 +36,3 @@ services:
       TZ: 'America/Mexico_City'
       PGTZ: 'America/Mexico_City'
 
-networks:
-  topol-net:
-    driver: bridge

@@ -3,7 +3,7 @@ from fastapi import FastAPI, HTTPException
 import time
 import sys
 
-from controller import  ( estimate, importData )
+from controller import  ( estimate, importData, alerts )
 
 from config.conn import testConn, query
 
@@ -32,6 +32,7 @@ def read_root():
 
 app.include_router(importData.router, prefix='/import')
 app.include_router(estimate.router, prefix='/estim')
+app.include_router(alerts.router, prefix='/alert')
 
 
 

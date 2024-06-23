@@ -19,8 +19,14 @@ def testConn():
     cursor = conn.cursor()
     return conn
 
-def getConn():
-    return conn
+def execQuery(query, params):
+    try:
+        cursor.execute(query, params)
+        records = cursor.fetchall()
+        return records
+    except Exception as e:
+        print(e)
+        conn.rollback()
 
 def setup():
     cursor.execute("""
@@ -61,6 +67,15 @@ def setup():
         )
     """)
 
+    cursor.execute("""
+        CREATE TABLE alerts(
+            date DATE NOT NULL,
+            time TIME,
+            expected_traffic INT,
+            found_traffic INT
+        )
+    """)
+
     conn.commit()
 
     print("Table created sucessfully")
@@ -86,6 +101,84 @@ def createIndex():
 
     print("Index created sucessfully")
 
+def insertLog(row):
+    try:
+        cursor.execute(
+            """
+                INSERT INTO logs(
+                    remote_addr,
+                    remote_usr,
+                    date,
+                    time,
+                    weekday,
+                    request,
+                    req_method,
+                    req_uri,
+                    http_ver,
+                    status,
+                    body_bytes_sent,
+                    http_referer,
+                    user_agent,
+                    dec_req_uri,
+                    clean_path,
+                    clean_query_list,
+                    domain,
+                    fabstime
+                )VALUES(
+                     %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s
+                )
+            """,
+            (
+                    row["remote_addr"],
+                    row["remote_usr"],
+                    row["date"],
+                    row["time"],
+                    row["weekday"],
+                    row["request"],
+                    row["req_method"],
+                    row["req_uri"],
+                    row["http_ver"],
+                    row["status"],
+                    row["body_bytes_sent"],
+                    row["http_referer"],
+                    row["user_agent"],
+                    row["dec_req_uri"],
+                    row["clean_path"],
+                    row["clean_query_list"],
+                    row["domain"],
+                    row["fabstime"]
+            )
+        )
+        conn.commit()
+    except Exception as e:
+        print(e)
+        conn.rollback()
+
+
+def insertAlert(row):
+    try:
+        cursor.execute(
+            """
+                INSERT INTO alerts(
+                    date,
+                    time,
+                    expected_traffic,
+                    found_traffic
+                )VALUES(
+                     %s, %s, %s, %s
+                )
+            """,
+            (
+                    row["date"],
+                    row["time"],
+                    row["expected_traffic"],
+                    row["found_traffic"]
+            )
+        )
+        conn.commit()
+    except Exception as e:
+        print(e)
+        conn.rollback()
 
 def query():
     try:
