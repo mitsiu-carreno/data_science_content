@@ -1,7 +1,9 @@
+Mitsiu Alejandro Carreño Sarabia - E23S-18014
+
 # Descripción:
 El siguiente código permite levantar dos contenedores, uno con el gestor de bases de datos postgres y el otro con una API Rest para consumir y crear datos alojados en el gestor de base de datos.
 # Procedimiento:
-1. Se deberán descargar los datos para llenar la base de datos, se puede descargar cualquiera de los dos archivos (el sql ocupa más disco pero se carga más rápido, el archivo parquet ocupa menos espacio pero es más lento en cargar) contenidos en  y se deben guardar en la carpeta **data**:
+1. Se deberán descargar los datos para llenar la base de datos, se puede descargar cualquiera de los dos archivos (el sql ocupa más disco pero se carga más rápido, el archivo parquet ocupa menos espacio pero es más lento en cargar) contenidos en [drive](https://drive.google.com/drive/folders/1udL7Kr08BGNz_TQNnWH0qwG1C8zQWW0X?usp=sharing) y se deben guardar en la carpeta **data**:
 
 2. Una vez que los archivos sql o parquet estén en **data** se puede usar el siguiente comando para levantar la api del proyecto:
 ```bash

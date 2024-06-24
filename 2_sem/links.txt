@@ -7,6 +7,8 @@ https://www.youtube.com/watch?v=rL5mCSa4JUk&t=3s
 https://tembo.io/blog/optimizing-memory-usage
 https://best.openssf.org/Compiler-Hardening-Guides/Compiler-Options-Hardening-Guide-for-C-and-C++.html
 
+https://gaultier.github.io/blog/
+
 https://www.udemy.com/course/part-1-video-coding-with-ffmpeg-and-c-in-replit-online-ide/
 
 
