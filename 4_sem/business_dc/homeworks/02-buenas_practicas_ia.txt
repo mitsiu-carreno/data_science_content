@@ -1,0 +1,16 @@
+GENERACIÓN DE NEGOCIOS BASADOS EN DATOS
+Mitsiu Alejandro Carreño Sarabia - E23S-18014
+
+Actividad 2: Buenas prácticas
+
+Define un conjunto de buenas prácticas para el uso de plataformas de IA Generativa para el emprendedor de algún tipo específico de negocio o de emprendimiento. Agrega una breve descripción de este.
+
+Descripción de negocio:
+Partiendo de un escenario de negocio basado en desarrollo y comercialización de software a la medida así como de software como un servicio (SaaS).
+
+Buenas prácticas:
+Recordemos que las plataformas de IA son suceptibles a dar resultados imprecisos o plenamente erroneos por ello considero que una buena práctica es usar la herramienta como punto de partida en exploración de ideas (brainstorming), dado que una idea no puede ser erronea, puede ser irrealista pero ello es tarea del emprendedor analizarlo, por ejemplo el emprendedor decide que la capacidad técnica con la que cuenta es en desarrollo de sitios web como medium para storytellings, un uso posible de una plaforma IA sería "Que consideraciones se deben tener para crear un storytelling atractivo y cautivador" o incluso se puede emplear como referencia para investigación de modelo de negocio, "Lista 3 empresas que hayan generado un modelo de negocio exitoso basado en storytellings" y listar y analizar la competencia.
+
+En cambio si lo que se necesita es una validación de datos/ideas, es más recomendable usea la plataforma para listar posibles fuentes confiables para validar uno mismo en lugar de solicitarle obtener la validación de la plataforma, por ejemplo, se quiere validar que los méxicanos se conectan más a servicios de internet a travez de dispositivos moviles, un buen uso podría ser, "Listame fuentes y sitios de confianza para estudiar el comportamiento de mexicanos en internet".
+
+Finalmente de manera generalizada es recomendable usar plataformas IA con prompts especificos y proveer suficente contexto para obtener una respuesta de valor, no tomar solo la primer respuesta, sino ahondar en detalles, analizar y siempre juzgar los datos y respuestas.

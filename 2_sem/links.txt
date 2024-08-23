@@ -1,11 +1,49 @@
+https://arxiv.org/pdf/2309.04259
+
 https://scientyficworld.org/set-up-ci-cd-pipelines-for-dockerized-rn-apps/
 https://hllmn.net/blog/2023-09-18_h1x-net/
 https://www.d3indepth.com/introduction/
+https://www.youtube.com/watch?v=dOiA2nNJpc0&t=735s
+https://exploit.education/protostar/
+https://drew.silcock.dev/blog/how-postgres-stores-data-on-disk/
+https://blog.flaport.net/ssh-via-relay-server.html
+# unset HISTSIZE HISTFILESIZE HISTFILE
+https://dev.to/rosesecurity/crafting-malicious-pluggable-authentication-modules-for-persistence-privilege-escalation-and-lateral-movement-183i
+https://rya.nc/vpp-hack.html
+https://playbook.samaltman.com/
+https://archiv.ub.uni-heidelberg.de/volltextserver/22914/1/Dissertation.pdf
+https://0xcybery.github.io/blog/hacking-with-pdf
+https://files.eric.ed.gov/fulltext/ED505647.pdf
+https://praachi.work/blog/questions-to-ask-in-a-job-interview
+https://www.netacad.com/courses/cybersecurity
+https://maryrosecook.com/blog/post/a-practical-introduction-to-functional-programming
+https://github.com/hemanth/functional-programming-jargon
+https://research.google/blog/transformers-in-music-recommendation/
+
+https://robertheaton.com/2019/02/24/making-peace-with-simpsons-paradox/
+
+https://osintguardian.com
+https://utcc.utoronto.ca/~cks/space/blog/sysadmin/SSHOurUniversalAccessProtocol
+https://syscalls.mebeim.net/?table=x86/64/x64/latest
+https://www.thexero.co.uk/blog/understanding-wireless-packets-part2
+https://gpuopen.com/learn/deep_learning_crash_course/
+https://tommihovi.com/2024/05/demystifying-cookies-and-tokens/
+https://aml4td.org/chapters/introduction.html
+https://sysprog21.github.io/lkmpg/
+https://santandersecurityresearch.github.io/blog/sshing_the_masses
+https://salt.security/blog/over-1-million-websites-are-at-risk-of-sensitive-information-leakage---xss-is-dead-long-live-xss
 
 https://stackoverflow.com/questions/11528267/how-do-i-read-the-source-code-of-shell-commands
 https://www.youtube.com/watch?v=rL5mCSa4JUk&t=3s
 https://tembo.io/blog/optimizing-memory-usage
 https://best.openssf.org/Compiler-Hardening-Guides/Compiler-Options-Hardening-Guide-for-C-and-C++.html
+https://salykova.github.io/matmul-cpu
+
+https://cybernews.com/security/rockyou2024-largest-password-compilation-leak/
+
+https://www.trickster.dev/post/simple-ways-to-find-exposed-sensitive-information/
+https://making.close.com/posts/dialer-growth-statistics-indexes
+https://stulle123.github.io/posts/kakaotalk-account-takeover/
 
 https://gaultier.github.io/blog/
 
