@@ -1,0 +1,15 @@
+# pip install scrapy
+
+# scrapy startproject s02_scrapy
+
+# spider
+  # tener un spider por página
+
+# scrapy crawl quoted
+# scrapy crawl quoted -o quoted.xml
+# scrapy crawl quoted -o quoted.json
+# scrapy crawl quoted -o quoted.csv
+
+# scrapy shell <site>
+  # response.css("div.quote")
+  # response.xpath("/html/body/div")
