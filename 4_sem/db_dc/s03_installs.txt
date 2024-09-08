@@ -1,0 +1,7 @@
+#basex/basexhttp:latest
+
+spark:scala
+
+podman run -it --volume ../../3_sem/big_data/homeworks/tweets/data:/data/tweets:Z --volume ./data/:/data/new:Z --expose 4040 -p 4040:4040 spark:latest /opt/spark/bin/spark-shell
+
+podman run -it -d -p 8080:8080 -p 8443:8443 --name exist existdb/existdb:latest

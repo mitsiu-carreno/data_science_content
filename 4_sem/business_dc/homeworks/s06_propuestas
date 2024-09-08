@@ -1,0 +1,28 @@
+-Aprendizaje máquina para el desarrollo de modelos predictivos
+Se propone desarrollar una aplicación que permita alertar a los usuarios cuando sus trayectos rutinarios (camino al trabajo, camino a la escuela, camino a casa de un amigo/familiar), cuando estás se ven afectadas por tráfico inusual. 
+Usualmente los sistemas de asistencia de navegación son ampliamente empleados para rutas desconocidas, este sistema toma un enfoque distinto, en el que la alarma únicamente surge cuando un recorrido habitual se verá afectado por condiciones anomalas, en el que se alerta al usuario del posible impacto y se recomiendan rutas alternas.
+Si bien el uso directo de la aplicación será poco (solo cuando se detecte tráfico anomalo en recorridos predecibles), la aplicación estará en constante monitoreo de la ubicación, esto para seguir detectando conductas habituales y ofreciendo alertas relevantes.
+El modelo de negocio será en dos modalidades, gratuito con publicidad, y premium con exclusivos features (no rastrear mi ubicación on demand, guardar rutas personalizadas, integración con datos meteorologicos, etc)
+
+-Ciberseguridad y criptografía
+Se sugiere una aplicación que monitoree las redes inalambricas a las que se conecta el dispositivo movil, enviando paquetes de reconocimiento en la red y aplicando técnicas de analisis de datos, determine los dispositivos comunes en la red y alarme sobre los desconocidos.
+A pesar de que existen aplicaciones similares, el distintivo será la introducción de técnicas de analisis de datos, lo cuál mejorará el analisis y detección de disponsitivos sospechosos, este tipo de analisis, hechos de manera manual son poco frecuentes, pero pueden ser de gran utilidad para protección y reconocimiento de la red. 
+El modelo de negocio considerado es una aplicación de paga, debido a que se supone que el publico méta es de nicho, con interés genuino por la funcionalidad que presenta y que esta dispuesta a pagar por ella.
+
+-Internet de las cosas
+Se plantea una aplicación que detecte dispositivos IoT en el rango (mediante la antena interna del celular), y mediante técnicas de ciencia de datos intenté encontrar vulnerabilidades comúnes en la industria.
+Esta aplicación esta pensada para usuarios con interés por SecOps, por lo que esta pensada para un publico nicho, es una herramienta de entretenimiento y recreasión que permite evaluar dispositivos por simple cercanía fisica.
+Un dispositivo muy similar sería pwnagotchi que actua similar pero esta enfocado a evaluación de redes inalambricas.
+Incluso es posible extender la funcionalidad vendiendo upgrades físicos que se puedan conectar al dispositivo movil y mejore y aumenten las capacidades del hardware del dispositivo movil, por ejemplo permitan analizar mayor rango de dispositivos, agregar nuevas antenas y sensores que permitan interactuar con un mayor rango de dispositivos IoT, etc.
+El modelo de negocio similar a la aplicación de monitoreo de redes inalambricas es de paga, dado el segmento de nicho que esta interesado en la funcionalidad, así como las mejoras de hardware.
+
+- Transformación digital de procesos industriales
+Se propone una aplicación que permita realizar seguimiento de delitos menores mediante fotografías desde el dispositivo movil, el método de operación sera el siguiente, un ciudadano detecta un delito (tirar basura en via publica, conducción con celular, conducción bajo efecto del alcohol), toma evidencia (foto/video) del acto, adjunta la evidencia en la aplicación la cuál realiza un analisis de veracidad con detección de imágenes automatizado, una vez completado el chequeo de verificación, mediante los metadatos de la evidencia se obtienen coordenadas y fecha. La aplicación se espera tenga un vinculo con las autoridades correspondientes que puedan realizar una indagatoria con ayuda de sistemas estatales como C5.
+Para la correcta implementación del sistema es fundamental la integración con el estado, por lo que se espera su colaboración y financiamiento, dado que es una herramienta para practicar activismo cívico y se combaten actividades en contra de la sociedad.
+Existen pocas aplicaciones exitosas que sean desarrolladas o integren el gobierno, pero es un paso en la digitalización de sistemas gubernamentales.
+
+
+- Educación y tutores inteligentes
+Se propone una aplicación que asista a los educadores, en la que ingresen datos generales del curso que estan imaprtiendo como el grado, la materia, temario, nivel educativo, etc y la aplicación generé sugerencias de contenido o actividades que el educador puede implementar, de esta manera el educador recibe una lluvia de ideas sobre la que puede partir para la planeación de clase.
+Existen algunas otras aplicaciones que son similares, pero se considera que aplicando una red de entrenamiento enfocada a educación y pedagogía es posible obtener mejores sugerencias que mediante aplicaciones de competencia.
+El modelo de negocio se planea como de paga con un periodo de prueba gratuito, en caso de no querer pagar habilitar un modo gratuito con publicidad, y cantidad de interacciones límitada, de esta manera se espera que el educador tenga la oportunidad de experimentar de primera mano para ver el valor del producto.

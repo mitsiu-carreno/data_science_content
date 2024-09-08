@@ -19,6 +19,13 @@ https://www.netacad.com/courses/cybersecurity
 https://maryrosecook.com/blog/post/a-practical-introduction-to-functional-programming
 https://github.com/hemanth/functional-programming-jargon
 https://research.google/blog/transformers-in-music-recommendation/
+https://www.rob.directory/blog/react-from-scratch
+https://giansegato.com/essays/why-edtech-startups-dont-scale
+https://microk8s.io/
+https://microk8s.io/docs/clustering
+https://www.haskellforall.com/2021/09/forward-and-reverse-proxies-explained.html
+https://www.haskellforall.com/2024/08/firewall-rules-not-as-secure-as-you.html
+https://www.somethingsimilar.com/2013/01/14/notes-on-distributed-systems-for-young-bloods/
 
 https://robertheaton.com/2019/02/24/making-peace-with-simpsons-paradox/
 
