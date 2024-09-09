@@ -26,6 +26,7 @@ https://microk8s.io/docs/clustering
 https://www.haskellforall.com/2021/09/forward-and-reverse-proxies-explained.html
 https://www.haskellforall.com/2024/08/firewall-rules-not-as-secure-as-you.html
 https://www.somethingsimilar.com/2013/01/14/notes-on-distributed-systems-for-young-bloods/
+https://avestura.dev/blog/creating-a-git-commit-the-hard-way
 
 https://robertheaton.com/2019/02/24/making-peace-with-simpsons-paradox/
 

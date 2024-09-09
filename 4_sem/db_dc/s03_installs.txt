@@ -5,3 +5,15 @@ spark:scala
 podman run -it --volume ../../3_sem/big_data/homeworks/tweets/data:/data/tweets:Z --volume ./data/:/data/new:Z --expose 4040 -p 4040:4040 spark:latest /opt/spark/bin/spark-shell
 
 podman run -it -d -p 8080:8080 -p 8443:8443 --name exist existdb/existdb:latest
+
+
+XML (https://github.com/databricks/spark-xml?tab=readme-ov-file#scala-api)
+https://sparkbyexamples.com/pyspark/pyspark-read-and-write-parquet-file/
+
+podman run -it --volume ${PWD}:/data:Z --expose 4040 -p 4040:4040 -u 0 spark:latest /opt/spark/bin/spark-shell --conf spark.driver.extraJavaOptions="-Divy.cache.dir=/tmp -Divy.home=/tmp" --packages com.databricks:spark-xml_2.12:0.18.0
+podman run -it --volume ${PWD}:/data:Z --expose 4040 -p 4040:4040 -u 0 spark:latest /opt/spark/bin/spark-shell --packages com.databricks:spark-xml_2.12:0.18.0
+
+val df = spark.read.format("xml").option("rootTag", "items").option("rowTag", "item").load("/data/best.xml")
+
+df.write.parquet("/data/test.parquet")
+df.coalesce(1).write.parquet("/data/test.parquet")
