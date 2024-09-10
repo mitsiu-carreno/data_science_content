@@ -8,6 +8,9 @@
 
 **/tweets/data
 **/4_sem/db_dc/data/
+**/4_sem/db_dc/s20_final_project/hn_scraper/hn_scraper/data/
+**/4_sem/db_dc/s20_final_project/hn_scraper/hn_scraper/parquet/
+**shodan/
 
 **/bin/*
 **/build/*

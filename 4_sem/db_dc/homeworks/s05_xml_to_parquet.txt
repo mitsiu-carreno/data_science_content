@@ -1,0 +1,20 @@
+# Levantar contenedor con XML en /data
+podman run -it --volume ${PWD}:/data:Z --expose 4040 -p 4040:4040 -u 0 spark:latest /opt/spark/bin/spark-shell --packages com.databricks:spark-xml_2.12:0.18.0
+
+# Cargar todos los XML en dataframe
+val df = spark.read.format("xml").option("rootTag", "items").option("rowTag", "item").load("/data/data/")
+
+# En un principio "comments" es un struct, que contiene "value" que es un array, se descarta "comments" y se mantiene "value" que es un array
+val test1 = df.select("*","comments.*").drop("comments")  
+
+# Se convierte cada elemento en el arreglo "value" en un renglón (cambia la granularidad del dataframe)
+val test2 = test1.withColumn("value", explode(test1("value"))) 
+
+# Se renombran las columnas en "values" para evitar colisión de nombres entre publicación y comentario
+val test3 = test2.select($"dc_creator",$"description",$"guid",$"id",$"link",$"pubDate",$"title",col("value").cast("struct<comment_dc_creator:string,comment_description:string,comment_guid:string,comment_id:long,comment_link:string,comment_pubDate:string,comment_title:string>")).printSchema
+
+# Se obtienen las columnas anidadas en "value"
+val test4 = test3.select("*", "value.*").drop("value")
+
+# Se exporta a parquet
+test4.coalesce(1).write.parquet("data/data/final.parquet")

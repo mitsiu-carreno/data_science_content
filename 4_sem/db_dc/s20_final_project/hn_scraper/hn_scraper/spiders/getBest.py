@@ -9,11 +9,12 @@ class GetbestSpider(scrapy.Spider):
 
     def parse(self, response):
         for entry in response.xpath("/rss/channel/item"):
-            comments_id = entry.xpath(".//comments/text()").re(r".+item\?id=([\d]+)")[0]
+            entry_id = entry.xpath(".//guid/text()").re(r".+item\?id=([\d]+)")[0]
             getComments = scrapy.Request(
-                f"https://hnrss.org/replies?id={comments_id}",
+                f"https://hnrss.org/replies?id={entry_id}",
                 callback=self.parseComment, 
                 cb_kwargs=dict(
+                    id=entry_id,
                     title=entry.xpath(".//title/text()").get(),
                     description=entry.xpath(".//description/text()").get(),
                     pubDate=entry.xpath(".//pubDate/text()").get(),
@@ -24,10 +25,12 @@ class GetbestSpider(scrapy.Spider):
             )
             yield getComments
 
-    def parseComment(self, response, title, description, pubDate, link, dc_creator, guid):
+    def parseComment(self, response, id, title, description, pubDate, link, dc_creator, guid):
         comments = []
         for comment in response.xpath("/rss/channel/item"):
+            comment_id = comment.xpath(".//guid/text()").re(r".+item\?id=([\d]+)")[0]
             comments.append({
+                "id": comment_id,
                 "title": comment.xpath(".//title/text()").get(),
                 "description": comment.xpath(".//description/text()").get(),
                 "pubDate": comment.xpath(".//pubDate/text()").get(),
@@ -36,6 +39,7 @@ class GetbestSpider(scrapy.Spider):
                 "guid": comment.xpath(".//guid/text()").get()
             })
         yield {
+            "id":id,
             "title": title,
             "description": description,
             "pubDate": pubDate,

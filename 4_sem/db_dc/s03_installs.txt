@@ -15,5 +15,21 @@ podman run -it --volume ${PWD}:/data:Z --expose 4040 -p 4040:4040 -u 0 spark:lat
 
 val df = spark.read.format("xml").option("rootTag", "items").option("rowTag", "item").load("/data/best.xml")
 
+#df.select($"*", $"comments.*")
+# Select all rows and all subrows in comments, remove comments => comments pass from being an struct into an internal array
+val test1 = df.select("*","comments.*").drop("comments")  
+
+# Each element in "value" array is turned into a row
+val test2 = test1.withColumn("value", explode(test1("value"))) 
+
+# Take all columns from test2, left join (take all sub cols in value, rename to comment_<column>)  finally drop struct value
+ATENCIÓN GENERA DUPLICADOS LITERAL ES UN JOIN
+val test3 = test2.join(test2.select("value.*").withColumnRenamed("dc_creator", "comment_dc_creator").withColumnRenamed("description", "comment_description").withColumnRenamed("guid", "comment_guid").withColumnRenamed("id", "comment_id").withColumnRenamed("link", "comment_link").withColumnRenamed("pubDate", "comment_pubDate").withColumnRenamed("title", "comment_title")).drop("value")
+
+.show(false) # dont trim
+
 df.write.parquet("/data/test.parquet")
 df.coalesce(1).write.parquet("/data/test.parquet")
+
+
+
