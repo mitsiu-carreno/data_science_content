@@ -4,7 +4,44 @@ spark:scala
 
 podman run -it --volume ../../3_sem/big_data/homeworks/tweets/data:/data/tweets:Z --volume ./data/:/data/new:Z --expose 4040 -p 4040:4040 spark:latest /opt/spark/bin/spark-shell
 
+user:admin
+pass: <empty>
 podman run -it -d -p 8080:8080 -p 8443:8443 --name exist existdb/existdb:latest
+
+for $result in doc(..)...
+return $result
+
+doc("/db/data/mondial.xml")
+doc("/db/data/mondial.xml")//country/name
+doc("/db/data/mondial.xml")//country[@area<28750]
+doc("/db/data/mondial.xml")//country/@area
+count(doc("/db/data/mondial.xml")//country/city)
+doc("/db/data/mondial.xml")//country/city/population[@measured="census" and @year>2000]
+
+doc("/db/data/mondial.xml")//country/city/population[@measured="estimate" and @year=2020]
+vs
+for $country in doc("/db/data/mondial.xml")//country
+where $country/population/@year=2020 and $country/population/@measured="census"
+return <entry><name>{$country/name}</name> <pop>{$country/population}</pop></entry>
+
+for $country in doc("/db/data/mondial.xml")//country
+where $country/border/@country="R"
+order by $country/name ascending
+return $country/name
+
+for $country in doc("/db/data/mondial.xml")//country
+where ($country/religion = "Catholic")
+return <country name="{$country/name}">
+{
+    for $religion in $country/religion
+    where $religion = "Catholic"
+    return data($religion/@percentage)
+}
+</country>
+
+
+
+
 
 
 XML (https://github.com/databricks/spark-xml?tab=readme-ov-file#scala-api)

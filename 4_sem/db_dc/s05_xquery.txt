@@ -1,0 +1,42 @@
+for $result in doc(..)...
+return $result
+
+doc("/db/data/mondial.xml")
+doc("/db/data/mondial.xml")//country/name
+doc("/db/data/mondial.xml")//country[@area<28750]
+doc("/db/data/mondial.xml")//country/@area
+count(doc("/db/data/mondial.xml")//country/city)
+doc("/db/data/mondial.xml")//country/city/population[@measured="census" and @year>2000]
+
+doc("/db/data/mondial.xml")//country/city/population[@measured="estimate" and @year=2020]
+vs
+for $country in doc("/db/data/mondial.xml")//country
+where $country/population/@year=2020 and $country/population/@measured="census"
+return <entry><name>{$country/name}</name> <pop>{$country/population}</pop></entry>
+
+for $country in doc("/db/data/mondial.xml")//country
+where $country/border/@country="R"
+order by $country/name ascending
+return $country/name
+
+for $country in doc("/db/data/mondial.xml")//country
+where ($country/religion = "Catholic")
+return <country name="{$country/name}">
+{
+    for $religion in $country/religion
+    where $religion = "Catholic"
+    return data($religion/@percentage)
+}
+</country>
+
+
+for $country in doc("/db/data/mondial.xml")//country
+for $population in $country/population
+where $population/@year=2020 and $population/@measured = "estimate"
+return <entry>{$country/name}
+{
+for $pop in $country/population
+where $pop/@year = 2020 and $pop/@measured = "estimate"
+return $pop
+}
+</entry> 

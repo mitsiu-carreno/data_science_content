@@ -1,0 +1,26 @@
+#dot -Tpng file.gv -o file.png | kitty icat responsab.png
+
+graph ER {
+	fontname="Helvetica,Arial,sans-serif"
+	node [fontname="Helvetica,Arial,sans-serif"]
+	edge [fontname="Helvetica,Arial,sans-serif"]
+	layout=neato
+	node [shape=box,style=filled,fillcolor=lightpink,penwidth=1.3]; country; language; religion;
+	node [shape=ellipse,style=filled,fillcolor=lightblue,penwidth=1.3]; pop; lang_name; relig_name;
+		code;
+	node [shape=diamond,style=filled,fillcolor=lightgreen,penwidth=1.3]; "speak"; "believe"; "influence";
+
+	pop -- country;
+	code -- country;
+	country -- "speak";
+	"speak" -- language;
+	language -- lang_name;
+	language -- "influence";
+	"influence" -- religion ;
+	religion -- relig_name;
+	religion -- "believe"[len=1.2];
+	"believe" -- country;
+
+	label = "\n\nEntity Relation Diagram\nof the HN RSS";
+	fontsize=20;
+}
