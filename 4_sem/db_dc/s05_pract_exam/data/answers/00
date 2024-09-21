@@ -1,0 +1,12 @@
+xquery version "3.1";
+
+declare namespace message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message";
+declare namespace ss="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/structurespecific";
+
+for $data in doc('/db/apps/data/comtrade_sdmx.xml')//message:StructureSpecificData
+return $data
+
+
+
+curl -s -f -H 'Content-Type: application/xml'      -T DataStructure.xml      --user admin:      "http://localhost:8080/exist/rest/db/apps/data/DataStructure.xml"
+curl -s -f -H 'Content-Type: application/xml' -T comtrade_sdmx.xml --user admin:  "http://localhost:8080/exist/rest/db/apps/data/comtrade_sdmx.xml"

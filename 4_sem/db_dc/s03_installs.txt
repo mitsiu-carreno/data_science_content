@@ -8,6 +8,9 @@ user:admin
 pass: <empty>
 podman run -it -d -p 8080:8080 -p 8443:8443 --name exist existdb/existdb:latest
 
+Upload file to exist-db
+curl -s -f -H 'Content-Type: application/xml' -T comtrade_sdmx.xml  --user admin:  "http://localhost:8080/exist/rest/db/apps/data/comtrade_sdmx.xml"
+
 for $result in doc(..)...
 return $result
 

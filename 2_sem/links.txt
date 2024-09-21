@@ -29,6 +29,7 @@ https://www.somethingsimilar.com/2013/01/14/notes-on-distributed-systems-for-you
 https://avestura.dev/blog/creating-a-git-commit-the-hard-way
 https://planetscale.com/blog/btrees-and-database-indexes
 https://www.gtf.io/musings/why-haskell
+https://binarygecko.com/race-conditions-in-linux-kernel-perf-events/
 
 https://robertheaton.com/2019/02/24/making-peace-with-simpsons-paradox/
 

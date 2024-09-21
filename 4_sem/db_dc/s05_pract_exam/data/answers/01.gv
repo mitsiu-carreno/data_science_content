@@ -1,0 +1,29 @@
+#dot -Tpng file.gv -o file.png | kitty icat responsab.png
+
+graph ER {
+	fontname="Helvetica,Arial,sans-serif"
+	node [fontname="Helvetica,Arial,sans-serif"]
+	edge [fontname="Helvetica,Arial,sans-serif"]
+	layout=dot
+	node [shape=box,style=filled,fillcolor=lightpink,penwidth=1.3]; "message:StructureSpecificData"; "message:Header"; "message:DataSet";
+	node [shape=ellipse,style=filled,fillcolor=lightblue,penwidth=1.3]; "message:ID"; "message:Test"; "message:Prepared"; "message:Sender"; "message:Structure"; "common:Structure"; Series; Obs;
+	node [shape=diamond,style=filled,fillcolor=lightgreen,penwidth=1.3]; 
+
+  "message:StructureSpecificData" -- "message:Header";
+  
+  "message:Header" -- "message:ID";
+  "message:Header" -- "message:Test";
+  "message:Header" -- "message:Prepared";
+  "message:Header" -- "message:Sender";
+  "message:Header" -- "message:Structure";
+  "message:Header" -- "common:Structure";
+
+  "message:StructureSpecificData" -- "message:DataSet";
+
+  "message:DataSet" -- Series;
+  
+  Series -- Obs;
+  
+	label = "\n\nDiagrama entidad relación\ncomtrade_sdmx";
+	fontsize=20;
+}

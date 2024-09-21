@@ -1,0 +1,33 @@
+#dot -Tpng file.gv -o file.png | kitty icat responsab.png
+
+graph ER {
+	fontname="Helvetica,Arial,sans-serif"
+	node [fontname="Helvetica,Arial,sans-serif"]
+	edge [fontname="Helvetica,Arial,sans-serif"]
+	layout=dot
+	node [shape=box,style=filled,fillcolor=lightpink,penwidth=1.3]; Header; Codelist; Code;
+	node [shape=ellipse,style=filled,fillcolor=lightblue,penwidth=1.3]; Id; Test; Prepared; Sender; Receiver; Name; Description; Name2[label="Name"]; Description2[label="Description"];Parent; Ref;
+	node [shape=diamond,style=filled,fillcolor=lightgreen,penwidth=1.3]; 
+
+  Header -- Id;
+  Header -- Test;
+  Header -- Prepared;
+  Header -- Sender;
+  Header -- Receiver;
+
+  Header -- Codelist;
+
+  Codelist -- Name;
+  Codelist -- Code;
+  Codelist -- Description;
+
+  Code -- Name2;
+  Code -- Description2;
+  Code -- Parent;
+
+  Parent -- Ref;
+  
+
+	label = "\n\nDiagrama entidad relación\nDataStructure";
+	fontsize=20;
+}
