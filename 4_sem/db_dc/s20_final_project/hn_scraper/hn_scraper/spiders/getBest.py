@@ -1,4 +1,4 @@
-# scrapy crawl getBest -o data/best.xml
+# scrapy crawl getBest -o data/dd-sep-HH-best.xml
 import scrapy
 
 

@@ -2,7 +2,9 @@
 
 spark:scala
 
-podman run -it --volume ../../3_sem/big_data/homeworks/tweets/data:/data/tweets:Z --volume ./data/:/data/new:Z --expose 4040 -p 4040:4040 spark:latest /opt/spark/bin/spark-shell
+podman run -it --volume ../../3_sem/big_data/homeworks/tweets/data:/data/tweets:Z --volume ./data/:/data/new:Z --expose 4040 -p 4040:4040 -u 0 --name spark spark:latest /opt/spark/bin/spark-shell
+
+podman exec -it -u 0 spark /opt/spark/bin/spark-shell
 
 user:admin
 pass: <empty>

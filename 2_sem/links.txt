@@ -30,6 +30,10 @@ https://avestura.dev/blog/creating-a-git-commit-the-hard-way
 https://planetscale.com/blog/btrees-and-database-indexes
 https://www.gtf.io/musings/why-haskell
 https://binarygecko.com/race-conditions-in-linux-kernel-perf-events/
+https://github.com/bitnami/charts/tree/main/bitnami/spark/#installing-the-chart
+https://medium.com/@SaphE/deploying-apache-spark-on-kubernetes-using-helm-charts-simplified-cluster-management-and-ee5e4f2264fd
+https://verylazytech.gitbook.io/verylazytech/network-pentesting/ssh-port-22
+https://www.evilsocket.net/2024/09/26/Attacking-UNIX-systems-via-CUPS-Part-I/
 
 https://robertheaton.com/2019/02/24/making-peace-with-simpsons-paradox/
 
