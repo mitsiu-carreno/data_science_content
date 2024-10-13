@@ -1,0 +1,199 @@
+#### Prep
+Open wallpaper for wallpapering
+Shift + Super + arrow # move current window between displays
+Primary display should be tv! (Allow multiple windows kitty + browser)
+
+Tabs:
+1 spark-cluster
+2 watchers
+3 forwarding
+
+Forwarding
+2 watch -d kubectl -n spark-cluster get pods
+
+2- kubectl -n kube-system logs -f $(kubectl -n kube-system get pods -l k8s-app=kube-dns -o jsonpath="{.items[0].metadata.name}")
+
+3 kubectl port-forward --namespace spark-cluster svc/spark-cluster-master-svc 8080:80
+
+3- kubectl -n spark-cluster port-forward spark-cluster-worker-0 8081:8080
+
+3- kubectl -n minio port-forward pod/$(kubectl -n minio get pods -o jsonpath={".items[0].metadata.name"}) 9001
+
+3- kubectl -n spark-cluster port-forward spark-cluster-master-0 4040:4040
+#### Prep
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1 minikube start --network=bridge
+
+# kubectl get ns
+
+!DNS
+
+# helm install spark-cluster oci://registry-1.docker.io/bitnamicharts/spark --namespace spark-cluster --create-namespace --set master.url=spark://spark-cluster-master-svc:7077
+
+1 helm repo add bitnami https://charts.bitnami.com/bitnami
+
+1 helm install spark-cluster bitnami/spark --namespace spark-cluster --create-namespace
+
+!Watch creation
+!UI Forward
+
+!Minio demo 
+demo
+  input
+  output
+
+1 kubectl -n spark-cluster cp s10_custom_job.py spark-cluster-master-0:/tmp/test.py
+
+#kubectl -n spark-cluster exec -it spark-cluster-master-0 -- /bin/bash
+
+1
+kubectl -n spark-cluster exec -it spark-cluster-master-0 -- ./bin/spark-submit \
+--master spark://spark-cluster-master-0.spark-cluster-headless.spark-cluster.svc.cluster.local:7077 \
+--conf spark.hadoop.fs.s3a.endpoint=http://minio.minio.svc.cluster.local:9000 \
+--conf spark.hadoop.fs.s3a.access.key=rootuser \
+--conf spark.hadoop.fs.s3a.secret.key=rootpass123 \
+--conf spark.hadoop.fs.s3a.path.style.access=true \
+/tmp/test.py
+
+helm upgrade -n spark-cluster spark-cluster bitnami/spark --set worker.replicaCount=5
+
+
+
+
+
+
+
+
+
+
+
+
+helm list --all-namespaces
+
+helm upgrade spark-test oci://registry-1.docker.io/bitnamicharts/spark --set worker.replicaCount=5 
+
+helm uninstall spark-cluster
+
+kubectl delete namespace spark-cluster
+
+
+
+--------------------------------------------
+helm repo add minio https://charts.min.io/
+
+helm install minio \
+--set resources.requests.memory=512Mi \
+--set replicas=1 \
+--set persistence.enabled=false \
+--set mode=standalone \
+--set rootUser=rootuser,rootPassword=rootpass123 \
+minio/minio \
+--namespace minio --create-namespace
+
+kubectl -n minio port-forward pod/minio-7fdd6bd5bd-pphm2 9001
+
+
+if kubectl cp fails -->  cat [local file path] | kubectl exec -i -n [namespace] [pod] -c [container] "--" sh -c "cat > [remote file path]"
+
+
+
+
+refs:
+https://medium.com/@SaphE/testing-apache-spark-locally-docker-compose-and-kubernetes-deployment-94d35a54f222
+https://medium.com/@SaphE/deploying-apache-spark-on-a-local-kubernetes-cluster-a-comprehensive-guide-d4a59c6b1204
+https://medium.com/@SaphE/deploying-apache-spark-on-kubernetes-using-helm-charts-simplified-cluster-management-and-ee5e4f2264fd
+
+https://towardsdatascience.com/how-to-build-spark-from-source-and-deploy-it-to-a-kubernetes-cluster-in-60-minutes-225829b744f9
+
+https://stackoverflow.com/questions/47817818/helm-delete-all-releases
+
+
+Fallback
+kubectl exec -it spark-cluster-master-0 -- ./bin/spark-submit --class org.apache.spark.examples.SparkPi --master spark://spark-cluster-master-0.spark-cluster-headless.default.svc.cluster.local:7077 ./examples/jars/spark-examples_2.12-3.5.3.jar 1000
+
+
+
+
+
+
+---------------------------------------------
+
+helm repo add jupyterhub https://hub.jupyter.org/helm-chart/
+
+helm repo update
+
+helm upgrade --cleanup-on-fail --install jupyterhub jupyterhub/jupyterhub --namespace jupyterhub --create-namespace  --values config.yaml
+
+minikube start --network=bridge --insecure-registry="localhost:5000"
+
+helm upgrade --install jupyterhub jupyterhub/jupyterhub --namespace jupyterhub --create-namespace --set singleuser.image.name=localhost:5000/mit-jupy-java-s3 --set singleuser.image.tag=1.0.0 --set singleuser.image.pullPolicy=IfNotPresent
+
+kubectl --namespace=jupyterhub port-forward service/proxy-public 9080:http
+
+
+## Extending for java
+eval $(minikube docker-env)
+
+podman build -t my-jupyterhub-java -f s10_jupyter_dockerfile
+
+podman save -o my-jupyterhub-java.tar my-jupyterhub-java:latest 
+
+minikube cp my-jupyterhub-java.tar /tmp/image/
+
+minikube ssh
+
+docker load -i my-jupyterhub-java.tar 
+
+helm upgrade --install jupyterhub jupyterhub/jupyterhub --namespace jupyterhub --set singleuser.image.name=localhost:5000/mit-jupy-java-s3 --set singleuser.image.tag=1.0.0 --set singleuser.image.pullPolicy=IfNotPresent
+
+
+
+
+
+
+
+
+
+----------------------------------
+Local registry
+(podman)
+sudo vim /etc/containers/registries.conf.d/myregistry.conf 
+>>>
+[[registry]]
+location = "localhost:5000"
+insecure = true
+>>>
+
+minikube start --network=bridge --insecure-registry="localhost:5000"
+
+minikube ssh
+
+podman run -d -p 5000:5000 --restart=always --name registry registry:2
+curl http://localhost:5000/v2/
+
+podman build -t mit-jupy-java-s3:1.0.0 -f s10_jupyter_dockerfile
+
+podman tag mit-jupy-java-s3:1.0.0 localhost:5000/mit-jupy-java-s3:1.0.0
+
+podman push localhost:5000/mit-jupy-java-s3:1.0.0
+
+curl localhost:5000/v2/_catalog
+
+
