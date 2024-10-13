@@ -143,7 +143,7 @@ helm upgrade --cleanup-on-fail --install jupyterhub jupyterhub/jupyterhub --name
 
 minikube start --network=bridge --insecure-registry="localhost:5000"
 
-helm upgrade --install jupyterhub jupyterhub/jupyterhub --namespace jupyterhub --create-namespace --set singleuser.image.name=localhost:5000/mit-jupy-java-s3 --set singleuser.image.tag=1.0.0 --set singleuser.image.pullPolicy=IfNotPresent
+helm upgrade --cleanup-on-fail --install jupyterhub jupyterhub/jupyterhub --namespace jupyterhub --create-namespace --set singleuser.image.name=localhost:5000/mit-jupy-java-s3 --set singleuser.image.tag=1.0.4 --set singleuser.image.pullPolicy=IfNotPresent
 
 kubectl --namespace=jupyterhub port-forward service/proxy-public 9080:http
 

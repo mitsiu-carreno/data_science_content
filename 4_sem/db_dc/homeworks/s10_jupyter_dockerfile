@@ -1,0 +1,62 @@
+FROM quay.io/jupyterhub/k8s-singleuser-sample:3.3.8
+
+USER root
+
+RUN apt-get update && \
+  apt-get install -y openjdk-11-jdk-headless curl && \
+  apt-get clean
+
+RUN pip install pyspark
+
+ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+ENV PATH=$PATH:$JAVA_HOME/bin
+
+
+ENV HADOOP_VERSION="3.3.6"
+ENV AWS_VERSION="1.12.599"
+
+# Install Hadoop and the s3a connector for PySpark to use MinIO
+RUN mkdir -p /usr/local/hadoop 
+RUN curl -o /tmp/hadoop.tar.gz https://downloads.apache.org/hadoop/common/hadoop-${HADOOP_VERSION}/hadoop-${HADOOP_VERSION}.tar.gz
+RUN tar -xzvf /tmp/hadoop.tar.gz -C /usr/local/hadoop --strip-components=1
+RUN rm /tmp/hadoop.tar.gz
+
+
+RUN curl -o /usr/local/hadoop/share/hadoop/tools/lib/hadoop-aws-${HADOOP_VERSION}.jar https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/${HADOOP_VERSION}/hadoop-aws-${HADOOP_VERSION}.jar
+RUN curl -o /usr/local/hadoop/share/hadoop/tools/lib/aws-java-sdk-bundle-${AWS_VERSION}.jar https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/${AWS_VERSION}/aws-java-sdk-bundle-${AWS_VERSION}.jar
+
+##   Configure Hadoop for S3A 
+##  RUN echo "\n\
+##  export HADOOP_HOME=/usr/local/hadoop\n\
+##  export HADOOP_CONF_DIR=/usr/local/hadoop/etc/hadoop\n\
+##  export SPARK_DIST_CLASSPATH=$(/usr/local/hadoop/bin/hadoop classpath)\n\
+##  " >> ~/.bashrc
+
+ENV HADOOP_HOME=/usr/local/hadoop
+ENV HADOOP_CONF_DIR=/usr/local/hadoop/etc/hadoop
+
+RUN echo "export SPARK_DIST_CLASSPATH=$(/usr/local/hadoop/bin/hadoop classpath)" >> /etc/profile.d/spark.sh
+
+RUN pip install minio
+
+EXPOSE 8888
+
+
+##  RUN mkdir -p /usr/local/spark/jars
+##  
+##  # find /usr/local/spark/jars/ -name 'hadoop-client-api-*.jar' | awk -F- '{print $4}' | grep -Eo '([0-9]\.)+[0-9]'
+##  ENV AWS_VERSION="1.12.599"
+##  ENV SCALA_VERSION="2.12"
+##  
+##  RUN (cd /usr/local/spark/jars  curl -s -O https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-common/${HADOOP_VERSION}/hadoop-common-${HADOOP_VERSION}.jar)
+##  RUN (cd /usr/local/spark/jars  curl -s -O https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/${HADOOP_VERSION}/hadoop-aws-${HADOOP_VERSION}.jar)
+##  RUN (cd /usr/local/spark/jars  curl -s -O https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-core/${AWS_VERSION}/aws-java-sdk-core-${AWS_VERSION}.jar)
+##  RUN (cd /usr/local/spark/jars  curl -s -O https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-s3/${AWS_VERSION}/aws-java-sdk-s3-${AWS_VERSION}.jar)
+##  RUN (cd /usr/local/spark/jars  curl -s -O https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-dynamodb/${AWS_VERSION}/aws-java-sdk-dynamodb-${AWS_VERSION}.jar)
+##  
+##  #ENV PYSPARK_SUBMIT_ARGS '--packages com.amazonaws:aws-java-sdk:1.11.950,org.apache.hadoop:hadoop-aws:3.2.0,net.java.dev.jets3t:jets3t:0.9.4 pyspark-shell'
+
+# Switch back to jupyter user
+USER ${NB_UID}
+
+CMD ["/bin/bash", "-c", "source /etc/profile && start-notebook.sh"]
