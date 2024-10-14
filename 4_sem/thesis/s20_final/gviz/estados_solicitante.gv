@@ -1,0 +1,26 @@
+digraph G {
+  # dot -Tsvg file.gv -o file.svg | kitty icat file.svg
+	fontname="Helvetica,Arial,sans-serif"
+	node [fontname="Helvetica,Arial,sans-serif"]
+	edge [fontname="Helvetica,Arial,sans-serif"]
+
+  labelloc="t";
+  label="Transición de estados de solicitante";
+
+	subgraph cluster_0 {
+		node [style=filled];
+		solicitando -> esperando -> recibiendo -> exito;
+    label=""
+	}
+
+	subgraph cluster_1 {
+		node [style=filled];
+		fallo;
+    label=""
+	}
+    
+	solicitando -> fallo
+	esperando -> fallo
+	recibiendo -> fallo
+	exito
+}

@@ -47,6 +47,14 @@ Forwarding
 
 # helm install spark-cluster oci://registry-1.docker.io/bitnamicharts/spark --namespace spark-cluster --create-namespace --set master.url=spark://spark-cluster-master-svc:7077
 
+# FROM bitnami/spark
+# USER root
+# RUN install_packages curl
+# USER 1001
+# RUN curl https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.11.704/aws-java-sdk-bundle-1.11.704.jar --output /opt/bitnami/spark/jars/aws-java-sdk-bundle-1.11.704.jar
+
+
+
 1 helm repo add bitnami https://charts.bitnami.com/bitnami
 
 1 helm install spark-cluster bitnami/spark --namespace spark-cluster --create-namespace
@@ -143,7 +151,7 @@ helm upgrade --cleanup-on-fail --install jupyterhub jupyterhub/jupyterhub --name
 
 minikube start --network=bridge --insecure-registry="localhost:5000"
 
-helm upgrade --cleanup-on-fail --install jupyterhub jupyterhub/jupyterhub --namespace jupyterhub --create-namespace --set singleuser.image.name=localhost:5000/mit-jupy-java-s3 --set singleuser.image.tag=1.0.4 --set singleuser.image.pullPolicy=IfNotPresent
+helm upgrade --cleanup-on-fail --install jupyterhub jupyterhub/jupyterhub --namespace jupyterhub --create-namespace --set singleuser.image.name=localhost:5000/mit-jupy-java-s3 --set singleuser.image.tag=1.0.4 --set singleuser.image.pullPolicy=IfNotPresent --set singleuser.storage.type=none 
 
 kubectl --namespace=jupyterhub port-forward service/proxy-public 9080:http
 
@@ -159,9 +167,7 @@ minikube cp my-jupyterhub-java.tar /tmp/image/
 
 minikube ssh
 
-docker load -i my-jupyterhub-java.tar 
 
-helm upgrade --install jupyterhub jupyterhub/jupyterhub --namespace jupyterhub --set singleuser.image.name=localhost:5000/mit-jupy-java-s3 --set singleuser.image.tag=1.0.0 --set singleuser.image.pullPolicy=IfNotPresent
 
 
 
@@ -197,3 +203,11 @@ podman push localhost:5000/mit-jupy-java-s3:1.0.0
 curl localhost:5000/v2/_catalog
 
 
+export v=1.0.4
+
+docker build -t mit-jupy-java-s3:${v} . && docker tag mit-jupy-java-s3:${v} localhost:5000/mit-jupy-java-s3:${v} && docker push localhost:5000/mit-jupy-java-s3:${v}
+
+
+
+kubectl -n jupyterhub rollout restart deployment.apps/hub
+kubectl -n jupyterhub rollout restart deployment.apps/proxy

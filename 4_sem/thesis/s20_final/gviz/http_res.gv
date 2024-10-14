@@ -1,0 +1,68 @@
+digraph G {
+  fontname="Helvetica,Arial,sans-serif"
+  node [fontname="Helvetica,Arial,sans-serif"]
+  edge [fontname="Helvetica,Arial,sans-serif"]
+  
+  labelloc="t";
+  label="Respuesta HTTP";
+  
+  a0 [shape=none label=<
+ <TABLE border="0" cellspacing="5" cellpadding="10" bgcolor="lightgray">
+  <TR>
+    <TD colspan="15" bgcolor="#efdfff">
+        HTTP/1.1 200 OK
+    </TD>
+    <TD colspan="4" bgcolor="#efdfff">
+        Línea de solicitud
+    </TD>
+  </TR>
+  <TR>
+    <TD colspan="15" bgcolor="#e0e0ff">
+        Date: Thu, 5 Oct 2024 21:34:13 GMT 
+        <BR></BR>
+        Connection: close
+    </TD>
+    <TD colspan="4" bgcolor="#e0e0ff">
+        Encabezados generales
+    </TD>
+  </TR>
+  <TR>
+    <TD  colspan="15" bgcolor="#e0ffff">
+        Server: Apache/1.3.27
+        <BR></BR>
+        Accept-Ranges: bytes
+    </TD>
+    <TD colspan="4" bgcolor="#e0ffff">Encabezados de respuesta</TD>
+  </TR>
+  <TR>
+    <TD colspan="15" bgcolor="#e0ffe0">
+        Content-Type: text/html
+        <BR></BR>
+        Content-Length: 140
+        <BR></BR>
+        Last-Modified: Tue, 18 Oct 10:14:49 GMT
+    </TD>
+    <TD colspan="4" bgcolor="#e0ffe0">
+        Cabezeras de entrada
+    </TD>
+  </TR>
+  <TR>
+    <TD colspan="15" bgcolor="#ffe0e0">
+        &#60;html&#62;
+        <BR></BR>
+        &#60;body&#62;
+        <BR></BR>
+        &#60;h1&#62;This site is poorly build&#60;/h1&#62;
+        <BR></BR>
+        &#60;/body&#62;
+        <BR></BR>
+        &#60;/html&#62;
+    </TD>
+    <TD colspan="4" bgcolor="#ffe0e0">
+        Cuerpo de mensaje
+    </TD>
+  </TR>
+  
+</TABLE>>];
+
+}

@@ -1,0 +1,56 @@
+¿Para quién lo hago?
+Para empresas que generan software dentro de la categoría de sistemas de tiempo real.
+¿Quiénes son esas personas?
+Empresas que se dedican a desarrollo de videojuegos, sistemas de navegación, sistemas médicos, plataformas de transacciones digitales, entre otras.
+¿Qué están buscando?
+Ofrecer software que cumpla con requisitos de tiempo de procesamiento (durante ejecución) definidos.
+
+
+¿Qué estoy ofreciendo?
+Una herramienta que mediante análisis heuristicos y estadisticos aplicados a estructuras de datos apoyen en optimizar el código y su representación en memoria para alcanzar el performance requerido.
+¿Cómo lo doy a conocer?
+Los canales de difusión se consideran para clientes empresariales por lo que pueden ser, convenciones del ramo, marketing targeteado, además de publicidad online segmentado.
+¿Cómo lo proporciono?
+Se pueden implementar campañas de newsletter, un blog técnico, demos gratuitos.
+
+
+¿Cómo contacto con los usuarios (usuarios actuales, usuarios nuevos, usuarios futuros)?
+Al ser un producto de uso empresarial se considera que la mejor estrategia es asistir a convenciones del ramo así como buscar contacto 1 a 1 con representantes de las empresas, se considera.
+
+
+¿Qué necesito para hacerlo?
+Principalmente se debe trabajar en el producto (el software que permita optimizar código), contratar ingenieros con especialización data driven development.
+¿Cuáles son sus características?
+La solución debe ser robusta, permitiendo ajustarse a código externo, medible para demostrar su efecto y beneficio, debe ser plug-and-play para fácilitar la integración a diversos lenguajes y ambientes.
+¿Cómo se deben hacer c/u?
+Se debe tomar un sentido engineering driven en que la calidad del producto sea principal. Además se debe trabajar el sentido mercadologico para volver conocido el producto.
+¿Cómo se conjuntan?
+Se debe equilibrar cuidadosamente los requisitos de ingeniería, los requisitos mercadologicos y el ambito financiero para producir productos terminados, vendibles y viables, una vez completada la primer versión, se considera una estatégia de incremento iterativo.
+
+
+¿Qué tan bueno es lo que hago?
+Se considera de un buen nivel de calidad.
+¿Es atractivo para el cliente?
+Se espera que el software sea atractivo para el sector al que esta planificado, ya que la optimización juega un papel escencial en alcanzar el performance necesario en la rama de sistemas de tiempo real.
+¿Qué tan bien resuelve el problema?
+Se considera que la calidad debe ser el factor diferenciador, por lo que la calidad para resolver el problema es escencial y de máxima prioridad.
+¿Es mejor que los demás?
+Debe serlo, la sostenibilidad del emprendimiento depende de ello, esto no significa que debe ser la única y mejor opción, pero debe ser viable para cierto sector de empresas interesadas en desarrollo de sistemas de tiempo real.
+
+
+¿Con quién cuento para hacerlo?
+Se cuenta con un personal con amplia experiencia y sentido de la ingeniería.
+¿Quién me ayuda?
+Se cuenta con socios con experiencia en ventas y manejo de clientes.
+¿De quién necesito?
+Se requieren ingenieros con experiencia en desarrollo de software de tiempo real, así como desarrollo data-driven.
+
+
+¿Cómo hago dinero con esto?
+Se considera un modelo de suscripción y venta a nivel empresarial basado en cantidad de licencias.
+¿Cuánto me va a costar?
+Se estima que los costos iniciales sean superiores a los $200,000.00 para el desarrollo de la primera versión.
+¿En cuánto lo voy a ofrecer?
+Se estima que el costo por licencia sea cercano a los $10,000 mensuales, conforme se desarrolle el producto se puede diversificar en suscipciones de distintos niveles como, 1) Unicamente software 2) Asistencia 24/7.
+¿En cuánto lo ofrece la competencia?
+Al momento no sé conoce sobre existencia de competencia directa, usualmente las empresas directamente contratan especialistas para optimizar in-house, pero herramientas similares como revisores de código AI tienen un precio de $500 mensuales en un plan personal, a nivel empresarial no ofrecen precios directamente, sino bajo cierta revisión especifica.

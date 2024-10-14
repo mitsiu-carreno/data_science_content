@@ -1,0 +1,60 @@
+digraph G {
+  fontname="Helvetica,Arial,sans-serif"
+  node [fontname="Helvetica,Arial,sans-serif"]
+  edge [fontname="Helvetica,Arial,sans-serif"]
+  
+  labelloc="t";
+  label="Solicitud HTTP";
+  
+  a0 [shape=none label=<
+ <TABLE border="0" cellspacing="5" cellpadding="10" bgcolor="lightgray">
+  <TR>
+    <TD colspan="7" bgcolor="#efdfff">
+        GET /index.html HTTP/1.1
+    </TD>
+    <TD colspan="5" bgcolor="#efdfff">
+        Línea de solicitud
+    </TD>
+  </TR>
+  <TR>
+    <TD colspan="7" bgcolor="#e0e0ff">
+        Date: Thu, 5 Oct 2024 21:34:12 GMT 
+        <BR></BR>
+        Connection: close
+    </TD>
+    <TD colspan="5" bgcolor="#e0e0ff">
+        Encabezados generales
+    </TD>
+  </TR>
+  <TR>
+    <TD  colspan="7" bgcolor="#e0ffff">
+        Host: www.enlace.ucags.edu.mx
+        <BR></BR>
+        From: JoeDoe@moodle.ucags.edu.mx
+        <BR></BR>
+        Accept: text/html, text/plain
+        <BR></BR>
+        User-Agent: Mozilla/4.0 (compatible: MSIE 6.0; Windows NT 5.1)
+    </TD>
+    <TD colspan="5" bgcolor="#e0ffff">Encabezados de solicitud</TD>
+  </TR>
+  <TR>
+    <TD colspan="7" bgcolor="#e0ffe0">
+    </TD>
+    <TD colspan="5" bgcolor="#e0ffe0">
+        Cabezeras de entrada
+    </TD>
+  </TR>
+  <TR>
+    <TD colspan="7" bgcolor="#ffe0e0">
+    </TD>
+    <TD colspan="5" bgcolor="#ffe0e0">
+        Cuerpo de mensaje
+    </TD>
+  </TR>
+  
+  
+  
+</TABLE>>];
+
+}

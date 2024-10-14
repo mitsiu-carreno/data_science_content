@@ -34,6 +34,9 @@ https://github.com/bitnami/charts/tree/main/bitnami/spark/#installing-the-chart
 https://medium.com/@SaphE/deploying-apache-spark-on-kubernetes-using-helm-charts-simplified-cluster-management-and-ee5e4f2264fd
 https://verylazytech.gitbook.io/verylazytech/network-pentesting/ssh-port-22
 https://www.evilsocket.net/2024/09/26/Attacking-UNIX-systems-via-CUPS-Part-I/
+http://www.lemis.com/grog/Documentation/Lions/book.pdf
+https://www.tedinski.com/2018/11/13/function-coloring.html
+https://www.codeproject.com/Articles/5291187/Using-Multiple-Return-Values-instead-of-Exceptions
 
 https://robertheaton.com/2019/02/24/making-peace-with-simpsons-paradox/
 

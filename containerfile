@@ -5,7 +5,7 @@ WORKDIR /tf
 RUN pip install seaborn
 RUN pip install scipy
 RUN pip install scikit-learn
-RUN pip install pip install tqdm
+RUN pip install tqdm
 RUN pip install scikit-image
 RUN pip install sqlalchemy
 RUN pip install keras-tuner 

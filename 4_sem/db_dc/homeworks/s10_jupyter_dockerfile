@@ -2,9 +2,47 @@ FROM quay.io/jupyterhub/k8s-singleuser-sample:3.3.8
 
 USER root
 
+# Install required packages for building Python from source
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    wget \
+    libssl-dev \
+    libbz2-dev \
+    libreadline-dev \
+    libsqlite3-dev \
+    libffi-dev \
+    zlib1g-dev \
+    curl \
+    llvm \
+    libgdbm-dev \
+    liblzma-dev \
+    tk-dev \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Download and install Python 3.12
+RUN wget https://www.python.org/ftp/python/3.12.6/Python-3.12.6.tgz \
+    && tar xzf Python-3.12.6.tgz \
+    && cd Python-3.12.6 \
+    && ./configure --enable-optimizations \
+    && make altinstall \
+    && cd .. \
+    && rm -rf Python-3.12.6 Python-3.12.6.tgz
+
+# Set Python 3.12 as the default python
+#RUN update-alternatives --install /usr/local/bin/python python /usr/local/bin/python3.12 1
+#RUN update-alternatives --set python /usr/local/bin/python3.12
+
+# Optionally, install pip for Python 3.12
+RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
+    && python3.12 get-pip.py \
+    && rm get-pip.py
+
 RUN apt-get update && \
   apt-get install -y openjdk-11-jdk-headless curl && \
   apt-get clean
+
+RUN python3 -m pip install --upgrade pip
 
 RUN pip install pyspark
 
@@ -59,4 +97,4 @@ EXPOSE 8888
 # Switch back to jupyter user
 USER ${NB_UID}
 
-CMD ["/bin/bash", "-c", "source /etc/profile && start-notebook.sh"]
+CMD ["start-notebook.sh"]
