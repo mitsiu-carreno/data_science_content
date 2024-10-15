@@ -1,0 +1,128 @@
+#### Prep
+
+minikube start --network=bridge
+
+minikube ssh 
+mkdir -p /tmp/images
+docker run -d -p 5000:5000 --restart=always --name registry registry:2
+
+curl http://localhost:5000/v2/
+
+#Copy Dockerfile
+export tag=1.0.0
+export repo=mit-jupy-pyspark
+
+docker build -t ${repo}:${tag} . \
+&& docker tag ${repo}:${tag} localhost:5000/${repo}:${tag} \
+&& docker push localhost:5000/${repo}:${tag}
+
+
+docker pull bitnami/spark:3.5.3-debian-12-r0
+docker pull quay.io/jupyterhub/k8s-singleuser-sample:3.3.8
+docker pull quay.io/jupyterhub/k8s-hub:3.3.8
+docker pull quay.io/minio/minio:RELEASE.2024-04-18T19-09-19Z
+
+
+
+helm repo add jupyterhub https://hub.jupyter.org/helm-chart/
+
+helm upgrade \
+--install jupyterhub jupyterhub/jupyterhub \
+--namespace jupyterhub \
+--create-namespace \
+--cleanup-on-fail \
+--set singleuser.storage.type=none 
+
+helm upgrade \
+--install jupyterhub jupyterhub/jupyterhub \
+--namespace jupyterhub \
+--create-namespace  \
+--cleanup-on-fail \
+--values values.yml
+
+helm repo add minio https://charts.min.io/
+
+helm upgrade \
+--install minio minio/minio \
+--namespace minio \
+--create-namespace \
+--cleanup-on-fail \
+--set resources.requests.memory=512Mi \
+--set replicas=1 \
+--set persistence.enabled=false \
+--set mode=standalone \
+--set rootUser=user,rootPassword=password
+
+
+Tabs:
+1 spark-cluster/k8s
+2 watchers
+3 forwarding
+
+Forwarding
+2
+watch -d kubectl -n spark-cluster get pods
+
+2
+kubectl -n kube-system logs -f $(kubectl -n kube-system get pods -l k8s-app=kube-dns -o jsonpath="{.items[0].metadata.name}")
+
+3
+kubectl port-forward --namespace spark-cluster svc/spark-cluster-master-svc 8080:80
+
+3
+kubectl -n spark-cluster port-forward spark-cluster-worker-0 8081:8080
+
+3
+kubectl -n spark-cluster port-forward spark-cluster-master-0 4040:4040
+
+3
+kubectl -n minio port-forward pod/$(kubectl -n minio get pods -o jsonpath={".items[0].metadata.name"}) 9001
+
+3
+kubectl --namespace=jupyterhub port-forward service/proxy-public 9080:http
+#### Prep
+
+
+
+helm repo add bitnami https://charts.bitnami.com/bitnami
+
+helm upgrade \
+--install spark-cluster bitnami/spark \
+--namespace spark-cluster \
+--create-namespace \
+--cleanup-on-fail
+
+
+kubectl -n spark-cluster exec -it spark-cluster-worker-0 -- /bin/bash
+
+kubectl exec -n spark-cluster -it spark-cluster-master-0 -- ./bin/spark-submit \
+--class org.apache.spark.examples.SparkPi \
+--master spark://spark-cluster-master-0.spark-cluster-headless.spark-cluster.svc.cluster.local:7077 \
+./examples/jars/spark-examples_2.12-3.5.3.jar 1000
+
+
+#Subir archivo 9001
+
+kubectl -n spark-cluster cp submit-job.py spark-cluster-master-0:/tmp/submit-job.py
+
+time kubectl -n spark-cluster exec -it spark-cluster-master-0 -- ./bin/spark-submit \
+--master spark://spark-cluster-master-0.spark-cluster-headless.spark-cluster.svc.cluster.local:7077 \
+--conf spark.hadoop.fs.s3a.endpoint=http://minio.minio.svc.cluster.local:9000 \
+--conf spark.hadoop.fs.s3a.access.key=user \
+--conf spark.hadoop.fs.s3a.secret.key=password \
+--conf spark.hadoop.fs.s3a.path.style.access=true \
+/tmp/submit-job.py
+
+
+helm upgrade \
+--install spark-cluster bitnami/spark \
+--namespace spark-cluster \
+--create-namespace \
+--cleanup-on-fail \
+--set worker.replicaCount=5
+
+
+
+# Jupyterhub 9080
+
+
