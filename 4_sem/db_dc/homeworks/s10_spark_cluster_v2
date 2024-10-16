@@ -31,7 +31,7 @@ helm upgrade \
 --namespace jupyterhub \
 --create-namespace \
 --cleanup-on-fail \
---set singleuser.storage.type=none 
+--set set prePuller.hook.enabled=false
 
 helm upgrade \
 --install jupyterhub jupyterhub/jupyterhub \
@@ -90,7 +90,8 @@ helm upgrade \
 --install spark-cluster bitnami/spark \
 --namespace spark-cluster \
 --create-namespace \
---cleanup-on-fail
+--cleanup-on-fail \
+--values values.yml
 
 
 kubectl -n spark-cluster exec -it spark-cluster-worker-0 -- /bin/bash
@@ -119,6 +120,7 @@ helm upgrade \
 --namespace spark-cluster \
 --create-namespace \
 --cleanup-on-fail \
+--values values.yml \
 --set worker.replicaCount=5
 
 
