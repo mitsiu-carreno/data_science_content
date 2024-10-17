@@ -37,6 +37,8 @@ https://www.evilsocket.net/2024/09/26/Attacking-UNIX-systems-via-CUPS-Part-I/
 http://www.lemis.com/grog/Documentation/Lions/book.pdf
 https://www.tedinski.com/2018/11/13/function-coloring.html
 https://www.codeproject.com/Articles/5291187/Using-Multiple-Return-Values-instead-of-Exceptions
+https://fhur.me/posts/2024/thats-not-an-abstraction
+https://glasskube.dev/blog/what-is-helm-in-kubernetes/
 
 https://robertheaton.com/2019/02/24/making-peace-with-simpsons-paradox/
 

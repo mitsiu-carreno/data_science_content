@@ -121,7 +121,7 @@ helm upgrade \
 --create-namespace \
 --cleanup-on-fail \
 --values values.yml \
---set worker.replicaCount=5
+--set worker.replicaCount=6
 
 
 
