@@ -31,7 +31,9 @@ helm upgrade \
 --namespace jupyterhub \
 --create-namespace \
 --cleanup-on-fail \
---set set prePuller.hook.enabled=false
+--set prePuller.hook.enabled=false
+
+cd jupyterhub
 
 helm upgrade \
 --install jupyterhub jupyterhub/jupyterhub \
@@ -73,7 +75,7 @@ kubectl port-forward --namespace spark-cluster svc/spark-cluster-master-svc 8080
 kubectl -n spark-cluster port-forward spark-cluster-worker-0 8081:8080
 
 3
-kubectl -n spark-cluster port-forward spark-cluster-master-0 4040:4040
+kubectl --namespace=jupyterhub port-forward jupyter-mit 4040:4040
 
 3
 kubectl -n minio port-forward pod/$(kubectl -n minio get pods -o jsonpath={".items[0].metadata.name"}) 9001
@@ -85,6 +87,8 @@ kubectl --namespace=jupyterhub port-forward service/proxy-public 9080:http
 
 
 helm repo add bitnami https://charts.bitnami.com/bitnami
+
+cd spark
 
 helm upgrade \
 --install spark-cluster bitnami/spark \
