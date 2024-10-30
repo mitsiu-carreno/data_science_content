@@ -1,0 +1,51 @@
+Glosario o antecedentes agregar modelo OSI
+
+
+
+
+Los mapas autoorganizados (también conocidos como mapas de Kohonen o SOM por sus siglas en inglés) se refieren a un tipo de red neuronal entrenada a traves de algoritmos competitivos. "La propiedad central de los mapas autoorganizados es que crean proyecciones no lineales de un conjunto de datos de alta dimensión en un plano regular de baja dimensión (usualmente 2d). En esta representación los clusters de datos así como las relaciones métrico-topológicas de los datos son claramente visibles" (Kohonen, 2001) 
+
+Este tipo de red se usa clusterizar y convertir datos multidimensionales en representaciones de baja dimensionalidad lo cuál permite reducir la compleijdad de problemas y faciliar su interpretación.
+
+"Este tipo de red permite clusterizar datos aunque se desconozcan cuales son esots grupos en un comienzo. Las observaciones se agrupan de manera que tiendan a ser similares dentro del grupo" (IBM, 2024)
+
+La arquitectura de un mapa autoorganizado se conforma de dos capas, capa de entrada y cada ssalida, como otras redes neuronaes cada capa esta compuesta de neuronas, todas las neurontas de la capa de entrada esta conectada con todas las neuronas de la capa de salida.
+
+(Diagrama neuronas capa entrada y salida) (ej https://www.geeksforgeeks.org/self-organising-maps-kohonen-maps/)
+
+"Durante el entrenamiento se distinguen dos etapas: la etapa competitiva y la etapa cooperativa. Durante la etapa competitiva se elige la neurona del mapa mejor adaptada a un dato de entrada y se asinga como 'ganadora' en la segunda etapa, los pesos de la neurona 'ganadora' se adaptan a las neuronas vecinas" (Van Hulle, )
+
+(Diagrama van ulle, )
+
+Kohonen, (2001) Self-Organizing Maps, Springer Series in Information Sciences, Vol. 30, 3rd edition, http://cis.legacy.ics.tkk.fi/research/reports/biennial02-03/cis-biennial-report-2002-2003-8.pdf
+
+https://dataplatform.cloud.ibm.com/docs/content/wsd/nodes/kohonen.html?context=cpdaas
+
+Van Hulle et al (2012) Self-organizing Maps. Handbook of natural computing, 1, 585-622. http://www.pspc.unige.it/~drivsco/Papers/VanHulle_Springer.pdf
+
+
+
+
+
+Estudios actuales
+La expansión de servicios de internet su rápida adopción global, así como el incremento de dispositivos con capacidad de interconexión, ha permitido que más personas se conecten, esto aunado al progresivo aumento de asequibilidad a equipos y servicios de computo ha desenbocado en diversos estudios centrados exclusivamente en monitorear y detectar el uso y abuso de servicios en internet.
+
+Para este trabajo se tomaron como referencia técnicas, métodos y procesos provenientes de dos investigaciones las cuales se descrben acontinuación.
+
+A Distributed Architecture for DDoS Prediction and Bot Detection
+Este estudio se centra especificamente en la detección pronta de ataques distribuidos de denegación de servicio (DDoS por sus siglas en inglés) el cuál "software malicioso infecta diversos dispositivos, transformandolos en robots (bots) que operan en red (botnet), atacando usuarios, servicios y dispositivos" (Rahal, 2020)
+
+Una vez que un dispositivo forma parte de una botnet, se encuentra a la espera de instruccioes de un atacante remoto. "Las botnets son capaces de llevar a cabo ataques mucho más potentes que el que haría una maquina sola. El objetivo de estos actores maliciosos es vulnerar la confidencialidad e integridad de datos y/o comprometer la disponibilidad del servicio atacado." (Rahal, 2020) 
+
+El objetivo de este estudio es la detección temprana de un ataque distribuido de denegación de servicio, incluso antes de que este inicie, enfocado en la detección de etapas tempranas del ataque.
+
+"Emplean una arquitectura jerarquica compuesta de dos niveles: local e internet. [...] En el nivel local, se identifican señales de un inminente ataque antes de que alcance etapas avanzadas. Estas señales se basan en indicadores como tasa de retorno, autocorrelación, coeficiente de varianza y asimetría [...] En el nivel de internet se emlea un sistema hibrido de detección de bots. El cuál emplea técnicas de clustering acompañado de procesamiento de señales." (Rahal, 2020)
+
+"Para ambos niveles local e internet se captura el tráfico enviado y recibido por los dispositivos conectados y este se emplea para construir y analizar una serie temporal" (Rahal, 2020)
+
+(Arquitectura de estudio)
+
+Cabe mencionar que existen discrepancias importantes entre este estudio y el llevado a cabo por Raal et al 2020, ya que se operan con datos en distintos niveles del modelo OSI, sin embargo se considera provechoso las distintas técnicas empleadas en su arquitectura, incluyendo el concepto de una arquitectura multi-nivel.
+
+Reglamentación
+Es ilegal, pursecution, etc
