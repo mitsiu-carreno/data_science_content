@@ -1,0 +1,18 @@
+1. Requerimientos y Wireframes
+
+    Elabora un listado detallado de las funcionalidades que debe incluir la aplicación. Reflexiona sobre las necesidades del usuario final y cómo la app puede satisfacerlas, por ejemplo mediante alertas diarias o monitoreo de hábitos.
+    Redacta cinco historias de usuario que describan interacciones específicas. Ejemplo: "Como usuario, quiero recibir alertas diarias con recomendaciones de actividades para mejorar mi productividad".
+    Dibuja cinco wireframes básicos para representar la estructura de las pantallas de la aplicación. El enfoque debe estar en la organización de los elementos, no en detalles visuales. Puedes utilizar  una herramienta de diseño como Figma, Adobe XD o Sketch para desarrollar un prototipo interactivo que simule la navegación entre estos. Conecta las pantallas de los wireframes para que los botones y enlaces funcionen y se pueda simular la interacción del usuario.
+    Diseña un tablero (dashboard) que presente un resumen claro y visual de los datos más relevantes para el usuario. Este tablero debe ser intuitivo y permitir una rápida interpretación de la información.  
+
+2. Evidencia para plataforma:
+
+    Listado de funcionalidades princiales
+    Historias de usuario
+    Captura de pantalla de cada uno de los 5 wireframes y su secuencia explicada
+    Tablero
+
+Nota: el siguiente sábado se revisará la secuencia de wireframes funcionando.
+
+1 El usuario debe poder 
+
