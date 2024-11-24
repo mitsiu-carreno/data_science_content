@@ -1,0 +1,53 @@
+Falta minio
+podman run \
+   -d \
+   --name minio \
+   -p 9000:9000 \
+   -p 9001:9001 \
+   --net elastic \
+   -e "MINIO_ROOT_USER=minioadmin" \
+   -e "MINIO_ROOT_PASSWORD=minioadmin" \
+   quay.io/minio/minio server /data --console-address ":9001"
+
+4 opcional elastic cambiar contraseña
+5 opcional kibana obtener token
+6 es02 
+
+Revisar elastic en http://localhost:9200/
+
+Configurar kibana
+localhost:5601
+Configure manually
+No https and put es01 ip (podman inspect es01 | grep "IPAddress")
+http://10.89.2.2:9200
+
+token en logs kib01
+
+IPS DE minio y elastic
+
+podman run -it --net elastic --expose 4040 -p 4040:4040 -u 0 --name spark spark:latest /opt/spark/bin/spark-shell \
+--packages org.apache.hadoop:hadoop-aws:3.3.4,com.amazonaws:aws-java-sdk-bundle:1.12.526,org.elasticsearch:elasticsearch-spark-30_2.12:8.6.2 \
+--conf spark.hadoop.fs.s3a.endpoint=http://10.89.2.9:9000 \
+--conf spark.hadoop.fs.s3a.access.key=minioadmin \
+--conf spark.hadoop.fs.s3a.secret.key=minioadmin \
+--conf spark.hadoop.fs.s3a.path.style.access=true \
+--conf spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem \
+--conf spark.es.nodes="10.89.2.2" \
+--conf spark.es.port="9200" \
+--conf spark.es.nodes.wan.only="true" 
+
+
+val df = spark.read.format("csv").option("header", "true").load("s3a://test/demo.csv")
+
+df.show()
+df.printSchema()
+df.count
+
+df.write.format("es").save("nombre_indice")
+
+Kibana -> dashboards
+Create your first dashboard
+
+Create a visualization
+
+SELECT * FROM nombre_indice LIMIT 5;

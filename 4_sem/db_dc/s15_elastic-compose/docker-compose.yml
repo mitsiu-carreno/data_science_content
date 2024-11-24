@@ -1,0 +1,64 @@
+version: '3.7'
+services:
+  minio:
+    image: 'minio/minio:latest'
+    hostname: minio
+    container_name: minio
+    ports:
+      - '9000:9000'
+      - '9001:9001'
+    volumes:
+      - minio-data:/data
+    environment:
+      MINIO_ROOT_USER: minio
+      MINIO_ROOT_PASSWORD: minio123
+    command: server --console-address ":9001" /data
+    networks:
+      - elastic
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.2
+    hostname: es01
+    container_name: es01
+    ports:
+      - 9200:9200
+      - 9300:9300
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+    networks:
+      - elastic
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.15.2
+    hostname: kib01
+    container_name: kib01
+    ports:
+      - 5601:5601
+    networks:
+      - elastic
+
+  spark:
+    hostname: spark
+    container_name: spark
+    image: cluster-apache-spark:3.5.3
+    ports:
+      - "9090:8080"
+      - "7077:7077"
+      - "4040:4040"
+    environment:
+      - SPARK_LOCAL_IP=spark
+      - SPARK_WORKLOAD=master
+    networks:
+      - elastic
+    
+
+volumes:
+  minio-data:
+    driver: local
+
+networks:
+  elastic:
+    driver: bridge
+
+
