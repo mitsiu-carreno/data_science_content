@@ -1,4 +1,6 @@
 https://arxiv.org/pdf/2309.04259
+https://datarefiner.com/feed/why-tda
+https://www.databricks.com/blog/2016/01/25/deep-learning-with-apache-spark-and-tensorflow.html
 
 https://scientyficworld.org/set-up-ci-cd-pipelines-for-dockerized-rn-apps/
 https://hllmn.net/blog/2023-09-18_h1x-net/
@@ -42,6 +44,8 @@ https://glasskube.dev/blog/what-is-helm-in-kubernetes/
 https://learnk8s.io/kubernetes-services-and-load-balancing
 https://javarevisited.blogspot.com/2022/03/how-to-prepare-for-system-design.html
 https://www.deeplearningbook.org/
+https://anonymousplanet.org/guide.html
+https://iximiuz.com/en/series/computer-networking-fundamentals/
 
 https://www.youtube.com/watch?v=0drZiTqy58Y
 
