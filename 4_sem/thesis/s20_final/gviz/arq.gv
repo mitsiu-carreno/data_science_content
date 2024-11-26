@@ -1,0 +1,70 @@
+digraph G {
+  # dot -Tsvg file.gv -o file.sgv | kitty icat file.svg
+ 
+  fontname="Helvetica,Arial,sans-serif"
+  node [fontname="Helvetica,Arial,sans-serif"]
+  edge [fontname="Helvetica,Arial,sans-serif"]
+  concentrate=True;
+
+  rankdir=LR;  
+  node [shape=box]
+  ranksep=1
+  nodesep=0.4
+  splines=true
+
+  ingesta [label="Ingesta"];
+  extract [label="Extracción"];
+  train [label="Entrenamiento\ndominio", margin=0.18];
+
+
+  subgraph cluster_0 {
+    style=filled
+
+    node [style=filled, color=white]
+    label="Almacenamiento"margin=15
+    labelloc="bottom";
+    df_raw [label="Datos\nno estruct", margin=0.15]
+    df_known [label="Datos\nestructurados", margin=0.15];
+
+    subgraph cluster_1 {
+      rankdir=TB
+      style=filled
+      bgcolor = lightblue;
+      label="Modelo"
+      labelloc="bottom"
+      Encoder;
+      Indexer;
+      LogReg;
+    }
+
+    df_pred [label="Datos\nground truth", margin=0.20];
+    { rank = same; df_raw; df_known; df_pred;}
+  }
+
+  predict [label="Predecir\ndominio", margin=0.13];
+
+  # Asegurar orden
+  ingesta -> extract [style=invis, nodesep=0.3];
+  extract -> train [style=invis];
+  train -> predict [style=invis];
+
+
+  df_raw -> df_known [style=invis];
+  #df_known -> Encoder [style=invis];
+  #LogReg -> df_pred [style=invis];
+
+  ingesta -> df_raw;
+  df_raw -> extract;
+  extract -> df_known;
+  df_known -> train [label="Dominio!=otro"];
+  train -> Encoder;
+  train -> Indexer;
+  train -> LogReg;
+  LogReg -> predict;
+  predict -> df_pred;
+  df_known -> predict [label="Dominio==otro"];
+  #df_known -> df_pred [label="!otro",bend=30];
+
+  { rank = same; ingesta; extract; train; predict}
+}
+
