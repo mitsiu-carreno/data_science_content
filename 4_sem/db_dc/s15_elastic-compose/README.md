@@ -10,3 +10,6 @@ df.write.format("es").save("nombre_indice")
 http://localhost:9200/nombre_indice/
 
 http://localhost:9200/nombre_indice/_search?q=%22hola%22
+
+Generar dashboard en
+http://localhost:5601

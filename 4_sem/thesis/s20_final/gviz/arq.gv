@@ -8,13 +8,13 @@ digraph G {
 
   rankdir=LR;  
   node [shape=box]
-  ranksep=1
-  nodesep=0.4
+  #ranksep=1.5
+  nodesep=0.6
   splines=true
 
   ingesta [label="Ingesta"];
   extract [label="Extracción"];
-  train [label="Entrenamiento\ndominio", margin=0.18];
+  train [label="Entrenar modelo\nbasado en\ndominios conocidos", margin=0.18];
 
 
   subgraph cluster_0 {
@@ -41,7 +41,7 @@ digraph G {
     { rank = same; df_raw; df_known; df_pred;}
   }
 
-  predict [label="Predecir\ndominio", margin=0.13];
+  predict [label="Asignar dominio\nsegún modelo", margin=0.13];
 
   # Asegurar orden
   ingesta -> extract [style=invis, nodesep=0.3];
@@ -56,15 +56,18 @@ digraph G {
   ingesta -> df_raw;
   df_raw -> extract;
   extract -> df_known;
-  df_known -> train [label="Dominio!=otro"];
+  df_known -> train [label="Dominio!=otro" color=blue fontcolor=blue];
   train -> Encoder;
   train -> Indexer;
   train -> LogReg;
   LogReg -> predict;
+  #Indexer -> predict;
+  #Encoder -> predict;
   predict -> df_pred;
-  df_known -> predict [label="Dominio==otro"];
-  #df_known -> df_pred [label="!otro",bend=30];
+  df_known -> predict [label="Dominio==otro" color=darkgreen fontcolor=darkgreen];
+  #df_known -> df_pred [label="Dominio!=otro" color=purple fontcolor=purple];
 
-  { rank = same; ingesta; extract; train; predict}
+  { rank = same; ingesta; extract; train; predict; }
+  #{ rank = same; predict;}
 }
 

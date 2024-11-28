@@ -1,0 +1,120 @@
+digraph G {
+  # dot -Tsvg file.gv -o file.sgv | kitty icat file.svg
+  fontname="Helvetica,Arial,sans-serif"
+  node [fontname="Helvetica,Arial,sans-serif"]
+  edge [fontname="Helvetica,Arial,sans-serif"]
+  concentrate=True;
+  rankdir=TB;
+  ranksep=1.2
+  nodesep=1
+  #node [shape=record];
+  
+  subgraph clusterS1 {
+    label=<<b>Host</b>>
+    labelloc="bottom"
+    style = filled;
+    bgcolor = lightblue;
+
+    
+    subgraph clusterIO {
+      label=<<b>MinIO</b>>
+      labelloc="top"
+      margin="12"
+      bgcolor="#e0ffe0"
+      minio [label=<
+        <TABLE border="0" cellspacing="0" cellpadding="5">
+          <tr>
+            <td>UI:9001</td>
+          </tr>
+          <tr>
+            <td>API:9001</td>
+          </tr>
+        </TABLE>
+      > shape=none]
+    }
+    
+    subgraph clusterM1 {
+      label=<<b>spark-master</b>>
+      labelloc="top"
+      margin="12"
+      bgcolor="#ffe0e0"
+      master [label=<
+        <TABLE border="0" cellspacing="0" cellpadding="5">
+          <tr>
+            <td>Master UI:8080</td>
+          </tr>
+          <tr>
+            <td>App UI:4040</td>
+          </tr>
+          <tr>
+            <td>Service:7077</td>
+          </tr>
+        </TABLE>
+      > shape=none]
+    }
+    
+    subgraph clusterW1 { 
+      label=<<b>spark-worker-1</b>>
+      margin="12"
+      style = filled;
+      bgcolor="#efdfff"
+      worker1 [
+          label=<
+        <TABLE border="0" cellspacing="0" cellpadding="5">
+          <tr>
+            <td>Worker UI:8080</td>
+          </tr>
+          <tr>
+            <td>Service:7000</td>
+          </tr>
+        </TABLE>
+      > shape=none]
+    }
+    subgraph clusterW2 { 
+      label=<<b>spark-worker-2</b>>
+      margin="12"
+      style = filled;
+      bgcolor="#efdfff"
+      worker2 [
+          label=<
+        <TABLE border="0" cellspacing="0" cellpadding="5">
+          <tr>
+            <td>Worker UI:8080</td>
+          </tr>
+          <tr>
+            <td>Service:7000</td>
+          </tr>
+        </TABLE>
+      > shape=none]
+    }
+    
+    subgraph clusterW3 { 
+      label=<<b>spark-worker-3</b>>
+      margin="12"
+      style = filled;
+      bgcolor="#efdfff"
+      worker3 [
+          label=<
+        <TABLE border="0" cellspacing="0" cellpadding="5">
+          <tr>
+            <td>Worker UI:8080</td>
+          </tr>
+          <tr>
+            <td>Service:7000</td>
+          </tr>
+        </TABLE>
+      > shape=none]
+    }
+    
+    master -> worker1 [dir=both];
+    master -> worker2 [dir=both];
+    master -> worker3 [dir=both];
+    
+    minio -> worker1 [dir=both];
+    minio -> worker2 [dir=both];
+    minio -> worker3 [dir=both];
+    minio -> master [dir=both];
+    
+  }
+}
+
