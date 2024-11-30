@@ -46,6 +46,7 @@ https://javarevisited.blogspot.com/2022/03/how-to-prepare-for-system-design.html
 https://www.deeplearningbook.org/
 https://anonymousplanet.org/guide.html
 https://iximiuz.com/en/series/computer-networking-fundamentals/
+https://steelph0enix.github.io/posts/llama-cpp-guide/
 
 https://www.youtube.com/watch?v=0drZiTqy58Y
 
