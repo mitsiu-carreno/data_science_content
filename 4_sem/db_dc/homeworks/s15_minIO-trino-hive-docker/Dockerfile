@@ -31,6 +31,8 @@ RUN groupadd -r hive --gid=1000 && \
     chown hive:hive -R ${HIVE_HOME} && \
     chown hive:hive /entrypoint.sh && chmod +x /entrypoint.sh
 
+COPY conf/metastore-site.xml /opt/apache-hive-metastore-3.0.0-bin/conf/metastore-site.xml
+
 RUN chown -R hive:hive /opt
 
 USER hive

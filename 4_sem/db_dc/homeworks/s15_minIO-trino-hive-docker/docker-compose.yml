@@ -7,8 +7,8 @@ services:
     ports:
       - '8080:8080'
     volumes:
-      - ./etc:/etc/trino
-      - ./conf:/etc/trino/conf
+      - ./etc:/etc/trino:Z
+      - ./conf:/etc/trino/conf:Z
     networks:
       - trino-network
 
@@ -33,8 +33,8 @@ services:
     hostname: hive-metastore
     ports:
       - '9083:9083' # Metastore Thrift
-    volumes:
-      - ./conf/metastore-site.xml:/opt/apache-hive-metastore-3.0.0-bin/conf/metastore-site.xml:ro
+    #volumes:
+      #- ./conf/metastore-site.xml:/opt/apache-hive-metastore-3.0.0-bin/conf/metastore-site.xml:ro
     environment:
       METASTORE_DB_HOSTNAME: postgres
       METASTORE_TYPE: postgres
