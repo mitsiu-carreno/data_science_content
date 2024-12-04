@@ -1,0 +1,96 @@
+digraph G {
+    # dot -Tsvg file.gv -o file.sgv | kitty icat file.svg
+    graph [
+        label = "Diagrama de componentes"
+        labelloc = t
+        fontname="Helvetica,Arial,sans-serif"
+        fontsize = 20
+        layout = dot
+        rankdir = LR
+        newrank = true
+        nodesep=1
+        
+    ]
+    node [
+		style=filled
+		shape=rect
+		pencolor="#00000044" 
+		fontname="Helvetica,Arial,sans-serif"
+		shape=plaintext
+	]
+	edge [
+		arrowsize=0.5
+		fontname="Helvetica,Arial,sans-serif"
+		labeldistance=3
+		labelfontcolor="#00000080"
+		penwidth=1.3
+
+	]
+
+    app [
+		color="#88ff0022"
+		label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="12">
+			<tr> <td> <b>App</b></td> </tr>
+		</table>>
+		shape=plain
+	]
+    
+	extData [
+		color="#88000022"
+		label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="16">
+			<tr> <td> <b>Datos externos</b></td> </tr>
+			<tr> <td>
+			 - Noticias
+			 <br/>
+			 - Artículos
+			 <br/>
+			 - Scrapper temático
+			</td> </tr>
+		</table>>
+		shape=plain
+	]
+	
+	intData [
+		color="#ff880022"
+		label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="18">
+			<tr> <td> <b>Datos de usuario</b></td> </tr>
+			<tr> <td>
+			 <u>Metadatos</u>
+			 <br/>
+			 - Likes
+			 <br/>
+			 - Temáticas
+			 <br/>
+			 - Engagement
+			</td> </tr>
+			<tr> <td>
+			 <u>Datos</u>
+			 <br/>
+			 - Compras
+			 <br/>
+			 - Rutina de sueño
+			 <br/>
+			 - Salud
+			</td> </tr>
+		</table>>
+		shape=plain
+	]
+	
+	engine [
+		color="#0044ff22"
+		label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="17">
+			<tr> <td> <b>Motor inteligente</b></td> </tr>
+		</table>>
+		shape=plain
+	]
+	
+	app -> intData [label="Métricas interacción" weight=1000]
+	intData -> extData [dir=both];
+	intData -> engine;
+	extData -> engine;
+	engine -> app [label="Recomendaciones"]
+	
+	{rank=same engine extData }
+	
+}
+
