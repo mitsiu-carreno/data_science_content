@@ -15,9 +15,9 @@ digraph G {
 
     ingesta [label="Ingesta"];
     extrac [label="Extracción"];
-    modelo_clas [label="Entrenar modelo\nbasado en\ndominios conocidos", margin=0.20];
+    modelo_clas [label="Entrenar modelo\nbasado en\ndominios conocidos", margin=0.20, style=invis];
     asignar_dom [label="Asignar dominio\nsegún modelo", margin=0.13];
-    modelo_anomal [label="Entrenar modelo\npara anomalías"]
+    modelo_anomal [label="Entrenar modelo\npara anomalías" style=invis]
     detect [label="Detectar anomalías"]
   }
 
@@ -94,14 +94,12 @@ digraph G {
   ingesta -> no_estrct;
   no_estrct -> extrac;
   extrac -> estruct;
-  estruct -> modelo_clas [label="Dominio!=otro" color="#0d1445" fontcolor="#0d1445"];
   estruct -> asignar_dom [headlabel="Dominio==otro" labeldistance=10.0 color=darkgreen fontcolor=darkgreen];
   estruct -> ground_t [taillabel="Dominio!=otro" labeldistance=7 color="#0d1445" fontcolor="#0d1445"]
-  modelo_clas -> classif;
   classif -> asignar_dom;
   asignar_dom -> ground_t;
-  ground_t -> modelo_anomal;
-  modelo_anomal -> iforest;
+  ground_t -> detect;
+  #modelo_anomal -> iforest;
   iforest -> detect;
   detect -> anoms
 
@@ -112,3 +110,4 @@ digraph G {
   {rank=same; modelo_anomal; iforest;}
   {rank=same; detect; anoms}
 }
+
