@@ -13,13 +13,14 @@ digraph G {
     penwidth=0
     node [fillcolor="#c2d9d1", fontcolor="#0d1445"]
 
-    ingesta [label="Ingesta"];
-    extrac [label="Extracción"];
-    modelo_clas [label="Entrenar modelo\nbasado en\ndominios conocidos", margin=0.20];
-    asignar_dom [label="Asignar dominio\nsegún modelo", margin=0.13];
-    modelo_anomal [label="Entrenar modelo\npara anomalías"]
-    detect [label="Detectar anomalías"]
-    viz [label="Visualización"]
+    ingesta [label="Ingesta" labelloc="top" image="imgs/ssh.png" width=1 height=1.5 fixedsize=true imagescale=true];
+    extrac [label="Extracción" labelloc="top" image="imgs/pyspark.png" width=1.5 height=0.8 fixedsize=true];
+    modelo_clas [label="Modelo dominios" labelloc="top" margin=0.20 image="imgs/pyspark.png" width=1.5 height=1 fixedsize=true imagescale=true];
+    asignar_dom [label="Asignar dominio" labelloc="top" margin=0.13 image="imgs/pyspark.png" width=1.5 height=1 fixedsize=true imagescale=true];
+    modelo_anomal [label="Modelo anomalías" labelloc="top" image="imgs/scalaspark.png" width=2 height=1.3 fixedsize=true imagescale=true]
+    detect [label="Detectar anomalías" labelloc="top" image="imgs/scalaspark.png" width=2 height=1.3 fixedsize=true imagescale=true]
+    analy [label="Motor analítico" labelloc="top" image="imgs/elastic_search.png" width=2 height=1.5 fixedsize=true imagescale=true]
+    viz [label="Visualización" labelloc="top" image="imgs/kibana.png" width=1.5 height=1.5 fixedsize=true imagescale=true]
   }
 
   subgraph cluster_store {
@@ -28,6 +29,8 @@ digraph G {
     label="Almacenamiento"
     fontcolor="#933643"
     labelloc="bottom"
+
+    clust_img [label="" fillcolor="#e0d6d9" shape=rect, width=2, height=0.5, style=filled, image="imgs/minio.png", fixedsize=true]
 
     node [fillcolor="#374375", fontcolor="#fffcf5"]
 
@@ -88,7 +91,7 @@ digraph G {
 
   }
 
-  ingesta -> extrac -> modelo_clas -> asignar_dom -> modelo_anomal -> detect -> viz [style=invis];
+  ingesta -> extrac -> modelo_clas -> asignar_dom -> modelo_anomal -> detect -> analy ->viz [style=invis];
 
   no_estrct -> estruct -> ground_t -> iforest -> anoms [style=invis]
 
@@ -105,7 +108,8 @@ digraph G {
   modelo_anomal -> iforest;
   iforest -> detect;
   detect -> anoms;
-  anoms -> viz;
+  anoms -> analy;
+  analy -> viz;
 
   {rank=same; ingesta; no_estrct;}
   {rank=same; extrac; estruct;}
@@ -113,5 +117,6 @@ digraph G {
   {rank=same; asignar_dom; ground_t;}
   {rank=same; modelo_anomal; iforest;}
   {rank=same; detect; anoms}
+  {rank=same; analy;}
   {rank=same; viz;}
 }
