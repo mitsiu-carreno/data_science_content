@@ -1,6 +1,6 @@
 digraph G {
   # dot -Tsvg file.gv -o file.svg | kitty icat file.svg
-  rankdir=LR
+  rankdir=TB
   newrank=true
   #nodesep=0.7
   #ranksep=0
@@ -12,43 +12,48 @@ digraph G {
   subgraph cluster_green {
     penwidth=0
     node [fillcolor="#c2d9d1", fontcolor="#0d1445"]
-    a
+    a [label="Bg #c2d9d1 \n F #0d1445"]
   }
 
   subgraph cluster_blue {
     penwidth=0
     node [fillcolor="#374375", fontcolor="#fffcf5"]
-    b
+    b [label="Bg #374375 \n F #fffcf5" ]
   }
 
   subgraph cluster_white {
     penwidth=0
     node [fillcolor="white", fontcolor="#0d1445"]
-    c
+    c [label="Bg white\n F #0d1445" ]
+
   }
 
   subgraph cluster_red {
     penwidth=0
     node [fillcolor="#e0d6d9", fontcolor="#933643"]
-    d
+    d [label="Bg #e0d6d9 \n F #933643" ]
+
   }
 
   subgraph cluster_darkred{
     penwidth=0
     node [fillcolor="#ad525e", fontcolor="#fffcf5"]
-    e
+    e [label="Bg #ad525e \n F #fffcf5" ]
+
   }
 
   subgraph cluster_purple{
     penwidth=0
     node [fillcolor="#babde2", fontcolor="#0d1445"]
-    f
+    f [label="Bg #babde2 \n F #0d1445" ]
+
   }
 
   subgraph cluster_lime{
     penwidth=0
     node [fillcolor="#d6dc82", fontcolor="#0d1445"]
-    g
+    g [label="Bg #d6dc82 \n F #0d1445" ]
+
   }
 }
 

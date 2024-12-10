@@ -14,47 +14,55 @@ digraph G {
   subgraph clusterS1 {
     label="Servidor 1"
     style = filled;
-    bgcolor = lightblue;
+    bgcolor ="#374375";
+    fontcolor="#fffcf5"
     
     nginx[
       label="NGINX" 
       margin=0.3 
       style=filled
-      fillcolor=lightgreen 
+      fillcolor="#d6dc82"
+      fontcolor="#0d1445" 
     ]
     
     subgraph clusterD3 {
         label="docker-app-3"
         margin="12"
-        bgcolor="#e0ffe0"
-        app3 [label="App 3 front | App 3 back" shape=record]
+        bgcolor="#babde2"
+        fontcolor="#0d1445"
+        app3 [label="App 3 front | App 3 back" shape=record fontcolor="#0d1445" color="#0d1445"]
     }
     
     subgraph clusterD2 {
         label="docker-app-2"
         margin="12"
-        bgcolor="#ffe0e0"
-        app2 [label="App 2 front | App 2 back" shape=record]
+        bgcolor="#c2d9d1"
+        fontcolor="#0d1445"
+        app2 [label="App 2 front | App 2 back" shape=record fontcolor="#0d1445" color="#0d1445"]
     }
     
     subgraph clusterD1 {
         label="docker-app-1"
         margin="12"
         style = filled;
-        bgcolor="#efdfff"
-        app1 [label="App 1 front | App 1 back" shape=record]
+        bgcolor="#e0d6d9"
+        fontcolor="#933643"
+        app1 [label="App 1 front | App 1 back" shape=record fontcolor="#933643" color="#933643"]
     }
 
   }
 
-   
-  Cliente1 -> nginx [label="https://a.com/index.html"] 
-  Cliente2 -> nginx [label="https://b.com/api/status"] 
-  Cliente3 -> nginx [label="https://c.com/api/on"] 
+  Cliente1 [style=filled fillcolor="#e0d6d9", fontcolor="#933643"]  
+  Cliente2 [style=filled fillcolor="#c2d9d1", fontcolor="#0d1445"]
+  Cliente3 [style=filled fillcolor="#babde2", fontcolor="#0d1445"]
+ 
+  Cliente1 -> nginx [label="https://a.com/index.html" fontcolor="#0d1445" color="#ad525e" penwidth=3] 
+  Cliente2 -> nginx [label="https://b.com/api/status" fontcolor="#0d1445" color="#ad525e" penwidth=3] 
+  Cliente3 -> nginx [taillabel="https://c.com/api/on" labeldistance=10 fontcolor="#0d1445" color="#ad525e" penwidth=3]  
   
-  nginx -> app1 [label="https://a.com/index.html"];
-  nginx -> app2 [label="https://b.com/api/status"];
-  nginx -> app3 [label="https://c.com/api/on"];
+  nginx -> app1 [label="https://a.com/index.html" fontcolor="#fffcf5" color="#ad525e" penwidth=3];
+  nginx -> app2 [label="https://b.com/api/status" fontcolor="#fffcf5" color="#ad525e" penwidth=3];
+  nginx -> app3 [taillabel="https://c.com/api/on" labeldistance=10 fontcolor="#fffcf5" color="#ad525e" penwidth=3];
 
 }
 
