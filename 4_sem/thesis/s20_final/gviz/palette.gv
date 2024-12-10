@@ -1,0 +1,55 @@
+digraph G {
+  # dot -Tsvg file.gv -o file.svg | kitty icat file.svg
+  rankdir=LR
+  newrank=true
+  #nodesep=0.7
+  #ranksep=0
+  fontname="Helvetica,Arial,sans-serif"
+  #splines=false
+  node [shape=box, style=filled, penwidth=0, fontname="Helvetica,Arial,sans-serif"];
+  edge [color="#4d5c60", fontname="Helvetica,Arial,sans-serif"];
+
+  subgraph cluster_green {
+    penwidth=0
+    node [fillcolor="#c2d9d1", fontcolor="#0d1445"]
+    a
+  }
+
+  subgraph cluster_blue {
+    penwidth=0
+    node [fillcolor="#374375", fontcolor="#fffcf5"]
+    b
+  }
+
+  subgraph cluster_white {
+    penwidth=0
+    node [fillcolor="white", fontcolor="#0d1445"]
+    c
+  }
+
+  subgraph cluster_red {
+    penwidth=0
+    node [fillcolor="#e0d6d9", fontcolor="#933643"]
+    d
+  }
+
+  subgraph cluster_darkred{
+    penwidth=0
+    node [fillcolor="#ad525e", fontcolor="#fffcf5"]
+    e
+  }
+
+  subgraph cluster_purple{
+    penwidth=0
+    node [fillcolor="#babde2", fontcolor="#0d1445"]
+    f
+  }
+
+  subgraph cluster_lime{
+    penwidth=0
+    node [fillcolor="#d6dc82", fontcolor="#0d1445"]
+    g
+  }
+}
+
+

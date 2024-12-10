@@ -1,0 +1,71 @@
+digraph G {
+  fontname="Helvetica,Arial,sans-serif"
+  node [fontname="Helvetica,Arial,sans-serif"]
+  edge [fontname="Helvetica,Arial,sans-serif"]
+  
+  labelloc="b";
+  label="Tiempo";
+  
+  a2 [shape=none fontcolor="#fffcf5" label=<
+ <TABLE border="0" cellspacing="3" cellpadding="10" bgcolor="white">
+  <TR>
+    <TD colspan="1" bgcolor="#ad525e" color="#fffcf5">Recop</TD>
+    <TD colspan="1" bgcolor="#374375">Entren</TD>
+    <TD colspan="1" bgcolor="#babde2"><font color="#0d1445">Despl</font></TD>
+    <TD colspan="1" bgcolor="white"></TD>
+    <TD colspan="1" bgcolor="white"></TD>
+    <TD colspan="1" bgcolor="white"></TD>
+  </TR>
+  <TR>
+    <TD colspan="1" bgcolor="white"></TD>
+    <TD colspan="1" bgcolor="#ad525e" color="#fffcf5">Recop</TD>
+    <TD colspan="1" bgcolor="#374375">Entren</TD>
+    <TD colspan="1" bgcolor="#babde2"><font color="#0d1445">Despl</font></TD>
+    <TD colspan="1" bgcolor="white"></TD>
+    <TD colspan="1" bgcolor="white"></TD>
+  </TR>
+  <TR>
+    <TD colspan="1" bgcolor="white"></TD>
+    <TD colspan="1" bgcolor="white"></TD>
+    <TD colspan="1" bgcolor="#ad525e" color="#fffcf5">Recop</TD>
+    <TD colspan="1" bgcolor="#374375">Entren</TD>
+    <TD colspan="1" bgcolor="#babde2"><font color="#0d1445">Despl</font></TD>
+    <TD colspan="1" bgcolor="white"></TD>
+  </TR>
+  <TR>
+    <TD colspan="1" bgcolor="white"></TD>
+    <TD colspan="1" bgcolor="white"></TD>
+    <TD colspan="1" bgcolor="white"></TD>
+    <TD colspan="1" bgcolor="#ad525e" color="#fffcf5">Recop</TD>
+    <TD colspan="1" bgcolor="#374375">Entren</TD>
+    <TD colspan="1" bgcolor="#babde2"><font color="#0d1445">Despl</font></TD>
+  </TR>
+  <TR>
+    <TD colspan="1" bgcolor="#ad525e" color="#fffcf5">Recop</TD>
+    <TD colspan="1" bgcolor="#ad525e" color="#fffcf5">Recop</TD>
+    <TD colspan="1" bgcolor="#374375">Entren</TD>
+    <TD colspan="1" bgcolor="#babde2"><font color="#0d1445">Despl</font></TD>
+    <TD colspan="1" bgcolor="white"></TD>
+    <TD colspan="1" bgcolor="white"></TD>
+  </TR>
+  <TR>
+    <TD colspan="1" bgcolor="white"></TD>
+    <TD colspan="1" bgcolor="white"></TD>
+    <TD colspan="1" bgcolor="#ad525e" color="#fffcf5">Recop</TD>
+    <TD colspan="1" bgcolor="#ad525e" color="#fffcf5">Recop</TD>
+    <TD colspan="1" bgcolor="#374375">Entren</TD>
+    <TD colspan="1" bgcolor="#babde2"><font color="#0d1445">Despl</font></TD>
+  </TR>
+  <TR>
+    <TD colspan="1" bgcolor="#ad525e" color="#fffcf5">Recop</TD>
+    <TD colspan="1" bgcolor="#ad525e" color="#fffcf5">Recop</TD>
+    <TD colspan="1" bgcolor="#ad525e" color="#fffcf5">Recop</TD>
+    <TD colspan="1" bgcolor="#ad525e" color="#fffcf5">Recop</TD>
+    <TD colspan="1" bgcolor="#374375">Entren</TD>
+    <TD colspan="1" bgcolor="#babde2"><font color="#0d1445">Despl</font></TD>
+  </TR>
+  
+</TABLE>>];
+
+}
+

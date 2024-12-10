@@ -28,7 +28,7 @@ digraph G {
     fontcolor="#933643"
     labelloc="bottom"
 
-    node [fillcolor="#0d1445", fontcolor="white"]
+    node [fillcolor="#374375", fontcolor="#fffcf5"]
 
     no_estrct [label="Datos\nno estruct", margin=0.15];
     estruct [label="Datos\nestructurados", margin=0.15];
@@ -37,7 +37,7 @@ digraph G {
       penwidth=1
       bgcolor = white;
       label="Modelo para clasificar dominios"
-      fontcolor="#262628" 
+      fontcolor="#0d1445" 
       labelloc="bottom"
 
       classif [
@@ -57,7 +57,7 @@ digraph G {
       penwidth=1
       bgcolor= white;
       label="Modelo detección anomalías"
-      fontcolor="#262628"
+      fontcolor="#0d1445"
       labelloc="bottom"
 
       iforest[
