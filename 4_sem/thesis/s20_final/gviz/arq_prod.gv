@@ -91,12 +91,12 @@ digraph G {
   estruct -> ground_t -> iforest -> anoms [style=invis]
 
   extrac -> estruct;
-  estruct -> asignar_dom [headlabel="Dominio==otro" labeldistance=10.0 color=darkgreen fontcolor=darkgreen];
-  estruct -> ground_t [taillabel="Dominio!=otro" labeldistance=7 color="#0d1445" fontcolor="#0d1445"]
-  extrac -> detect [taillabel="Dominio!=otro" labeldistance=7 color="#0d1445" fontcolor="#0d1445"]
+  estruct -> asignar_dom [headlabel="Dominio==otro" labeldistance=10.0 color=darkgreen fontcolor=darkgreen style=dotted penwidth=2];
+  estruct -> ground_t [taillabel="Dominio!=otro" labeldistance=7 color="#0d1445" fontcolor="#0d1445" style=dashed];
+  extrac -> detect [taillabel="Dominio!=otro" labeldistance=7 color="#0d1445" fontcolor="#0d1445" style=dashed]
   classif -> asignar_dom;
   asignar_dom -> ground_t;
-  asignar_dom -> detect [taillabel="Dominio==otro" labeldistance=5 color=darkgreen fontcolor=darkgreen];
+  asignar_dom -> detect [taillabel="Dominio==otro" labeldistance=5 color=darkgreen fontcolor=darkgreen style=dotted penwidth=2];
   #ground_t -> detect;
   #modelo_anomal -> iforest;
   iforest -> detect;

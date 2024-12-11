@@ -95,9 +95,9 @@ digraph G {
   ingesta -> no_estrct;
   no_estrct -> extrac;
   extrac -> estruct;
-  estruct -> modelo_clas [label="Dominio!=otro" color="#0d1445" fontcolor="#0d1445"];
-  estruct -> asignar_dom [headlabel="Dominio==otro" labeldistance=10.0 color=darkgreen fontcolor=darkgreen];
-  estruct -> ground_t [taillabel="Dominio!=otro" labeldistance=7 color="#0d1445" fontcolor="#0d1445"]
+  estruct -> modelo_clas [label="Dominio!=otro" color="#0d1445" fontcolor="#0d1445" style=dashed];
+  estruct -> asignar_dom [headlabel="Dominio==otro" labeldistance=10.0 color=darkgreen fontcolor=darkgreen style=dotted penwidth=2];
+  estruct -> ground_t [taillabel="Dominio!=otro" labeldistance=7 color="#0d1445" fontcolor="#0d1445" style=dashed]
   modelo_clas -> classif;
   classif -> asignar_dom;
   asignar_dom -> ground_t;
