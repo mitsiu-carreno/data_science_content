@@ -8,14 +8,15 @@ digraph G {
   #ranksep=1.2
   nodesep=1
   #node [shape=record];
+  edge [color="#4d5c60", fontname="Helvetica,Arial,sans-serif"];
   
   
   
   subgraph clusterS1 {
     label="Servidor 1"
     style = filled;
-    bgcolor ="#374375";
-    fontcolor="#fffcf5"
+    bgcolor ="white";
+    fontcolor="#0d1445"
     
     nginx[
       label="NGINX" 
@@ -56,13 +57,13 @@ digraph G {
   Cliente2 [style=filled fillcolor="#c2d9d1", fontcolor="#0d1445"]
   Cliente3 [style=filled fillcolor="#babde2", fontcolor="#0d1445"]
  
-  Cliente1 -> nginx [label="https://a.com/index.html" fontcolor="#0d1445" color="#ad525e" penwidth=3] 
-  Cliente2 -> nginx [label="https://b.com/api/status" fontcolor="#0d1445" color="#ad525e" penwidth=3] 
-  Cliente3 -> nginx [taillabel="https://c.com/api/on" labeldistance=10 fontcolor="#0d1445" color="#ad525e" penwidth=3]  
+  Cliente1 -> nginx [label="https://a.com/index.html" fontcolor="#0d1445"penwidth=1.5] 
+  Cliente2 -> nginx [label="https://b.com/api/status" fontcolor="#0d1445"penwidth=1.5] 
+  Cliente3 -> nginx [taillabel="https://c.com/api/on" labeldistance=10 fontcolor="#0d1445"penwidth=1.5]  
   
-  nginx -> app1 [label="https://a.com/index.html" fontcolor="#fffcf5" color="#ad525e" penwidth=3];
-  nginx -> app2 [label="https://b.com/api/status" fontcolor="#fffcf5" color="#ad525e" penwidth=3];
-  nginx -> app3 [taillabel="https://c.com/api/on" labeldistance=10 fontcolor="#fffcf5" color="#ad525e" penwidth=3];
+  nginx -> app1 [label="https://a.com/index.html" fontcolor="#0d1445"penwidth=1.5];
+  nginx -> app2 [label="https://b.com/api/status" fontcolor="#0d1445"penwidth=1.5];
+  nginx -> app3 [taillabel="https://c.com/api/on" labeldistance=10 fontcolor="#0d1445"penwidth=1.5];
 
 }
 

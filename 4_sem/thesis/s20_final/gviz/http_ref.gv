@@ -1,0 +1,47 @@
+digraph G {
+  # dot -Tsvg file.gv -o file.svg | kitty icat file.svg
+  rankdir=TB
+  newrank=true
+  nodesep=0.7
+  ranksep=0.5
+  fontname="Helvetica,Arial,sans-serif"
+  #splines=false
+  node [shape=box, style=filled, fillcolor="#babde2", fontcolor="#0d1445" penwidth=0, fontname="Helvetica,Arial,sans-serif"];
+  edge [color="#4d5c60", fontname="Helvetica,Arial,sans-serif"];
+  
+  http_ref [
+    label = "Existe http_referer";
+    shape = diamond;
+    height=1.3
+  ];
+  other [
+      label="domain_category=otro"
+      shape=rect;
+      width=2.5
+      fillcolor="#e0d6d9"
+      fontcolor="#933643"
+  ]
+
+  domain [
+    label = "Pertenece a un\ndominio conocido";
+    shape = diamond;
+    height=1.4
+  ];
+
+  known [
+    label= "domain_category=http_referer"
+    shape = rect;
+    width = 3
+    fillcolor="#d6dc82"
+    fontcolor="#0d1445"
+  ]
+
+  http_ref -> domain [label = "Si"]
+  http_ref -> other [label="No"]
+  domain -> known [label="Si"]
+  domain -> other [label="No"]
+  
+  { rank=same; http_ref; }
+  { rank=same; domain; other}
+  { rank=same; known; }
+}
