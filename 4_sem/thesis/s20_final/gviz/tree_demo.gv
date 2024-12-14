@@ -1,0 +1,50 @@
+digraph {
+    rankdir=LR
+    ranksep=1
+    nodesep=0.5
+
+    LOT1 [shape=rect]
+    LOT2 [shape=rect]
+    LOT3 [shape=rect]
+    LOT4 [shape=rect]
+    LOT5 [shape=rect]
+
+    {rank=same
+        PO
+        dot1 [shape=point width=0]
+        dot2 [shape=point width=0]
+        PO -> dot1 -> dot2 [arrowhead=none]
+    }
+    dot1 -> WO1 [weight=20]
+    {
+        rank=same
+        WO1
+        dot21  [shape=point width=0]
+        dot22  [shape=point width=0]
+        WO1 -> dot21 -> dot22 [arrowhead=none]
+    }
+    dot21 -> LOT1 [weight=20]
+    dot22 -> LOT2 [weight=20]
+    {
+        rank=same
+        dot31 [shape=point width=0]
+        dot32 [shape=point width=0]
+        dot33 [shape=point width=0]
+        dot31 -> dot32 -> dot33 [arrowhead=none]
+    }
+        dot2 -> WO2 [weight=20]
+    {
+        WO2
+        rank=same
+        dot23 [shape=point width=0]
+        dot24 [shape=point width=0]
+        dot25 [shape=point width=0]
+        WO2 -> dot23 -> dot24 -> dot25 [arrowhead=none]
+    }
+    dot23 -> LOT3 [weight=20]
+    dot24 -> LOT4 [weight=20]
+    dot25 -> LOT5 [weight=20]
+    dot31 -> SO1
+    dot33 -> SO2
+    LOT1 -> dot32
+}
