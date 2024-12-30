@@ -1,0 +1,33 @@
+1-Primero mostrar la estructura de logs (cuál fue la entrada, como quedó la salida)
+Luego mostrar el análisis estadístico
+2-En díagrama 33 intercambiar almacenamiento abajo
+Agregar diagrama de técnologías iconos
+(Anomalía de 40% muy bajo, intentar 60%)
+3-Documentar tipos de ataques
+5-Agregar flujo productivo (stream-saltar modelo)
+6-Proximos pasos clusterizar dominios, hashmin,  
+
+Como utilizan las soluciones técnologicas para un ambiente de producción <-- ESTO ES LO QUE VA A CALIFICAR
+
+Modelado no tan detallado
+Enfoque en el proceso
+
+Conclusiones como nos sirvió la clase de bases de datos (1porque, como nos beneficio 2 todas las de la solución técnologica)
+
+Plan de mantenimiento y mejora (cada cuanto voy a actualizar el modelo)
+Dos procesos el de tiempo real y como se actualizan los modelos
+
+================================00
+Cuál es la problemática
+Para que quieres resolver este problema
+Cómo esta estructurados los datos
+Cómo es el proceso que planteas (porque cada una)
+Cuáles son las técnologías
+Porque y para qué el modelo
+Ambiente productivo (solucion tecnologica)
+Conclusiones
+Trabajo futuro
+
+Máx 30 hojas
+
+Kibana reporte detallado de gráficos (dashboard)

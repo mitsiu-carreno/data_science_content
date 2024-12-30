@@ -49,6 +49,7 @@ https://iximiuz.com/en/series/computer-networking-fundamentals/
 https://steelph0enix.github.io/posts/llama-cpp-guide/
 https://blog.det.life/apache-iceberg-the-hadoop-of-the-modern-data-stack-c83f63a4ebb9
 https://estuary.dev/memory-efficient-streaming-parquet/
+https://milescole.dev/data-engineering/2024/10/10/RDDs-vs-DataFrames.html
 
 https://www.youtube.com/watch?v=0drZiTqy58Y
 
